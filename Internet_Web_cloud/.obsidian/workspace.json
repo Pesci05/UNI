@@ -1,0 +1,301 @@
+{
+  "main": {
+    "id": "adabd3529d52db53",
+    "type": "split",
+    "children": [
+      {
+        "id": "f101f12d42b48b1b",
+        "type": "tabs",
+        "children": [
+          {
+            "id": "fd52be69ca1d2d1f",
+            "type": "leaf",
+            "state": {
+              "type": "pdf",
+              "state": {
+                "file": "slide/9-LivelloTrasporto-parte2.pdf"
+              },
+              "icon": "lucide-file-text",
+              "title": "9-LivelloTrasporto-parte2"
+            }
+          },
+          {
+            "id": "b5d8631fb1f08e3a",
+            "type": "leaf",
+            "state": {
+              "type": "markdown",
+              "state": {
+                "file": "RETI E PROTOCCOLI.md",
+                "mode": "source",
+                "source": false
+              },
+              "icon": "lucide-file",
+              "title": "RETI E PROTOCCOLI"
+            }
+          },
+          {
+            "id": "03f88c84f6f2a29d",
+            "type": "leaf",
+            "state": {
+              "type": "markdown",
+              "state": {
+                "file": "APPLICAZIONI DI RETE.md",
+                "mode": "source",
+                "source": false
+              },
+              "icon": "lucide-file",
+              "title": "APPLICAZIONI DI RETE"
+            }
+          },
+          {
+            "id": "515fa566861c7198",
+            "type": "leaf",
+            "state": {
+              "type": "markdown",
+              "state": {
+                "file": "LIVELLO trasporto.md",
+                "mode": "source",
+                "source": false
+              },
+              "icon": "lucide-file",
+              "title": "LIVELLO trasporto"
+            }
+          },
+          {
+            "id": "375c776efa47ee0a",
+            "type": "leaf",
+            "state": {
+              "type": "markdown",
+              "state": {
+                "file": "LIVELLO RETE.md",
+                "mode": "source",
+                "source": false
+              },
+              "icon": "lucide-file",
+              "title": "LIVELLO RETE"
+            }
+          },
+          {
+            "id": "e8231558f0c29a2e",
+            "type": "leaf",
+            "state": {
+              "type": "markdown",
+              "state": {
+                "file": "LIVELLO HOST-TO-NETWORK.md",
+                "mode": "source",
+                "source": false
+              },
+              "icon": "lucide-file",
+              "title": "LIVELLO HOST-TO-NETWORK"
+            }
+          }
+        ],
+        "currentTab": 3
+      }
+    ],
+    "direction": "vertical"
+  },
+  "left": {
+    "id": "4c4a36d49e1b0e56",
+    "type": "split",
+    "children": [
+      {
+        "id": "cf53acba52fe099d",
+        "type": "tabs",
+        "children": [
+          {
+            "id": "3174cf6aea51dadd",
+            "type": "leaf",
+            "state": {
+              "type": "file-explorer",
+              "state": {
+                "sortOrder": "alphabetical",
+                "autoReveal": false,
+                "showSearch": false,
+                "searchQuery": ""
+              },
+              "icon": "lucide-folder-closed",
+              "title": "Esplora file"
+            }
+          },
+          {
+            "id": "4e5af51c1381052b",
+            "type": "leaf",
+            "state": {
+              "type": "search",
+              "state": {
+                "query": "",
+                "matchingCase": false,
+                "explainSearch": false,
+                "collapseAll": false,
+                "extraContext": false,
+                "sortOrder": "alphabetical"
+              },
+              "icon": "lucide-search",
+              "title": "Ricerca"
+            }
+          },
+          {
+            "id": "50896ec8e970cbce",
+            "type": "leaf",
+            "state": {
+              "type": "bookmarks",
+              "state": {},
+              "icon": "lucide-bookmark",
+              "title": "Segnalibri"
+            }
+          }
+        ]
+      }
+    ],
+    "direction": "horizontal",
+    "width": 200
+  },
+  "right": {
+    "id": "ac006e9f8c2d31cc",
+    "type": "split",
+    "children": [
+      {
+        "id": "a7f032ef321a91af",
+        "type": "tabs",
+        "children": [
+          {
+            "id": "897d15f558a0340f",
+            "type": "leaf",
+            "state": {
+              "type": "backlink",
+              "state": {
+                "file": "RETI E PROTOCCOLI.md",
+                "collapseAll": false,
+                "extraContext": false,
+                "sortOrder": "alphabetical",
+                "showSearch": false,
+                "searchQuery": "",
+                "backlinkCollapsed": false,
+                "unlinkedCollapsed": true
+              },
+              "icon": "links-coming-in",
+              "title": "Riferimenti a RETI E PROTOCCOLI"
+            }
+          },
+          {
+            "id": "74e52634489b7979",
+            "type": "leaf",
+            "state": {
+              "type": "outgoing-link",
+              "state": {
+                "file": "RETI E PROTOCCOLI.md",
+                "linksCollapsed": false,
+                "unlinkedCollapsed": true
+              },
+              "icon": "links-going-out",
+              "title": "Collegamenti in uscita da RETI E PROTOCCOLI"
+            }
+          },
+          {
+            "id": "6240f66bb72d83a6",
+            "type": "leaf",
+            "state": {
+              "type": "tag",
+              "state": {
+                "sortOrder": "frequency",
+                "useHierarchy": true,
+                "showSearch": false,
+                "searchQuery": ""
+              },
+              "icon": "lucide-tags",
+              "title": "Etichette"
+            }
+          },
+          {
+            "id": "fc746f127d18f055",
+            "type": "leaf",
+            "state": {
+              "type": "all-properties",
+              "state": {
+                "sortOrder": "frequency",
+                "showSearch": false,
+                "searchQuery": ""
+              },
+              "icon": "lucide-archive",
+              "title": "Tutte le proprietà"
+            }
+          },
+          {
+            "id": "f71d7e4e2129b33a",
+            "type": "leaf",
+            "state": {
+              "type": "outline",
+              "state": {
+                "file": "RETI E PROTOCCOLI.md",
+                "followCursor": false,
+                "showSearch": false,
+                "searchQuery": ""
+              },
+              "icon": "lucide-list",
+              "title": "Struttura di RETI E PROTOCCOLI"
+            }
+          }
+        ]
+      }
+    ],
+    "direction": "horizontal",
+    "width": 300,
+    "collapsed": true
+  },
+  "left-ribbon": {
+    "hiddenItems": {
+      "switcher:Apri selettore rapido": false,
+      "daily-notes:Apri nota giornaliera": false,
+      "graph:Apri vista grafo": false,
+      "canvas:Crea nuova lavagna": false,
+      "templates:Inserisci modello": false,
+      "command-palette:Apri riquadro comandi": false,
+      "bases:Crea nuova Base": false
+    }
+  },
+  "active": "515fa566861c7198",
+  "lastOpenFiles": [
+    "RETI E PROTOCCOLI.md",
+    "LIVELLO RETE.md",
+    "LIVELLO trasporto.md",
+    "APPLICAZIONI DI RETE.md",
+    "slide/9-LivelloTrasporto-parte2.pdf",
+    "slide/7-LivelloTrasporto-parte1.pdf",
+    "slide/5-LivelloApplicazione-DNS.pdf",
+    "LIVELLO HOST-TO-NETWORK.md",
+    "slide/14-LivelloIP-parte4.pdf",
+    "slide/13-LivelloIP-parte3.pdf",
+    "slide/12-LivelloIP-parte2.pdf",
+    "slide/10-LivelloTrasporto-parte3.pdf",
+    "slide/8-SocketProgramming.pdf",
+    "Pasted image 20260702171154.png",
+    "slide/4-LivelloApplicazione-HTTP.pdf",
+    "slide/3-Reti_RitardiPerditeThroughput.pdf",
+    "img/Pasted image 20260629235058.png",
+    "img/Pasted image 20260629184156.png",
+    "img/Pasted image 20260625191723.png",
+    "Senza nome.md",
+    "Pasted image 20260629235058.png",
+    "non.md",
+    "Pasted image 20260629184156.png",
+    "Pasted image 20260625191723.png",
+    "img/Pasted image 20260625185050.png",
+    "img/Pasted image 20260625185004.png",
+    "Pasted image 20260625185050.png",
+    "2026-05-06.md",
+    "2026-04-22.md",
+    "2026-03-16.md",
+    "o.md",
+    "an.md",
+    "2026-03-11.md",
+    "2026-03-04.md",
+    "Senza nome.canvas",
+    "2026-03-02.md",
+    "LAB.md",
+    "Py/prova/prova/README.md",
+    "prova/README.md",
+    "Py/prova/README.md",
+    "Py/README.md"
+  ]
+}

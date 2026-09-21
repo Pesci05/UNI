@@ -1,0 +1,12 @@
+body{
+    --h1-color: lightblue;
+    --h2-color: lightblue;
+    --h3-color: lightblue;
+    --bold-color: #66CCFD;
+}
+
+.cm-s-obsidian span.cm-formatting-highlight, .cm-s-obsidian span.cm-highlight {
+    background-color: #ABCFFDAA;
+    color: black;
+}
+

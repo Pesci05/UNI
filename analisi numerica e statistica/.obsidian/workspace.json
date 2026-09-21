@@ -1,0 +1,211 @@
+{
+  "main": {
+    "id": "faf562f9200e3266",
+    "type": "split",
+    "children": [
+      {
+        "id": "e158ec73af0bf68a",
+        "type": "tabs",
+        "children": [
+          {
+            "id": "c9b5ab9d8983d776",
+            "type": "leaf",
+            "state": {
+              "type": "markdown",
+              "state": {
+                "file": "Statistica.md",
+                "mode": "source",
+                "source": false
+              },
+              "icon": "lucide-file",
+              "title": "Statistica"
+            }
+          },
+          {
+            "id": "23c654ddb6b50925",
+            "type": "leaf",
+            "state": {
+              "type": "pdf",
+              "state": {
+                "file": "Statistica3.pdf"
+              },
+              "icon": "lucide-file-text",
+              "title": "Statistica3"
+            }
+          },
+          {
+            "id": "ddd4656019fb6eac",
+            "type": "leaf",
+            "state": {
+              "type": "markdown",
+              "state": {
+                "file": "ESAME.md",
+                "mode": "source",
+                "source": false
+              },
+              "icon": "lucide-file",
+              "title": "ESAME"
+            }
+          }
+        ],
+        "currentTab": 2
+      }
+    ],
+    "direction": "vertical"
+  },
+  "left": {
+    "id": "dbfa36ee1b94d12c",
+    "type": "split",
+    "children": [
+      {
+        "id": "878661dd5e791a9a",
+        "type": "tabs",
+        "children": [
+          {
+            "id": "f876fe65a1e631b8",
+            "type": "leaf",
+            "state": {
+              "type": "file-explorer",
+              "state": {
+                "sortOrder": "alphabetical",
+                "autoReveal": false
+              },
+              "icon": "lucide-folder-closed",
+              "title": "Esplora risorse"
+            }
+          },
+          {
+            "id": "3e229a021d137653",
+            "type": "leaf",
+            "state": {
+              "type": "search",
+              "state": {
+                "query": "",
+                "matchingCase": false,
+                "explainSearch": false,
+                "collapseAll": false,
+                "extraContext": false,
+                "sortOrder": "alphabetical"
+              },
+              "icon": "lucide-search",
+              "title": "Ricerca"
+            }
+          },
+          {
+            "id": "065917482bf5c4fd",
+            "type": "leaf",
+            "state": {
+              "type": "bookmarks",
+              "state": {},
+              "icon": "lucide-bookmark",
+              "title": "Segnalibri"
+            }
+          }
+        ]
+      }
+    ],
+    "direction": "horizontal",
+    "width": 300
+  },
+  "right": {
+    "id": "f532d9d33bb387da",
+    "type": "split",
+    "children": [
+      {
+        "id": "596e8864c4e09cde",
+        "type": "tabs",
+        "children": [
+          {
+            "id": "b863596f2bb7cabf",
+            "type": "leaf",
+            "state": {
+              "type": "backlink",
+              "state": {
+                "file": "Esempi codice matlab.md",
+                "collapseAll": false,
+                "extraContext": false,
+                "sortOrder": "alphabetical",
+                "showSearch": false,
+                "searchQuery": "",
+                "backlinkCollapsed": false,
+                "unlinkedCollapsed": true
+              },
+              "icon": "links-coming-in",
+              "title": "Riferimenti a Esempi codice matlab"
+            }
+          },
+          {
+            "id": "9d89aa657924d3fb",
+            "type": "leaf",
+            "state": {
+              "type": "outgoing-link",
+              "state": {
+                "file": "Esempi codice matlab.md",
+                "linksCollapsed": false,
+                "unlinkedCollapsed": true
+              },
+              "icon": "links-going-out",
+              "title": "Collegamenti in uscita da Esempi codice matlab"
+            }
+          },
+          {
+            "id": "2bb7f94ddf150b0e",
+            "type": "leaf",
+            "state": {
+              "type": "tag",
+              "state": {
+                "sortOrder": "frequency",
+                "useHierarchy": true,
+                "showSearch": false,
+                "searchQuery": ""
+              },
+              "icon": "lucide-tags",
+              "title": "Etichette"
+            }
+          },
+          {
+            "id": "efcab3dfb4662340",
+            "type": "leaf",
+            "state": {
+              "type": "outline",
+              "state": {
+                "file": "Esempi codice matlab.md",
+                "followCursor": false,
+                "showSearch": false,
+                "searchQuery": ""
+              },
+              "icon": "lucide-list",
+              "title": "Struttura di Esempi codice matlab"
+            }
+          }
+        ]
+      }
+    ],
+    "direction": "horizontal",
+    "width": 300,
+    "collapsed": true
+  },
+  "left-ribbon": {
+    "hiddenItems": {
+      "switcher:Apri selezione rapida": false,
+      "graph:Apri vista grafo": false,
+      "canvas:Crea nuova lavagna": false,
+      "daily-notes:Apri nota del giorno": false,
+      "templates:Inserisci modello": false,
+      "command-palette:Apri riquadro comandi": false,
+      "bases:Create new base": false
+    }
+  },
+  "active": "ddd4656019fb6eac",
+  "lastOpenFiles": [
+    "ESAME.md",
+    "Statistica.md",
+    "Statistica3.pdf",
+    "Statistica2.pdf",
+    "Statistica4.pdf",
+    "Statistica1.pdf",
+    "Esempi codice matlab.md",
+    "Benvenuto.md",
+    "crea un collegamento.md"
+  ]
+}

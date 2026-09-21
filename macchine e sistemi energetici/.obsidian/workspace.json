@@ -1,0 +1,208 @@
+{
+  "main": {
+    "id": "1a8ffa4f227b17df",
+    "type": "split",
+    "children": [
+      {
+        "id": "ba5bed0a52922ebe",
+        "type": "tabs",
+        "children": [
+          {
+            "id": "e4edf030dafa2460",
+            "type": "leaf",
+            "state": {
+              "type": "pdf",
+              "state": {
+                "file": "slide/006_SistemiCogenerativi_MN.pdf"
+              },
+              "icon": "lucide-file-text",
+              "title": "006_SistemiCogenerativi_MN"
+            }
+          }
+        ]
+      }
+    ],
+    "direction": "vertical"
+  },
+  "left": {
+    "id": "91a6921b7e9b0fad",
+    "type": "split",
+    "children": [
+      {
+        "id": "8710bea5d3a2009c",
+        "type": "tabs",
+        "children": [
+          {
+            "id": "ee34787388c2a124",
+            "type": "leaf",
+            "state": {
+              "type": "file-explorer",
+              "state": {
+                "sortOrder": "byModifiedTime",
+                "autoReveal": false,
+                "showSearch": false,
+                "searchQuery": ""
+              },
+              "icon": "lucide-folder-closed",
+              "title": "Esplora file"
+            }
+          },
+          {
+            "id": "005bdb75fea177e7",
+            "type": "leaf",
+            "state": {
+              "type": "search",
+              "state": {
+                "query": "tag:#funzione_stato",
+                "matchingCase": false,
+                "explainSearch": false,
+                "collapseAll": false,
+                "extraContext": false,
+                "sortOrder": "alphabetical"
+              },
+              "icon": "lucide-search",
+              "title": "Ricerca"
+            }
+          },
+          {
+            "id": "142189317048ff56",
+            "type": "leaf",
+            "state": {
+              "type": "bookmarks",
+              "state": {},
+              "icon": "lucide-bookmark",
+              "title": "Segnalibri"
+            }
+          }
+        ]
+      }
+    ],
+    "direction": "horizontal",
+    "width": 200
+  },
+  "right": {
+    "id": "4c86d6b651e6227a",
+    "type": "split",
+    "children": [
+      {
+        "id": "fac347d6cd2ac38f",
+        "type": "tabs",
+        "children": [
+          {
+            "id": "3bc2e858185380fe",
+            "type": "leaf",
+            "state": {
+              "type": "backlink",
+              "state": {
+                "file": "Scenario energetico.md",
+                "collapseAll": false,
+                "extraContext": false,
+                "sortOrder": "alphabetical",
+                "showSearch": false,
+                "searchQuery": "",
+                "backlinkCollapsed": false,
+                "unlinkedCollapsed": true
+              },
+              "icon": "links-coming-in",
+              "title": "Riferimenti a Scenario energetico"
+            }
+          },
+          {
+            "id": "5ca78014600bab68",
+            "type": "leaf",
+            "state": {
+              "type": "outgoing-link",
+              "state": {
+                "file": "Scenario energetico.md",
+                "linksCollapsed": false,
+                "unlinkedCollapsed": true
+              },
+              "icon": "links-going-out",
+              "title": "Collegamenti in uscita da Scenario energetico"
+            }
+          },
+          {
+            "id": "3debd1b454484276",
+            "type": "leaf",
+            "state": {
+              "type": "tag",
+              "state": {
+                "sortOrder": "frequency",
+                "useHierarchy": true,
+                "showSearch": false,
+                "searchQuery": ""
+              },
+              "icon": "lucide-tags",
+              "title": "Etichette"
+            }
+          },
+          {
+            "id": "ecf4e004207e65ae",
+            "type": "leaf",
+            "state": {
+              "type": "outline",
+              "state": {
+                "followCursor": false,
+                "showSearch": false,
+                "searchQuery": ""
+              },
+              "icon": "lucide-list",
+              "title": "Struttura"
+            }
+          }
+        ]
+      }
+    ],
+    "direction": "horizontal",
+    "width": 300,
+    "collapsed": true
+  },
+  "left-ribbon": {
+    "hiddenItems": {
+      "switcher:Apri selettore rapido": false,
+      "daily-notes:Apri nota giornaliera": false,
+      "bases:Crea nuova Base": false,
+      "graph:Apri vista grafo": false,
+      "canvas:Crea nuova lavagna": false,
+      "templates:Inserisci modello": false,
+      "command-palette:Apri riquadro comandi": false
+    }
+  },
+  "active": "e4edf030dafa2460",
+  "lastOpenFiles": [
+    "Scenario energetico.md",
+    "LEZIONE 0 intro.md",
+    "SISTEMI A GAS.md",
+    "CICLI COMBINATI.md",
+    "Termodinamica di base.md",
+    "SISTEMI CON IMPIANTI COGENERATIVI.md",
+    "SISTEMI A VAPORE.md",
+    "SISTEMI COGENERATIVI.md",
+    "slide/006_SistemiCogenerativi_MN.pdf",
+    "slide/008_MotoriACombustioneInterna_MN.pdf",
+    "slide/007_Generatori_di_Vapore_MN.pdf",
+    "screenshot/Pasted image 20251112105843.png",
+    "screenshot/Pasted image 20251112105815.png",
+    "screenshot/Pasted image 20251112105811.png",
+    "screenshot/Pasted image 20251112105752.png",
+    "screenshot/Pasted image 20251112105459.png",
+    "screenshot/Pasted image 20251112102743.png",
+    "Pasted image 20251112105843.png",
+    "Pasted image 20251112105815.png",
+    "Pasted image 20251112105811.png",
+    "Pasted image 20251112105752.png",
+    "slide/005_SistemiCombinatiGasVapore_MN.pdf",
+    "slide/004_SistemiAGas_MN.pdf",
+    "slide/002_IntroduzioneAlleMacchine_MN.pdf",
+    "slide/003_SistemiAVapore_MN.pdf",
+    "slide/001_Termodinamica_di_base_MN.pdf",
+    "Screenshot From 2025-10-01 12-23-47.png.md",
+    "Senza nome.canvas",
+    "001_Scenario_Energetico_MN.pdf.md",
+    "screenshot",
+    "slide/001_Scenario_Energetico_MN.pdf.md",
+    "slide/000_Scenario_Energetico_MN.pdf",
+    "collegamenti.md",
+    "2025-09-17.md"
+  ]
+}

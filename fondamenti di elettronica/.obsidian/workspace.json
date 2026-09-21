@@ -1,0 +1,230 @@
+{
+  "main": {
+    "id": "d76366dc6ecde717",
+    "type": "split",
+    "children": [
+      {
+        "id": "389272016ef74c9e",
+        "type": "tabs",
+        "children": [
+          {
+            "id": "9bf2ee124e727331",
+            "type": "leaf",
+            "state": {
+              "type": "markdown",
+              "state": {
+                "file": "CASA.md",
+                "mode": "source",
+                "source": false
+              },
+              "icon": "lucide-file",
+              "title": "CASA"
+            }
+          },
+          {
+            "id": "553f759322a33201",
+            "type": "leaf",
+            "state": {
+              "type": "pdf",
+              "state": {
+                "file": "slides/Dispense del Corso - Fondamenti di Elettronica.pdf"
+              },
+              "icon": "lucide-file-text",
+              "title": "Dispense del Corso - Fondamenti di Elettronica"
+            }
+          },
+          {
+            "id": "ab716a21f72239c0",
+            "type": "leaf",
+            "state": {
+              "type": "markdown",
+              "state": {
+                "file": "ESEMPI CIRCUITI.md",
+                "mode": "source",
+                "source": false
+              },
+              "icon": "lucide-file",
+              "title": "ESEMPI CIRCUITI"
+            }
+          }
+        ]
+      }
+    ],
+    "direction": "vertical"
+  },
+  "left": {
+    "id": "cac27e9b5d1eb2f0",
+    "type": "split",
+    "children": [
+      {
+        "id": "92f0a47d19b7213a",
+        "type": "tabs",
+        "children": [
+          {
+            "id": "8211147a863112ac",
+            "type": "leaf",
+            "state": {
+              "type": "file-explorer",
+              "state": {
+                "sortOrder": "alphabetical",
+                "autoReveal": false,
+                "showSearch": false,
+                "searchQuery": ""
+              },
+              "icon": "lucide-folder-closed",
+              "title": "Esplora file"
+            }
+          },
+          {
+            "id": "7d85fe3fbab8e1aa",
+            "type": "leaf",
+            "state": {
+              "type": "search",
+              "state": {
+                "query": "",
+                "matchingCase": false,
+                "explainSearch": false,
+                "collapseAll": false,
+                "extraContext": false,
+                "sortOrder": "alphabetical"
+              },
+              "icon": "lucide-search",
+              "title": "Ricerca"
+            }
+          },
+          {
+            "id": "22cb4115d64b8c92",
+            "type": "leaf",
+            "state": {
+              "type": "bookmarks",
+              "state": {},
+              "icon": "lucide-bookmark",
+              "title": "Segnalibri"
+            }
+          }
+        ]
+      }
+    ],
+    "direction": "horizontal",
+    "width": 200
+  },
+  "right": {
+    "id": "174cfe0ec33a1ab0",
+    "type": "split",
+    "children": [
+      {
+        "id": "322a538a59f241ae",
+        "type": "tabs",
+        "children": [
+          {
+            "id": "2f762d228924d81c",
+            "type": "leaf",
+            "state": {
+              "type": "backlink",
+              "state": {
+                "file": "01 - Nuts and Bolts of Electronics.pdf",
+                "collapseAll": false,
+                "extraContext": false,
+                "sortOrder": "alphabetical",
+                "showSearch": false,
+                "searchQuery": "",
+                "backlinkCollapsed": false,
+                "unlinkedCollapsed": true
+              },
+              "icon": "links-coming-in",
+              "title": "Riferimenti a 01 - Nuts and Bolts of Electronics"
+            }
+          },
+          {
+            "id": "fcc9bf34f87bb842",
+            "type": "leaf",
+            "state": {
+              "type": "outgoing-link",
+              "state": {
+                "file": "01 - Nuts and Bolts of Electronics.pdf",
+                "linksCollapsed": false,
+                "unlinkedCollapsed": true
+              },
+              "icon": "links-going-out",
+              "title": "Collegamenti in uscita da 01 - Nuts and Bolts of Electronics"
+            }
+          },
+          {
+            "id": "beff399c6dbe2e97",
+            "type": "leaf",
+            "state": {
+              "type": "tag",
+              "state": {
+                "sortOrder": "frequency",
+                "useHierarchy": true,
+                "showSearch": false,
+                "searchQuery": ""
+              },
+              "icon": "lucide-tags",
+              "title": "Etichette"
+            }
+          },
+          {
+            "id": "087d2e5968db049c",
+            "type": "leaf",
+            "state": {
+              "type": "outline",
+              "state": {
+                "file": "01 - Nuts and Bolts of Electronics.pdf",
+                "followCursor": false,
+                "showSearch": false,
+                "searchQuery": ""
+              },
+              "icon": "lucide-list",
+              "title": "Struttura di 01 - Nuts and Bolts of Electronics"
+            }
+          }
+        ]
+      }
+    ],
+    "direction": "horizontal",
+    "width": 300,
+    "collapsed": true
+  },
+  "left-ribbon": {
+    "hiddenItems": {
+      "switcher:Apri selettore rapido": false,
+      "daily-notes:Apri nota giornaliera": false,
+      "bases:Crea nuova Base": false,
+      "graph:Apri vista grafo": false,
+      "canvas:Crea nuova lavagna": false,
+      "templates:Inserisci modello": false,
+      "command-palette:Apri riquadro comandi": false
+    }
+  },
+  "active": "9bf2ee124e727331",
+  "lastOpenFiles": [
+    "slides/Dispense del Corso - Fondamenti di Elettronica.pdf",
+    "CASA.md",
+    "ESEMPI CIRCUITI.md",
+    "slides/Teoria/01 - Nuts and Bolts of Electronics.pdf",
+    "Pasted image 20260516162059.png",
+    "LEZIONI.md",
+    "img/Pasted image 20260504121916.png",
+    "img/Pasted image 20260504120226.png",
+    "img/Pasted image 20260503003725.png",
+    "img/Pasted image 20260503003421.png",
+    "img/Pasted image 20260503002153.png",
+    "img/Pasted image 20260428235319.png",
+    "img/Pasted image 20260427235654.png",
+    "img/Pasted image 20260427232934.png",
+    "img/Pasted image 20260426231855.png",
+    "slides/Teoria/06 - Wired Protocols.pdf",
+    "Senza nome.md",
+    "slides/Teoria/05 - A-D and D-A Conversion.pdf",
+    "slides/Teoria/04 - Power Supply.pdf",
+    "slides/Lab/Lezione_Lab_3.pdf",
+    "slides/Teoria/02 - Digital Electronics.pdf",
+    "slides/Teoria/03 - Sensors and Actuators.pdf",
+    "um.md",
+    "LABORATORIO.md",
+    "slides/Lab/Lezione_Lab_1.pdf",
+    "slides/Lab/Linee_guida_progetti_con_BLE.pdf",
+    "Senza nome.canvas"
+  ]
+}
