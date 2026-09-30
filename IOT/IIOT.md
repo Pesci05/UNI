@@ -66,3 +66,4 @@ I possibili protocolli utilizzabili sono:
 Un sistema fatto da IoT, permette di comunicari tra più oggetti che fanno cose diverse per raccogliere e gestire dati in input dai sensori di questi oggetti.
 
 
+

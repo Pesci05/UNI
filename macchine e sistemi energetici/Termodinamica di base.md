@@ -69,8 +69,8 @@ T -> Temperatura assoluta
 #calore_specifico
 Il calore specifico **C** è una quantità di calore che bisogna fornire a 1 Kg di sostanza per aumentare la sua temperatura di 1°K.
 
-- **Calore specifico a volume costante** $c_v$ :  calore necessario per aumentare di 1˚K la temperatura per 1kg di sostanza a ==volume costante==. 
-- **Calore specifico a pressione costante** $c_p$ : calore necessario per aumentare di 1°K la temperatura di 1Kg di sostanza con ==pressione costante==.
+- **Calore specifico a volume costante** $C_v$ :  calore necessario per aumentare di 1˚K la temperatura per 1kg di sostanza a ==volume costante==. 
+- **Calore specifico a pressione costante** $C_p$ : calore necessario per aumentare di 1°K la temperatura di 1Kg di sostanza con ==pressione costante==.
 
 Il calore specifico dice quanto un sostanza **resiste** al scaldarsi, più è grande più calore serve a scaldarsi.
 
@@ -84,8 +84,8 @@ Include:
 - l'energia potenziale dovuta alle interazione tra le particelle
 
 $\Delta U = Q - L$ 
-U -> energia Interna
-$\Delta U$ -> variazione dell'energia interna
+U ->  energia Interna
+$\Delta U \to$  variazione dell'energia interna
 Q -> calore scambiato
 L -> Lavoro scambiato
 
@@ -101,15 +101,27 @@ $H = U + pV$
 L' **energia intenra U** descrive tutto quello che è contenuto nel sistema. 
 L' **entalpia H**  descrive l'energia che un sistema aperto può scambiare con l'ambiente, si misura in Joule.
 [[001_Termodinamica_di_base_MN.pdf#page=12|001_Termodinamica_di_base_MN, pagina 12]]
-[[001_Termodinamica_di_base_MN.pdf#page=13|001_Termodinamica_di_base_MN, pagina 13]]
 
+Per un **gas perfetto**:
+$$
+pV = nRT \to dH = dU + d(pV) = dU + nRdT
+$$
+- Se il sistema è un gas perfetto, l'energia dipende solo dalla Temperatura T.
+- Se il calore specifico a volume costante,$C_{V}$ costante anche rispetto alla temperatura
+Quindi:
+$$
+dU = nC_{V}dT \to dH = nC_{V}dT + nRdT = n(C_{V}+R)dT=nC_{p}dT 
+$$
 ### Trasformazione Isobara
  #trasformazione_isobara
-$Q = \Delta + L$ 
+$Q = \Delta U+ L$ 
 Per una Trasformazione a pressione costante, il lavoro è pari al prodotto della pressione per la variazione di volume.
-$L = p\Delta V$         =>                      $Q = \Delta U + p\Delta V$ 
+$L = p\Delta V$         =>            $Q = \Delta U + p\Delta V$ 
 [[001_Termodinamica_di_base_MN.pdf#page=14|001_Termodinamica_di_base_MN, pagina 14]]
 
+le trasformazioni possono essere:
+- Reazione **esotermica**: reazione isobara che **rilascia** calore
+- Reazione **endotermica**: reazione isobara che **assorbe** calore
 ## 2° Principio della termodinamica: Entropia
 #entropia
 **Enunciato Kelvin-Plank:** È impossibile realizzare una trasformazione termodinamica che abbia come unico risultato la completa trasformazione in lavoro del calore assorbito da una sorgente a temperatura costante.
@@ -117,24 +129,43 @@ $L = p\Delta V$         =>                      $Q = \Delta U + p\Delta V$
 **Enunciato Clasius:** È impossibile realizzare un processo termodinamico che abbia come unico risultato il passaggio di calore da un corpo a temperatura minore a uno a temperatura maggiore.
 [[001_Termodinamica_di_base_MN.pdf#page=15|001_Termodinamica_di_base_MN, pagina 15]]
 
+È possibile definire la variazione di entropia in termini di energia scambiata sotto forma di calore e della temperatura alla quale vale lo scambio.
+
 Sia un sistema che faccia una **trasformazione infinitesima reversibile** scambiando $\delta Q$  alla temperatura T. Si definisce come variazione infinitesima di entropia la quantità:
 $dS = \frac{\delta Q}{T}$ 
 [[001_Termodinamica_di_base_MN.pdf#page=16|001_Termodinamica_di_base_MN, pagina 16]]
+
+- L'entropia è una **funzione di stato** che misura il "grado di equilibrio termico" del sistema.
+- Fornisce un **criterio oggettivo di spontaneità**
+- È legata alla **freccia del tempo**
 
 L'entropia misura quanto è **probabile lo stato in cui si trova il sistema**.
 [[001_Termodinamica_di_base_MN.pdf#page=18|001_Termodinamica_di_base_MN, pagina 18]]
 
 
-## Principi generali
+# Principi generali
 #prinicipi_generali
-[[002_IntroduzioneAlleMacchine_MN.pdf#page=2|002_IntroduzioneAlleMacchine_MN, pagina 2]]
+v = cost $\to$ Isocora
+p = cost $\to$ **Isobara**
+h = cost $\to$ **Isoentalpica**
+s = cost $\to$ **Isoentropica**
+T = cost $\to$ **Isotermica**
+x = cost $\to$ Isotitolo
 
-### Equazione generalizzate del moto dei fluidi
+![[Pasted image 20260930225110.png]]
+## Equazione generalizzate del moto dei fluidi
 - sistema aperto
 - Proprietà costanti sulla sezione 1 e 2 
 - Volume costante
 ![[Screenshot From 2025-09-24 13-16-48.png]]
-![[Screenshot From 2025-09-24 13-24-06.png]]
+
+$$
+\begin{aligned}
+dE = dQ_{e} -dL + dm_{1}\left( \frac{C_{1}^2}{2}+gz_{1}+u_{1} \right)-dm_{2}\left( \frac{C_{2}^2}{2}+gz_{2}+u_{2} \right) + p_{1}A_{1}ds_{1} -p_{2}A_{2}ds_{2}\\
+dE = dQ_{e} -dL + dm_{1}\left( \frac{c_{1}^2}{2}+gz_{1}+u_{1}+p_{1}v_{1} \right)-dm_{2}\left( \frac{C_{2}^2}{2} +gz_{2} u_{2} +p_{2}v_{2} \right) \\
+dE = dQ_{e}-dL + dm_{1}\left( \frac{C_{1}*2}{2}+gz_{1}+h_{1} \right)-dm_{2}\left( \frac{C_{2}^2}{2}+gz_{2}+h_{2} \right)
+\end{aligned}
+$$
 [[002_IntroduzioneAlleMacchine_MN.pdf#page=7|002_IntroduzioneAlleMacchine_MN, pagina 7]] 
 
 Equazione generalizzata del moto dei fluidi forma **termica** 
