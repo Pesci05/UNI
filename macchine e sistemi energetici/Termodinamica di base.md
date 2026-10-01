@@ -161,14 +161,15 @@ x = cost $\to$ Isotitolo
 
 $$
 \begin{aligned}
-dE = dQ_{e} -dL + dm_{1}\left( \frac{C_{1}^2}{2}+gz_{1}+u_{1} \right)-dm_{2}\left( \frac{C_{2}^2}{2}+gz_{2}+u_{2} \right) + p_{1}A_{1}ds_{1} -p_{2}A_{2}ds_{2}\\
-dE = dQ_{e} -dL + dm_{1}\left( \frac{c_{1}^2}{2}+gz_{1}+u_{1}+p_{1}v_{1} \right)-dm_{2}\left( \frac{C_{2}^2}{2} +gz_{2} u_{2} +p_{2}v_{2} \right) \\
-dE = dQ_{e}-dL + dm_{1}\left( \frac{C_{1}*2}{2}+gz_{1}+h_{1} \right)-dm_{2}\left( \frac{C_{2}^2}{2}+gz_{2}+h_{2} \right)
+dE = dQ_{e} -dL + dm_{1}\left( \frac{c_{1}^2}{2}+gz_{1}+u_{1} \right)-dm_{2}\left( \frac{c_{2}^2}{2}+gz_{2}+u_{2} \right) + p_{1}A_{1}ds_{1} -p_{2}A_{2}ds_{2}\\
+dE = dQ_{e} -dL + dm_{1}\left( \frac{c_{1}^2}{2}+gz_{1}+u_{1}+p_{1}v_{1} \right)-dm_{2}\left( \frac{c_{2}^2}{2} +gz_{2} u_{2} +p_{2}v_{2} \right) \\
+dE = dQ_{e}-dL + dm_{1}\left( \frac{c_{1}^2}{2}+gz_{1}+h_{1} \right)-dm_{2}\left( \frac{c_{2}^2}{2}+gz_{2}+h_{2} \right)
 \end{aligned}
 $$
 [[002_IntroduzioneAlleMacchine_MN.pdf#page=7|002_IntroduzioneAlleMacchine_MN, pagina 7]] 
 
 Equazione generalizzata del moto dei fluidi forma **termica** 
+
 [[002_IntroduzioneAlleMacchine_MN.pdf#page=9|002_IntroduzioneAlleMacchine_MN, pagina 9]]
 [[002_IntroduzioneAlleMacchine_MN.pdf#page=10|002_IntroduzioneAlleMacchine_MN, pagina 10]]
 

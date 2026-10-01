@@ -199,3 +199,12 @@ Gli operatori puntuali sono chiamati **omogenei** quando $f()$ non dipende dalle
 	$f_{invert}(a)=-a+a_{max}=a_{max}-a$
 - **Regolazione automatica del contrasto**
 	Modifica le intensità dei pixel in modo tale che l'intervallo di valori sia usato completamente, si può usare anche per diminuire il contrasto
+
+# FILTRI
+Un filtro spaziale utilizza (anche) il valore dei pixel circostanti, selezionati tramite una finestra dell’immagine centrata sul pixel corrente.
+![[Pasted image 20261001112916.png]]
+
+# APERTURE
+L'apertura focale **limita** il cono di luce che passa attraverso la lente, il quale raggiunge il piano dell'immagine.
+- Questo significa che si può **controllare la luminosità** dell'immagine
+- 
