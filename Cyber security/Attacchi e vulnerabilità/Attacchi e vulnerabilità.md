@@ -139,4 +139,108 @@ Per evitare questi limiti si devono implementare diverse tecnologie che aumentan
 - **Paradigma del Defence In Depth** 
 - **Principio del Minimo Privilegio**
 
+## IL MODELLO AAA
+ #02/10 
+Il modello AAA è un framework di sicurezza che **controlla l’accesso** alle risorse informatiche, **applica policy** e ne verifica l’**utilizzo**.
+
+- **Autenticazione**
+	**AuthN**, l'autenticazione, è la pratica che prevede l'identificazione degli utenti mediante la fornitura di **ccredenziali di accesso univoche**
+	I tipi di autenticazione possono
+	- essere basati su Informazioni che conosci 
+	- Dispositivi che possiedi 
+	- Caratteristiche fisiche personali
+	Un buon sisitema di autenticazione prevede **almeno l'utilizzo di 2 di queste tipologie**
+- **Autorizzazione**
+	È la pratica che prevede la **definizione di pemressi di accesso** ad un utente a seguito della sua autenticazione
+	L’autorizzazione permette di specificare, per ogni utente e ogni servizio cui vuole accedere, il perimetro di operatività legittimo entro il quale l’utente può operare. 
+	Simile alle *capabilities* dei sistemi UNIX.
+- **Accounting**
+	È la pratica di tenere traccia delle attività degli utenti mentre accedono ad una rete e/o ad unservizio, monitorando:
+	- L'istante d'accesso
+	- La durata dell'accesso
+	- I dati scambiati
+	- Indirizzo IP di accesso
+	- URI utilizzato
+	Per ogni servizio utilizzato
+	Può essere utilizzato anche per fini di fatturazione e per monitorare le attività su un particolare servizio/sistema al fini di **identificare attività anomale**
+- **NON RIPUDIO**
+	Si riferisce alla condizione secondo la quale di una particolare attività non può negare di averla svolta, mantenendo al tempo stesso garanzie di affidabilità della comunicazione.
+	
+	Il **non ripudio** estende il concetto della triade CIA applicandolo non solo ai dati in unparticolare stato, am agli utenti coinvolti nella trasmissione adogni instante di essa.
+- **Paradigma Defence in depth**
+	Consiste nella stratificazione delle risorse informatiche di protezione, rallentando la penetrazione di eventuali attacchi per fornire il tempo necessario per una efficace reazione protettiva.
+	Un classico esempio di DiD applicata ad un sistema di riferimento è l’autenticazione multifattore in un sistema di accesso.
+	- La **strutturazione a più livelli** è sicuramente l'asso nella manica di questa startegia
+	- Basando **più sistemi di sicurezza** su **differenti livelli** si va notevolmente ad ot- timizzare il livello di protezione. 
+	- Potrebbe infatti accadere che, durante un attacco, un livello non dovesse funzionare o venisse facilmente bypassato: in questo caso, entrerebbe in funzione il successivo, garantendo l’aumento di tempo utile e necessario per una risposta efficace e complementare.
+- **Difesa multilivello**(Defence in depth)
+	Alla base della **Defense in Depth** vi è la **Difesa Multilivello**, che utilizza un insieme di soluzioni per **restringere** la **superficie di attacco**, in modo tale che il perimetro di rete sia il più possibile **protetto da ogni lato**
+
+Le tipologie di difesa Defence in Depth e Multilivello, possono essere complementari, poiché mentre la **Defense in Depth, organizzata su più stratificazioni**, rallenta l’ingresso di terzi non autorizzati, la **Difesa Multilivello protegge in modo più efficiente le reti e gli endpoint.**
+
+![[Pasted image 20261002114222.png]]
+
+Questa configurazione di rete viene chaiamata  **[[Attacchi e vulnerabilità#DMZ|DMZ]]** , questa non permette a dispositivi esterni di comunicare con la rete interne, invece gli interni per comunicare conn internet, devono prima passare i propri dati al bastion Host (**PROXY**), il quale decide se i traffico può andare verso internet o viene bloccato.
+Questo tipo di configurazione però è vulnerabile rispetto a gli **attacanti interni**.
+
+## SCREENED SUBNET
+Formata da 3 dispositivi:
+- **Router interno**
+	Protegge sia la rete privata da attachi provenienti da Internet sia i server della DMZ da eventuali attacchi provenienti dall’interno della rete
+- **Router esterno**
+	Filtra il traffico tra Internet e DMZ secondo le politiche definite per l’accesso ai server della DMZ consentendo esclusivamente il transito di pacchetti (selettivo) da e verso il bastion host
+- **bastion host**
+
+Evoluzione dell’architettura **two-legged network e screened-host gateway**.
+
+# DMZ
+Una sottorete isolata che non fa parte né della rete interna né della rete esterna
+
+**SCOPO PRINCIPALE**:
+- Minimizza l’esposizione della rete in- terna ad attacchi esterni. 
+- Ospita esclusivamente i server che erogano servizi pubblici (Web, Mail, DNS) accessibili da Internet.
+![[Pasted image 20261002115137.png]]
+
+Il miglior tipo di configurazione è:
+![[Pasted image 20261002115801.png]]
+
+
+| **Rete di partenza** | **Rete di destinazione** | **Traffico permesso**                      |
+| -------------------- | ------------------------ | ------------------------------------------ |
+| LAN                  | Internet                 | Tutto (o quasi)                            |
+| LAN                  | DMZ                      | Solo protocolli voluti                     |
+| Internet             | DMZ                      | Solo protocolli voluti                     |
+| Internet             | LAN                      | Nessuno (tranne risposte <br>da richieste) |
+| DMZ                  | Internet                 | Solo protocolli voluti                     |
+| DMZ                  | LAN                      | Nessuno (tranne risposte <br>da richieste) |
+
+# ARCHITETTURA Web multi-Livello
+**Sicurezza nel filtraggio interno (Concettuale)**
+![[Pasted image 20261002121054.png]]
+
+# PRINCIPIO DEL MINIMO PRIVILEGIO
+Concetto secondo cui l'utente, un programma, o un'altra entità deve avere accesso alle sole risorse, ai dati e alle funzioni strettamente necessarie per il proprio ruolo lavorativo.
+
+**Lo scopo è quello di ridurre i danni potenziali derivanti da un account com- promesso o da una minaccia interna, limitando la superficie d’attacco.**
+
+# STRATEGIA DI SICUREZZA
+## CYBER KILL CHAIN
+Modello definito dalla Lockheed Martin, per l'identificazione e la prevenzione delle attività di intrusione delle attività di intrusione informatica attraverso l'implementazione di protocolli di sicurezza pro-attivi. Tale modello è a sua volta ispirato 
+
+La KILL CHAIN è formata:
+- **Ricognizione**
+	Attaccante identifica il target, ottiene informazioni su di esso, e prova ad identificare vulnerabilità nella rete o nei sistemi dell'organizzazione.
+- **ARMAMENTO**
+	Attaccente crea un'arma, 
+- **CONSEGNA**
+	Attaccane trasmette l'arma al target, attraverso vari vettori di attacco
+- **Esecuzione dell'exploit**
+	Il codice dell'arma malware viene attivato sul sistema vittima
+- **Installation**
+	L'arma malware installa un punto d'accesso nascosto e permanente(**backdoor**), che l'attaccante può sfruttare per mantenere l'accesso al sistema.
+- **Command & Control**
+	Il malware abilita l'attacante a mettere mano sul sistema 
+- **Azioni sugli obiettivi**
+	L'attaccante può controllare direttamente l'host compromesso per i propri scopi: esfiltrazione di datiriservati, distruzione di risorse o cifratura del file per richiesta di riscatto.
+
 
