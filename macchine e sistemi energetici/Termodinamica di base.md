@@ -168,11 +168,6 @@ dE = dQ_{e}-dL + dm_{1}\left( \frac{c_{1}^2}{2}+gz_{1}+h_{1} \right)-dm_{2}\left
 $$
 [[002_IntroduzioneAlleMacchine_MN.pdf#page=7|002_IntroduzioneAlleMacchine_MN, pagina 7]] 
 
-Equazione generalizzata del moto dei fluidi forma **termica** 
-
-[[002_IntroduzioneAlleMacchine_MN.pdf#page=9|002_IntroduzioneAlleMacchine_MN, pagina 9]]
-[[002_IntroduzioneAlleMacchine_MN.pdf#page=10|002_IntroduzioneAlleMacchine_MN, pagina 10]]
-
 L'equazione del moto dei fluidi in forma **meccanica**:
 $\frac{c^2_2}{2} - \frac{c^2_1}{2}  + g*(z_2 - z_1) + R + \int_{1}^{2}vdp+1 = 0$ 
 [[002_IntroduzioneAlleMacchine_MN.pdf#page=11|002_IntroduzioneAlleMacchine_MN, pagina 11]]
@@ -208,12 +203,22 @@ Un lavoro isoentropico è un tipo di lavoro **ideale**.
 [[002_IntroduzioneAlleMacchine_MN.pdf#page=14|002_IntroduzioneAlleMacchine_MN, pagina 14]]
 
 ==**LAVORO IDEALE**== 
-![[Screenshot From 2025-10-01 12-21-18.png]]
+$$
+l_{is} = \left( h_{1} + \frac{C_{1}^2}{2} \right) - (h_{2} + \frac{C_{2}^2}{2} ) = h_{r_{1}} - h_{r_{2}}
+$$
+
 [[002_IntroduzioneAlleMacchine_MN.pdf#page=15|002_IntroduzioneAlleMacchine_MN, pagina 15]]
 
 ==**LAVORO REALE**==
+$$
+l_{reale} = h_{1}-h_{2}
+$$
+[[002_IntroduzioneAlleMacchine_MN.pdf#page=17|002_IntroduzioneAlleMacchine_MN, pagina 17]]
 
- [[002_IntroduzioneAlleMacchine_MN.pdf#page=17|002_IntroduzioneAlleMacchine_MN, pagina 17]]
+**RENDIMENTO INTERNO**
+$$
+\eta_{i} = \frac{l_{reale}}{l_{is}} = \frac{h_{1}-h_{2}'}{h_{1} -h_{2} }
+$$
 
 Per passare da lavore ideale -> reale -> utile si deve sempre prendere da conto il rendimento di ogni passaggio.
 ![[Screenshot From 2025-10-01 12-50-31.png]]
@@ -231,7 +236,7 @@ Il fluido subisce:
 [[002_IntroduzioneAlleMacchine_MN.pdf#page=19|002_IntroduzioneAlleMacchine_MN, pagina 19]]
 
 Per ricavare le perdite del lavoro reale bisogna anche sta volta introdurre il rendimento
-Il compressore per eseguire il proprio copito deve tenere conto delle perdite per compensarle durante il lavoro.
+Il compressore per eseguire il proprio compito deve tenere conto delle perdite per compensarle durante il lavoro.
 [[002_IntroduzioneAlleMacchine_MN.pdf#page=20|002_IntroduzioneAlleMacchine_MN, pagina 20]]
 
 # Teorema di Carnot
@@ -242,7 +247,7 @@ Differenza fra l'energia termica q1, inizialmente ceduta al fluido, e quella q2,
 $l = q_1 - q_2$ 
 
 ==**RENDIMENTO TERMODINAMICO**== 
-$\mu_{thC} = \frac{l}{q_1} = \frac{q_1 - q_2}{q_1} = 1 - \frac{q_2}{q_1} = 1 - \frac{\Delta S * T_A}{\Delta S * T_B} = 1 - \frac{T_A}{T_B}$   
+$$\mu_{thC} = \frac{l}{q_1} = \frac{q_1 - q_2}{q_1} = 1 - \frac{q_2}{q_1} = 1 - \frac{\Delta S * T_A}{\Delta S * T_B} = 1 - \frac{T_A}{T_B}$$   
 **Scambio di calore a temperatura costante** 
 
 # Cicli termodinamici

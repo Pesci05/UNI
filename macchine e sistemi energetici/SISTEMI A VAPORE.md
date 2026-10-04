@@ -8,24 +8,24 @@ Utilizza un liquido operatore, di solito l'acqua, ed essendo un ciclo ad ogni ca
 Per ogni trasformazione il fluido operatore in questo ciclo ottiene 4 trasformazioni,:
 - **Pressurizzazione**
 	Avviene nel tratto **o - o"** 
-
 - **Riscaldamento**
 	Avviene nel tratto **o" - a**
-
+	$q_{oa} = q_{1} = h_{a}-h_{o}$
 - **Espansione**
 	Avviene nel tratto **a - b**
-
+	$l_{ab} = h_{a} - h_{b}$
 - **Condensazione**
 	Avviene nel tratto **b - o**
+	$q_{bo} = q_{2} = h_{b} - h_{o}$
 ![[Pasted image 20251102232758.png]]
-Queste trasformazione avvengono nel momento che il fluido attraverso le corrispetticve macchine.
+Queste trasformazione avvengono nel momento che il fluido attraverso le corrispettive macchine.
 [[003_SistemiAVapore_MN.pdf#page=8|003_SistemiAVapore_MN, pagina 8]]
-
 
 ## Ottimazzazione del rendimento termodinamico
 1. **Influenza della pressione a condensazione**
-	Più la differenza di temperatura fra le trasformazioni **isoterme**, più **migliora** il rendimento ad una certe pressione di condensazione $p_k$ , come succede nel [[Termodinamica di base#Teorema di Carnot|Ciclo di trasformazione di carnot]] .
-	Se $\frac{\Delta L}{\Delta q} > \frac{l}{q1}$ allora si ha un guadagno sul rednimento del sistema.
+	Più la differenza di temperatura fra le trasformazioni **isoterme**, più **migliora** il rendimento ad una certe pressione di condensazione $p_k$ , come succede nel [[Termodinamica di base#Teorema di Carnot|Ciclo di trasformazione di carnot]].
+	
+	Se $\frac{\Delta L}{\Delta q} > \frac{l}{q1}$ allora si ha un guadagno sul rendimento del sistema.
  	[[003_SistemiAVapore_MN.pdf#page=15|003_SistemiAVapore_MN, page 15]]
 
 2. **Influenza della pressione di vaporizzazione**
@@ -45,9 +45,9 @@ Dato un ciclo termodinamico generico, si può comparare con un ciclo termodinami
 
 # Ciclo a Risurriscaldamento
 ![[Pasted image 20251009105813.png]]
-In questo tipo di ciclo il fluido una volta uscito dalla caldaia, esce ad una certa pressione di vaporizzazzione $P_v$ passando attraverso una turbina di **alta pressione(AP)**, uscendo e passando di nuovo nella caldaia per risurriscaldarsi e attraversare la trurbina di **bassa pressione(BP)**.
+In questo tipo di ciclo il fluido una volta uscito dalla caldaia, esce ad una certa pressione di vaporizzazione $P_v$ passando attraverso una turbina di **alta pressione(AP)**, uscendo e passando di nuovo nella caldaia per risurriscaldarsi e attraversare la turbina di **bassa pressione(BP)**.
 
-Per questo tipo di ciclo se si vuole utilizzare il terzo tipo di [[SISTEMI A VAPORE#Ottimazzazione del rendimento termodinamico|Ottimazzazione del rendimento termodinamico]] , le aree questa volta saranno, la prima il ciclo di HIRN, invece la seconda la parte di risurriscaldamento.
+Per questo tipo di ciclo se si vuole utilizzare il terzo tipo di [[SISTEMI A VAPORE#Ottimazzazione del rendimento termodinamico|Ottimizzazione del rendimento termodinamico]] , le aree questa volta saranno, la prima il ciclo di HIRN, invece la seconda la parte di risurriscaldamento.
 
 Il rendimento in questo ciclo aumenta rispetto a quello di HIRN solo quando $P_k< P_{rs}^* < P_v$    
 [[003_SistemiAVapore_MN.pdf#page=20|003_SistemiAVapore_MN, pagina 20]]
@@ -63,4 +63,21 @@ Il ciclo termodinamico avviene:
 ![[Pasted image 20251009123109.png]]
 Quando il fluido si espande e arriva al punto 1, il fluido inizia a spillarsi, così da poter essere rigenerato.
 
+# CICLI ORC
+Il ciclo HIRN-RANKINE risulta essere **svantaggioso** con l'utilizzo del vapore per applicazioni a bassa temperatura in quanto:
+- Richiedono tubi e scambiatori di elevato volume, e quindi apparecchiature costose, che risultano essere antieconomiche per i valori di efficienza che si riescono a raggiungere
+- Bassa densità del vapore alla fine dell’espansione: richiede macchine con pale molto lunghe negli stadi di bassa pressione
+- Necessità di surriscaldare o di proteggere le pale delle turbine, a causa dell’umidità del vapore a fine espansione. Entrambi gli accorgimenti fanno lievitare i costi d’impianto.
+- Pressione di condensazione minore della pressione ambiente alle normali temperature di condensazione, con infiltrazioni d’aria e necessità di degassare l’impianto. 
+
+ In questo tipo di cicli si utilizzano:
+ - Fluidi bassobollenti, fluidi con temperatura di ebollizione minore a quella dell'acqua
+ - Il ciclo base è quello Rankine
+ - Proprietà che permettono di mantenere i costi dell'impianto anche in caso di temperature basse.
+
+Vengono utilizzati **fluidi organici**, che hanno proprietà diverse da quelle dell'acqua:
+- Date le basse temperature, le basse potenze in gioco e i bassi rendimenti, il ciclo deve essere il più semplice possibile.
+- Assenza di rigenerazione con spillamenti di vapore
+- No surriscaldamento
+- Assenza di degassatore per l'estrazione degli incondensabili
 

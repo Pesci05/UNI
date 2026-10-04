@@ -1,0 +1,215 @@
+{
+  "main": {
+    "id": "f90c68114a127473",
+    "type": "split",
+    "children": [
+      {
+        "id": "9624eb30ed7f5b2f",
+        "type": "tabs",
+        "children": [
+          {
+            "id": "f11a05341faf1ecc",
+            "type": "leaf",
+            "state": {
+              "type": "markdown",
+              "state": {
+                "file": "macchine e sistemi energetici/SISTEMI A VAPORE.md",
+                "mode": "source",
+                "source": false
+              },
+              "icon": "lucide-file",
+              "title": "SISTEMI A VAPORE"
+            }
+          },
+          {
+            "id": "189ff913d506d906",
+            "type": "leaf",
+            "state": {
+              "type": "pdf",
+              "state": {
+                "file": "macchine e sistemi energetici/slide/003_SistemiAVapore_MN.pdf"
+              },
+              "icon": "lucide-file-text",
+              "title": "003_SistemiAVapore_MN"
+            }
+          }
+        ],
+        "currentTab": 1
+      }
+    ],
+    "direction": "vertical"
+  },
+  "left": {
+    "id": "81b51bec7466f75c",
+    "type": "split",
+    "children": [
+      {
+        "id": "594692015a16f7af",
+        "type": "tabs",
+        "children": [
+          {
+            "id": "8f4a527975af6b83",
+            "type": "leaf",
+            "state": {
+              "type": "file-explorer",
+              "state": {
+                "sortOrder": "alphabetical",
+                "autoReveal": false,
+                "showSearch": false,
+                "searchQuery": ""
+              },
+              "icon": "lucide-folder-closed",
+              "title": "Esplora file"
+            }
+          },
+          {
+            "id": "8d56e9d730a39331",
+            "type": "leaf",
+            "state": {
+              "type": "search",
+              "state": {
+                "query": "",
+                "matchingCase": false,
+                "explainSearch": false,
+                "collapseAll": false,
+                "extraContext": false,
+                "sortOrder": "alphabetical"
+              },
+              "icon": "lucide-search",
+              "title": "Ricerca"
+            }
+          },
+          {
+            "id": "cd4517902d21177f",
+            "type": "leaf",
+            "state": {
+              "type": "bookmarks",
+              "state": {
+                "showSearch": false,
+                "searchQuery": ""
+              },
+              "icon": "lucide-bookmark",
+              "title": "Segnalibri"
+            }
+          }
+        ]
+      }
+    ],
+    "direction": "horizontal",
+    "width": 300
+  },
+  "right": {
+    "id": "29e1c8099c445f4d",
+    "type": "split",
+    "children": [
+      {
+        "id": "b7896353dca59d43",
+        "type": "tabs",
+        "children": [
+          {
+            "id": "4270d365a508b653",
+            "type": "leaf",
+            "state": {
+              "type": "backlink",
+              "state": {
+                "file": "macchine e sistemi energetici/Termodinamica di base.md",
+                "collapseAll": false,
+                "extraContext": false,
+                "sortOrder": "alphabetical",
+                "showSearch": false,
+                "searchQuery": "",
+                "backlinkCollapsed": false,
+                "unlinkedCollapsed": true
+              },
+              "icon": "links-coming-in",
+              "title": "Riferimenti"
+            }
+          },
+          {
+            "id": "3aa38f6d3348d685",
+            "type": "leaf",
+            "state": {
+              "type": "outgoing-link",
+              "state": {
+                "file": "macchine e sistemi energetici/Termodinamica di base.md",
+                "linksCollapsed": false,
+                "unlinkedCollapsed": true
+              },
+              "icon": "links-going-out",
+              "title": "Collegamenti in uscita"
+            }
+          },
+          {
+            "id": "420d30870481c3de",
+            "type": "leaf",
+            "state": {
+              "type": "tag",
+              "state": {
+                "sortOrder": "frequency",
+                "useHierarchy": true,
+                "showSearch": false,
+                "searchQuery": ""
+              },
+              "icon": "lucide-tags",
+              "title": "Etichette"
+            }
+          },
+          {
+            "id": "9afca85d8f10d46a",
+            "type": "leaf",
+            "state": {
+              "type": "all-properties",
+              "state": {
+                "sortOrder": "frequency",
+                "showSearch": false,
+                "searchQuery": ""
+              },
+              "icon": "lucide-archive",
+              "title": "Tutte le proprietà"
+            }
+          },
+          {
+            "id": "9efc740fa8bfbdbd",
+            "type": "leaf",
+            "state": {
+              "type": "outline",
+              "state": {
+                "file": "macchine e sistemi energetici/Termodinamica di base.md",
+                "followCursor": false,
+                "showSearch": false,
+                "searchQuery": ""
+              },
+              "icon": "lucide-list",
+              "title": "Struttura"
+            }
+          }
+        ]
+      }
+    ],
+    "direction": "horizontal",
+    "width": 300,
+    "collapsed": true
+  },
+  "left-ribbon": {
+    "hiddenItems": {
+      "switcher:Apri selettore rapido": false,
+      "graph:Apri vista grafo": false,
+      "canvas:Crea nuova lavagna": false,
+      "daily-notes:Apri nota giornaliera": false,
+      "templates:Inserisci modello": false,
+      "command-palette:Apri riquadro comandi": false,
+      "bases:Crea nuova Base": false
+    }
+  },
+  "active": "189ff913d506d906",
+  "lastOpenFiles": [
+    "macchine e sistemi energetici/SISTEMI A VAPORE.md",
+    "macchine e sistemi energetici/slide/003_SistemiAVapore_MN.pdf",
+    "macchine e sistemi energetici/SISTEMI A GAS.md",
+    "macchine e sistemi energetici/SISTEMI CON IMPIANTI COGENERATIVI.md",
+    "macchine e sistemi energetici/SISTEMI COGENERATIVI.md",
+    "macchine e sistemi energetici/Termodinamica di base.md",
+    "macchine e sistemi energetici/slide/002_IntroduzioneAlleMacchine_MN.pdf",
+    "macchine e sistemi energetici/slide/001_Termodinamica_di_base_MN.pdf"
+  ]
+}
