@@ -1,6 +1,5 @@
 # Gruppo turbo-gas
 #turbo_gas
-
 Sono motori termici che trasformano l'energia chimica del combustibile, in energia meccanica.
 
 Sono anche produttori di inquinanti.

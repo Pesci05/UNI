@@ -81,3 +81,10 @@ Vengono utilizzati **fluidi organici**, che hanno proprietà diverse da quelle d
 - No surriscaldamento
 - Assenza di degassatore per l'estrazione degli incondensabili
 
+Le proprietà dei fluidi possono modificare il comportamento durante le trasformazioni all'interno di un sistema:
+- **fluidi bagnati**(come l'acqua)
+	Sviluppano condensa negli ultimi stadi di espansione. I fluidi bagnati solitamente hanno una temperatura critica abbastanza modesta, per queste si deve lavorare a pressioni elevate.
+- **fluidi ascitti e isoentropici**
+	Al termine dell’espansione si rientra nella zona dei vapori surriscaldati: non è necessario surriscaldare.
+	È possibile aumentare il rendimento tramite la rigenerazione utilizzando il calore residuo nel vapore.
+
