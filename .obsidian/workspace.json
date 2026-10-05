@@ -13,12 +13,12 @@
             "state": {
               "type": "markdown",
               "state": {
-                "file": "macchine e sistemi energetici/SISTEMI A VAPORE.md",
+                "file": "macchine e sistemi energetici/SISTEMI A GAS.md",
                 "mode": "source",
                 "source": false
               },
               "icon": "lucide-file",
-              "title": "SISTEMI A VAPORE"
+              "title": "SISTEMI A GAS"
             }
           },
           {
@@ -27,10 +27,10 @@
             "state": {
               "type": "pdf",
               "state": {
-                "file": "macchine e sistemi energetici/slide/003_SistemiAVapore_MN.pdf"
+                "file": "macchine e sistemi energetici/slide/004_SistemiAGas_MN.pdf"
               },
               "icon": "lucide-file-text",
-              "title": "003_SistemiAVapore_MN"
+              "title": "004_SistemiAGas_MN"
             }
           }
         ],
@@ -203,12 +203,14 @@
   },
   "active": "189ff913d506d906",
   "lastOpenFiles": [
-    "macchine e sistemi energetici/SISTEMI A VAPORE.md",
-    "macchine e sistemi energetici/slide/003_SistemiAVapore_MN.pdf",
     "macchine e sistemi energetici/SISTEMI A GAS.md",
+    "macchine e sistemi energetici/slide/004_SistemiAGas_MN.pdf",
+    "macchine e sistemi energetici/Termodinamica di base.md",
+    "macchine e sistemi energetici/SISTEMI A VAPORE.md",
+    "Senza nome.md",
+    "macchine e sistemi energetici/slide/003_SistemiAVapore_MN.pdf",
     "macchine e sistemi energetici/SISTEMI CON IMPIANTI COGENERATIVI.md",
     "macchine e sistemi energetici/SISTEMI COGENERATIVI.md",
-    "macchine e sistemi energetici/Termodinamica di base.md",
     "macchine e sistemi energetici/slide/002_IntroduzioneAlleMacchine_MN.pdf",
     "macchine e sistemi energetici/slide/001_Termodinamica_di_base_MN.pdf"
   ]
