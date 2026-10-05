@@ -231,7 +231,7 @@ La KILL CHAIN è formata:
 - **Ricognizione**
 	Attaccante identifica il target, ottiene informazioni su di esso, e prova ad identificare vulnerabilità nella rete o nei sistemi dell'organizzazione.
 - **ARMAMENTO**
-	Attaccente crea un'arma, 
+	Attaccente crea un'arma, malware creata appositamete progettata per le vulnerabilità.
 - **CONSEGNA**
 	Attaccane trasmette l'arma al target, attraverso vari vettori di attacco
 - **Esecuzione dell'exploit**
@@ -243,4 +243,93 @@ La KILL CHAIN è formata:
 - **Azioni sugli obiettivi**
 	L'attaccante può controllare direttamente l'host compromesso per i propri scopi: esfiltrazione di datiriservati, distruzione di risorse o cifratura del file per richiesta di riscatto.
 
+![[Pasted image 20261005111000.png]]
+
+## MITRE ATT&CK
+#05/10
+Il mitre ATT&CK (**Adversarial Tactics Techniques and Common Knowledge framework**) è un catalogo omnicomprensivo di tutte le principali procedure usate degli attaccanti per:
+- Enumerare sistemi
+- Violare sistemi
+- Rendere persistente l'accesso ai sistemi
+### TATTICHE DI ATTACCO
+Le procedure di attacco sono suddivise in **tattiche**. 
+**Tattica**: è un obiettivo finale dell’attaccante, motivo principale delle sue azioni.
+
+Ogni tattica di attacco contiene diverse **tecniche**. 
+**Tecnica**: è un’azione concreta volta ad uno specifico obiettivo.
+
+### ATT&CK MATRIX
+Correla in modo efficace le **tattiche** con le rispettivi **tecniche**
+![[Pasted image 20261005111624.png]]
+
+Esistono **3 tipi di matrici**:
+- **Enterprise**
+	Per sistemi tradizionali e tecnologie cloud
+	Composta da 14 tattiche: [[3_StrategieSicurezzaVuln.pdf#page=23|3_StrategieSicurezzaVuln, pagina 23]]
+- **Mobile**
+	Per sistemi di comunicazione mobili
+	Composta da 14 tattiche: [[3_StrategieSicurezzaVuln.pdf#page=24|3_StrategieSicurezzaVuln, pagina 24]]
+- **ICS**
+	Per sistemi di controllo industriali
+	Composta da 12 tattiche: [[3_StrategieSicurezzaVuln.pdf#page=25|3_StrategieSicurezzaVuln, pagina 25]]
+All'interno di ogni matrice, è possibile selezionare la piattaforma di riferimento e vedere la lista di tecniche e sotto-tecniche che possono essere applicate.
+
+## DIFFERENZE TRA KILL CHAIN E MITRE&CK
+- **KILL CHAIN**
+	- **Focus** sugli stadi dell’attacco **dalla prospettiva dall’attaccante**. Alto livello
+	- Fornisce una **Scaletta chiara e concise delle fasi di un attacco**
+	- Utilizzata nelle fasi iniziali della threat detection e prevention, con lo **scopo principale di identificare potenziali minacce e impedire che causino danni**
+	- Sviluppata da Lockheed Martin e **aggiornata sporadicamente**
+- **MITRE&CK**
+	- Focus sulle **tecniche di attacco utilizzate dagli attaccanti**. Basso livello, permette di comprendere l’attività dell’attaccante fino al dettaglio delle tattiche d’attacco.
+	- Fornisce una **descrizione** chiara e concisa delle **tecnice utilizzate dagli attaccanti**, fornendo anche spunti su strategie di mitigazione e di rilevazione
+	- Utilizzata lungo tutto il ciclo di vita di sicurezza
+	- Sviluppo community-driven (mantenuto da MITRE) e **aggiornata continuamente**
+
+
+# Vulnerabilità Software e bug
+**Tutti i software hanno dei bug**. Alcuni bug possono essere funzionali, mentre altri sono creati per elevare i privilegi, i più problematici sono quelli di privazione del servizio e questi possono essere chiamati **vulnerabilità**.
+
+## CICLO DI VITA DIUNA VULNERABILITÀ
+1. Vulnerabilità introdotta $\to T_{v}$
+2. Exploit rilasciati al mondo  $\to T_{e}$
+3. Vulnerabilità scoperta (vendor) $\to T_{d}$ 
+4. Vulenrabilità annunciata pubblicamente $\to T_{0}$
+5. Rilasco della firma del codice dell'attacante $\to t_{s}$
+6. Rilascio della patch $\to t_{p}$
+7. Tutti i sistemi dovrebbero essere aggiornati $\to t_{a}$
+
+![[Pasted image 20261005121047.png]]
+
+- **zero-day attack**: Nel periodo di tempo $[t_{e},t_{0}]$, l'attacco avviene in assenza di una sua pubblica conoscenza. Si parla di attacco zero-day.
+- **follow-on attack**: Nel periodo di tempo $[t_{0},t_{a}]$, l'attacco avviene n presenza di una sua pubblica conoscenza. La sua forza è notevolmente rispetto al periodo $[t_{e},t_{0}]$.
+
+## CATALOGAZIONE DELLE VULNERABILITÀ
+Svariati team di sicurezza scoprono e divulgano le vulnerabilità in modo indipendente.
+Ciascun team di sicurezza costruisce un proprio archivio storico degli attacchi passati:
+- **Enumerazione**
+	Costruzione di una tupla univoca a partire dalla vulnerabilità 
+- **Catalogazione**
+	Inserimento della tupla in un apposito database
+Ogni team manteneva un proprio catalgo, questo però poteva dare diversi problemi come:
+- **Duplicazione dello sforzo**
+	Vulnerabilità scoperta da più team
+- **Eterogeneità del catalogo**
+	Formati diversi tra loro
+
+Per questo MITRE ha introdotto un **catalogo uniforme** delle vulnerabilità.
+Questo sistema si chiama **CVE** (**Common Vulnerability and Exposure**), cataloga in modo uniforme vulnerabilità e esposizioni.
+- **Vulnerabilità**
+	Una debolezza nel software e/o nel firmware che, se sfruttata, viola almeno una tra confidenzialità, integrità, disponibilità
+- **Esposizione**
+	Un errore nel software/nella sua configurazione che permette l’accesso a funzioni ed informazioni
+Ogni vulnerabilità viene identificata da un **identificatore CVE**, formata dall'anno e da un numero progressivo.
+
+Le vulnerabilitò **non sono tutte uguali**, per questo si è creato il **CVSS**, il quale introduce un **scoring system**.
+![[Pasted image 20261005124107.png]]
+Il punteggio si basa su:
+- **Base**
+- **Minacce**
+- **Ambiente**
+- **Supplementi**
 
