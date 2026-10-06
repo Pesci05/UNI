@@ -55,4 +55,33 @@ Per quanto un programma possa essere parallelizzato, ci sarà sempre un porzione
 [[07 - Parallel programming.pdf#page=20|07 - Parallel programming, pagina 20]]
 
 ## THREADING MODEL
-Un modo per utilizzare il multi thread è il metodo **fork-join**, dove il thread main viene chiamata **MASTER**, e i thread generati vengono chiamati **slaves**, grazie alle funzioni **join**(elimina/unisce thread) e **fork**(genera thread)
+Un modo per utilizzare il multi thread è il metodo **fork-join**, dove il thread main viene chiamata **MASTER**, e i thread generati vengono chiamati **slaves**, grazie alle funzioni **join**(elimina/unisce thread) e **fork**(genera thread).
+
+## DIVIDERE I COMPITI
+Per assegnare i compiti ai thread ci sono 3 modi:
+- **[[#DATA PARALLELISMO|Data parallelismo]]**
+
+- **Task parallelismo**
+
+- **Offloading**
+
+### DATA PARALLELISMO
+Dividere i compiti in modo uguale tra tutti i thread, assumendo che il carico di lavoro sia uguale tra i thread, e che tutti ci impieghino tutti lo stesso tempo.
+I thread fanno tutti lo **stesso lavoro**.
+La parte del dato su cui i thread lavorano si chiamo **chunk**, e il modo in cui vengono divisi si chiama **partitioning strategy**.
+La dimensione del chunk viene calcolata $chunk = \frac{N}{T}$
+- N = Numero di elementi
+- T = numero di thread
+
+
+
+
+
+# POSIX
+I POSIX Threads sono chiamati **PTHreads**, e sono un modello di esecuzione che esiste **indipendentemente dal linguaggio di programmazione**, come **modello di esecuzione in parallelo**.
+
+Specifica ad un Sistema Operativo un'**interfaccia** simile ai sistemi UNIX.
+POSIX mantiene una differenza tra **thread** e **processi**.
+Ogni processi ha almeno un thread detto **main**, tutti i thread **condividono** lo steso indirizzo di memoria, ma mantengono uno **stack privato**.
+[[Lab_PThreads.pdf#page=4|Lab_PThreads, pagina 4]]
+
