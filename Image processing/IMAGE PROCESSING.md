@@ -200,9 +200,65 @@ Gli operatori puntuali sono chiamati **omogenei** quando $f()$ non dipende dalle
 - **Regolazione automatica del contrasto**
 	Modifica le intensità dei pixel in modo tale che l'intervallo di valori sia usato completamente, si può usare anche per diminuire il contrasto
 
+## EQUALIZZAZIONE DEGLI ISTOGRAMMI
+Utilizzare gli operatori puntuali per avere una **distribuzione uniforme all'interno dell'istogramma**.
+
+Avviene grazie a questa funzione: 
+$$
+s = T(i) = K\sum^i_{j=0} p_{r}(j)
+$$
+- $i = l(u,v) \to$ Luminosità di un pixel all'interno di una qualsiasi  MxN
+- $p_{r} = \frac{h(i)}{MN} \to$ è la probabilità di occorrenza di i
+- K è il numero di livelli d'intensità dell'immmagine
+- $T(i)$ è la funzione di mapping ed è monotona non decrescente
+- s è il valore d'intensità del pixel alle coordinate (u,v) nell'immagine risultante
+![[Pasted image 20261006174009.png]]
+
 # FILTRI
 Un filtro spaziale utilizza (anche) il valore dei pixel circostanti, selezionati tramite una finestra dell’immagine centrata sul pixel corrente.
 ![[Pasted image 20261001112916.png]]
+
+Un filtro molto comune è quello del **blurring**, e consiste nel usare una finestra 3x3 e calcolarne la media.
+
+Esistono diversi tipi di filtri, e possono variare in base a:
+- **Filter shape**
+	I filtri non sono necessariamente quadrati
+- **Filter size**
+	Variare in grandezza 3x3,4x4,5x5...
+- **Filter function**
+	Può essere **lineare** o non lineare
+
+## FILTER FUNCTION LINEARE
+Si basa su una funzione lineare come:
+$$
+f(R_{u,w})=w_{1}l(u-1,v-1)+w_{2}(u-1,v)+\dots
+$$
+Dove  $w_{1},w_{2}\dots$ sono i pesi del filtro.
+
+Il **Kernel** anche detto **Filter Matrix**, H contiene il valore dei **pesi** che caratterizzano lo specifico filtro lineare, questo kernel è una matrice di valori reali con la stessa dimensione e forma di R.
+$$
+H(i,j) = \left[ \begin{matrix}
+\frac{1}{9} \space\frac{1}{9}\space\frac{1}{9} \\ \frac{1}{9}\space\frac{1}{9}\space\frac{1}{9} \\ \frac{1}{9}\space\frac{1}{9}\space\frac{1}{9}
+\end{matrix} \right] =  \frac{1}{9}\left[\begin{matrix}
+ 1\space 1\space 1 \\ 1\space 1\space 1 \\ 1\space1\space1 
+\end{matrix}\right]
+$$
+La **convoluzione** è l'applicazione di un filtro lineare ad un'immagine.
+
+Quando si incontrano i borid di un'immagine si può fare:
+- **Cropping**
+	Ritaglio un’immagine più piccola escludendo i bordi
+- **Padding**
+	Aggiungo una cornice all’immagine di larghezza K e altezza L prima di applicare il filtr
+
+### FILTRO GAUSSIANO
+Posso esprimere il valore del generico peso (i,j) di H, kernel Gaussiano, usando la definizione di funzione Gaussiana (bidimensionale):
+$$
+H(i,j) = Ke^{-(i^2+j^2)/2\sigma^2}=Ke^{-r^2/2\sigma^2} 
+$$
+- r è la distanza di (i,j) dall'hotspot
+- $\sigma$ è la larghezza della curva a campana
+- K è una costante che serve ad esprimere il valore del peso massimo, corrispondente all'hot spot
 
 # APERTURE
 L'apertura focale **limita** il cono di luce che passa attraverso la lente, il quale raggiunge il piano dell'immagine.
