@@ -46,9 +46,31 @@ Sono anche produttori di inquinanti.
 	Avviene nel tratto **4' - 1**
 	$q_{2} = h_{4'} - h_{1}$
 
+**Lavore reale all'albero della turbina**:
+$$
+l_{is} = l_{is,T} - l_{is,C} \geq 0;\space l_{reale}= l_{reale,T}-l_{reale,C} \geq 0
+$$
+Questa viene detta anche **condizione di autosufficienza**.
+$l_{reale} = c_{p}(T_{3}-T_{4'})-c_{p}(T_{2'}-t_{3}) = c_{p}(T_{3}-T_{4})\eta_{i,T} -\frac{c_{p}(T_{2}-T_{1})}{\eta_{i,c}} \geq 0$
 
-### Condizione di lavoro Utile e massimo rendimento
+**RENDIMENTO TERMODINAMICO REALE:**
+$$
+\eta_{th,r} = \frac{l_{reale}}{q_{1}} = \frac{c_{p}(T_{3}-T_{4})\eta_{i,T} -\frac{c_{p}(T_{2}-T_{1})}{\eta_{i,c}}}{c_{p(T_{3}-T_{2'})}}
+$$
+**CALORE FORNITO:**
+$$
+q_{1} = h_{3}-h_{2'} = c_{p}\left[ (T_{3}-T_{1}) - \frac{1}{\eta_{i,C}}(T_{2}-T_{1})\right]
+$$
+
+
+![[ciclo_brayton_pv_ts.png|660]]
+## LAVORO UTILE
 Il **Lavoro utile** e il lavoro in eccesso rispetto alla condizione di autosufficienza.
+$$
+L_{u} = L_{T} -L_{C} = c_{p}(T_{3}-T_{4})\eta_{i,T}-\frac{c_{p}(T_{2}-T_{1})}{\eta_{i,C}}
+$$
+
+
 [[004_SistemiAGas_MN.pdf#page=15|004_SistemiAGas_MN, pagina 15]]
 
 **MASSIMO LAVORO UTILE**
