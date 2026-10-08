@@ -260,7 +260,63 @@ $$
 - $\sigma$ è la larghezza della curva a campana
 - K è una costante che serve ad esprimere il valore del peso massimo, corrispondente all'hot spot
 
-# APERTURE
-L'apertura focale **limita** il cono di luce che passa attraverso la lente, il quale raggiunge il piano dell'immagine.
-- Questo significa che si può **controllare la luminosità** dell'immagine
+# RUMORE E FILTRI NON LINEARI
+Quando si acquisisce un'immagine, si possono creare degli **errori, degradazioni** dell'immagine, questo si chiama ==**RUMORE**==.
+
+## IMAGE RESTORATION
+È la pratica di **rimozione del rumore** da un'immagine.
+
+Può essere fatta:
+- Nel dominio **spaziale**
+- Nel dominio delle **frequenza**
+
+## TIPI DI RUMORE
+- **SALT AND PEPPER NOISE**
+	
 - 
+# EDGE DETECTION
+Un **edge** viene definito come un cambio drastico della luminosità, spesso avviene in corrispondenza dei bordi.
+
+L'==**EDGE DETECTION**== è la processo di rilevamento degli edge, gi edge vengono utilizzati per definire la forma degli oggetti.
+Il suo output sarà un'immagine binaria che rappresenta gli edge dell'immagine input.
+![[Pasted image 20261008104052.png]]
+
+Visto che può essere definito come un cambio drastico di luminosità può essere vista come una **step function**, rispetto ad una data direzione.
+![[Pasted image 20261008104154.png]]
+
+Gli edge in realtà non sono un salto drastico tra una luminosità e l'altra, ma il cambio di luminosità cambià in maniera pià *smussata*.
+In altri termini, un edge reale corrisponde ad un rapido incremento o decremento dell’intensità dei pixel rispetto ad una data direzione
+
+Possiamo supporre che le immagini sia funzioni unidimensionali dette l(x).
+La derivata prima di l(x)rileverà che ci sarà un picco in l'(x) in corrisponenza dell'edge.
+La derivata seconda l'' cambia segno e viene detta anche **zero crossing**. 
+![[Pasted image 20261008105549.png]]
+
+L’idea generale nell’edge detection è **ricondurre il problema dell’individuazione degli edge al calcolo della derivata prima di I**, e poi selezionare come punti di "edge" quei pixel corrispondenti ai valori (in modulo) più alti di I’.
+
+Però questo crea problemi nel calcolo della derivata poiche la funzione dell'immagine sarà:
+- l() è una funzione campionata, con un dominio discreto
+- l() non è definita in modo analitico
+Soluzione:
+La derivata l() può essere calcolata usando le **differenze finite**.
+Le differenze possono essere:
+- **Destra**
+	$\Delta+f(x)=f(x+1)-f(x)$
+- **Sinistra**
+	$\Delta -f(x) = f(x)-f(x-1)$
+- **Centrale**
+	$\Delta f(x) = \frac{1}{2}(f(x+1)-f(x-1))$
+
+Però un'immagine è formata da 2 dimensioni, per cui dobbiamo estendere questo approccio nelle funzioni a 2 variabili, questo si può fare grazie al **gradiente**(derivate parziali).
+
+Per utilizzare il gradiente su un'immagine si deve calcolare le derivate pariali sia per la direzione verticael, sia per quella orizzontale.
+$$\frac{\partial l}{ \partial u} \space e \space \frac{\partial l}{ \partial v}$$
+Il gradiente dell'immagine sarà:
+$$
+\nabla l(u,v) =\left[   \begin{matrix}
+\frac{\partial l}{\partial u}(u,v) \\
+\frac{\partial l}{\partial v}(u,v)
+\end{matrix}  \right]
+$$
+
+
