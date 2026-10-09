@@ -66,22 +66,38 @@ $$
 ![[ciclo_brayton_pv_ts.png|660]]
 ## LAVORO UTILE
 Il **Lavoro utile** e il lavoro in eccesso rispetto alla condizione di autosufficienza.
+$$\begin{aligned}
+L_{u} = L_{T} -L_{C} = c_{p}(T_{3}-T_{4})\eta_{i,T}-\frac{c_{p}(T_{2}-T_{1})}{\eta_{i,C}} \\
+\beta = \frac{T_{2}}{T_{1}} \to rapporto \space di\space compressione \\
+\theta = \frac{T_{3}}{T_{1}} \to rapporto \space di \space temperatuture \space estreme \space del \space ciclo \\
+L_{U}^* = \frac{L_{U}}{c_{p}T_{1}} = \left( \frac{T_{3}}{T_{1}} - \frac{T_{4}}{T_{1}} \right)\eta_{i,T}-\frac{1}{\eta_{i,C}}\left( \frac{T_{2}}{T_{1}}-1 \right)\\
+L_{U}^* = \left( \theta- \frac{\theta}{\beta} \right) \eta_{iT} - \frac{1}{\eta_{iC}}(\beta - 1) = (\beta -1 )\left( \frac{\theta}{\beta} \eta_{iT} - \frac{1}{\eta_{iC}} \right)
+\end{aligned}
 $$
-L_{u} = L_{T} -L_{C} = c_{p}(T_{3}-T_{4})\eta_{i,T}-\frac{c_{p}(T_{2}-T_{1})}{\eta_{i,C}}
-$$
-
 
 [[004_SistemiAGas_MN.pdf#page=15|004_SistemiAGas_MN, pagina 15]]
 
 **MASSIMO LAVORO UTILE**
 ![[Pasted image 20251023101308.png]]
 
+-  **TRATTO CRESCENTE**$\frac{dL_{U}*}{d\beta} > 0$
+	Un aumento di compressione è vantaggioso per la potenza prodotta: l'incremento di lavoro estratto in turbina supera il lavoro aggiuntivo assorbito dal compressore, facendo **crescere il lavoro netto**.
+- **PUNTO DI MASSIMO** $\frac{dL_{U}*}{d\beta} = 0$
+	**Condizione di ottimo (stazionarietà)**, il guadagno marginale in turbina e il costo marginale al compressore si bilanciano perfettamente. Il ciclo eroga la **massima quantità di lavoro utile per unità di massa di fluido**.
+- **TRATTO DECRESCENTE**$\frac{dL_{U}*}{d\beta} < 0$
+	Continuare ad aumentare $\beta$ riduce la potenza disponibile: il lavoro parassita assorbito dal compressore cresce più velocemente rispetto a quanto la turbina riesca ad erogare, facendo **diminuire il lavoro netto**.
+
+
 **MASSIMO RENDIMENTO**
 ![[Pasted image 20251023101418.png]]
 
 ### GRUPPO TURBO-GAS CON RECUPERO DI CALORE
 Si utilizzano i fumi caldi uscenti dalla turbina, che verrebbero scartati, per **PRERISCALDARE** il fluido operatore prima che entri in **CAMERA DI COMBUSTIONE**.
+
+![[ciclo_brayton_recupero_ts-v2.png|700]]
 [[004_SistemiAGas_MN.pdf#page=20|004_SistemiAGas_MN, pagina 20]]
+Infatti il rendimento diventa:
+$$\eta_{rig} = \frac{L_{netto}}{c_p (T_3 - T_x)} > \eta_{semplice} = \frac{L_{netto}}{c_p (T_3 - T_2)}$$
 
 ### REGOLAZIONE DEI GRUPPI TURBOGAS
 Si può regolare la potenza elettrica in uscita da una turbna grazie a vari paramentri come, densità e velocità del fluido in ingresso al compressore, e alla sezione d'ingresso del compressore.
