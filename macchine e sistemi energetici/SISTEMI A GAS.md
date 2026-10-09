@@ -109,8 +109,48 @@ Esistono **3 metodi di regolazione**:
 2. Variare lo stato fisico del fluido in ingresso del compressione
 3. **Velocità di rotazione**
 	![[Pasted image 20251023110437.png]]
+
 # TURBOGAS SU 2 ASSI
 #2assi
-![[Pasted image 20251023113641.png]]
-![[Pasted image 20251023113717.png]]
+![[Pasted image 20261009235436.png]]
+
+Un ciclo a 2 assi in questo caso, la turbina viene separata in 2:
+- **PRIMO ASSE (ASSE GENERATORE)**
+	Il primo asse comprende Camera di combustione, Compressore, e **turbina ad alta pressione**.
+	In questo ramo la turbina tramite l'espansione del gas fino ad una pressione intermedia, produce il lavoro **strettamente necessario** per trascinare il compressore.
+	Quindi lavora in condizione di autosufficienza.
+	$T_{3}-T_{in}\eta_{mTap} =\frac{T_{2}-T_{1}}{\eta_{m,C}}$ ^65da47
+- **SECONDO ASSE (ASSE DI POTENZA)**
+	Il secondo asse comprende la **turbin a bassa pressione** e l'alternatore, i gas che sono parzialmente espansi entrano nella turbina ad bassa pressione per espandersi fino a pressione ambientale, in questo caso il lavoro estratto dalla turbina costituirà il **lavoro erogato deall'impianto**.
+
+Il suo diagramma sarà:
+- **Tratto 1 → 2 (Compressione)**: L'aria passa da $p_1$ a $p_2$ assorbendo il lavoro $L_c = c_p(T_2 - T_1)$.
+- **Tratto 2 → 3 (Combustione)**: Adduzione di calore a pressione costante $p_2$ fino alla temperatura massima $T_3 = TIT$.
+- **Tratto 3 → 4a (Espansione Turbina HP)**: Espansione reale dalla pressione massima $p_2$ alla pressione intermedia $p_{int}$. Il salto entalpico estratto uguaglia il lavoro di compressione: $$c_p (T_3 - T_{4a}) = c_p (T_2 - T_1) \implies L_{t,HP} = L_c$$
+- **Tratto 4a → 4 (Espansione Turbina LP)**: Espansione reale dalla pressione intermedia $p_{int}$ alla pressione di scarico $p_1$. Il salto entalpico fornisce il lavoro utile: $$L_{netto} = c_p (T_{4a} - T_4) = L_{t,LP}$$
+- **Tratto 4 → 1 (Scarico Fumi)**: Raffreddamento/espulsione dei fumi esausti a pressione atmosferica $p_1$.
+
+In questo caso le turbine sono **disaccoppiate**, questo significa che l'asse di potenza può rotare a velocità costante o variabile al carico meccanico, invece l'asse generatore varia la sua velocità per modulare la portata d'aria aspirata.
+
+## 2 ASSI CON POST-COMBUSTIONE
+![[Pasted image 20261010001552.png]]
+
+Nei cicli con post-combustione (o _ricombustione_), l'espansione e l'apporto termico vengono frazionati per aumentare il lavoro specifico erogato dall'impianto:
+
+1. **Compressore (C)**: Aspira aria dall'ambiente (stato 1) e la comprime fino alla pressione massima $p_2$ (stato 2).
+2. **Camera di Combustione Principale (CC1)**: Riceve l'aria compressa, inietta il primo apporto di combustibile ($Q_{in1}$) e porta i fumi alla prima temperatura massima $TIT_1$ (stato 3).
+3. **Turbina ad Alta Pressione (T1 / HP)**: I fumi caldi si espandono parzialmente da $p_2$ a una **pressione intermedia (**$p_{int}$**)** (stato 4a).
+4. **Camera di Ricombustione / Post-Combustione (CC2)**: I fumi parzialmente espansi (che contengono ancora un'elevata percentuale di ossigeno incombusto) entrano in un secondo combustore, dove viene iniettato ulteriore combustibile ($Q_{in2}$) per riportare i fumi alla temperatura massima $TIT_2 \approx TIT_1$ (stato 3b).
+5. **Turbina a Bassa Pressione (T2 / LP)**: I fumi riscaldati si espandono una seconda volta dalla pressione intermedia $p_{int}$ alla pressione atmosferica $p_1$ (stato 4), azionando il carico/alternatore.
+
+Il diagramma termodinamico sarà:
+- **Tratto 1 → 2 (Compressione Reale)**: Compressione dall'isobara $p_1$ all'isobara di alta pressione $p_2$.
+- **Tratto 2 → 3 (Prima Combustione)**: Riscaldamento isobaro a pressione $p_2$ fino al punto 3 ($TIT_1 = 1400\text{ K}$).
+- **Tratto 3 → 4a (Prima Espansione HP)**: I fumi si espandono in turbina HP fino all'isobara intermedia $p_{int}$ (punto 4a).
+- **Tratto 4a → 3b (Post-Combustione)**: Riscaldamento isobaro a **pressione intermedia** $p_{int}$ che riporta la temperatura del fluido al valore di picco ($TIT_2 = 1400\text{ K}$, punto 3b).
+- **Tratto 3b → 4 (Seconda Espansione LP)**: Espansione finale in turbina LP dall'isobara $p_{int}$ alla pressione atmosferica $p_1$ (punto 4).
+- **Tratto 4 → 1 (Scarico Fumi)**: Raffreddamento/espulsione dei fumi a pressione atmosferica.
+
+Gli assi di questo tipo di ciclo lavorano come quello del **[[#TURBOGAS SU 2 ASS|Ciclo a 2 assi]]**.
+
 
