@@ -1,10 +1,18 @@
-#include "../include/stampa.h"
-#include "../include/operazioni.h"
+#include <iostream>
+using namespace std;
 
-int main() {
+void inc(int* x);
+
+int main()
+{
     int a = 10;
-    int b = 20;
-    int c = somma(a, b);
-    stampa(c);
+    int* b = &a;
+    cout << "valore a prima" << a << endl;
+    inc(b);
+    cout << "valore a dopo" << a << endl;
     return 0;
+}
+void inc(int* x){
+    *x = *x +1;
+    cout << "Valore di y: " << *x << endl;
 }
