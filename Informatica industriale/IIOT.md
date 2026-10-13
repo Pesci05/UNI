@@ -49,7 +49,7 @@ Per quanto un programma possa essere parallelizzato, ci sarà sempre un porzione
 - **PROCESSO**
 	Istanza di programma
 - **THREAD**
-	Esecutore di una parte del programma
+	Unità di esecuzione del processo
 - **TASK**
 	Parte del programma (sottoinsieme d'istruzioni)
 [[07 - Parallel programming.pdf#page=20|07 - Parallel programming, pagina 20]]
@@ -73,7 +73,7 @@ La dimensione del chunk viene calcolata $chunk = \frac{N}{T}$
 - N = Numero di elementi
 - T = numero di thread
 
-
+Ogni thread deve sapere che thread è, perché non sarebbe possibile dividere la memoria in base al numero di thread, questo è implementabile grazie ad un **identificatore**.
 
 
 

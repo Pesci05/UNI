@@ -4,7 +4,7 @@
 using namespace std;
 
 void *my_pthread_fn(void *arg) { 
-     cout << "Ciao dal Pthread" << endl;
+    cout << "Ciao dal Pthread" << endl;
     return NULL;
 }
 

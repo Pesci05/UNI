@@ -22,10 +22,10 @@ Questo dato serve anche per definire l'**efficienza dello scmabiatore di calore*
 
 
 Il rendimento si ricava sempre nello stesso modo cioè:
-![[Pasted image 20251029114910.png]]
+![[Pasted image 20251029114910.png|237]]
 
 Per migliorare ancora di più il rendimento di questo **Ciclo si può introdurre la post-combustione:**
-![[Pasted image 20261012001634.png]]
+![[Pasted image 20261012001634.png|700]]
 
 **DIFFERENZE TRA I 2 APPROCCI**
 
