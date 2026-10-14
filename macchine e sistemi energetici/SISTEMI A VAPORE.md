@@ -81,10 +81,33 @@ Vengono utilizzati **fluidi organici**, che hanno proprietà diverse da quelle d
 - No surriscaldamento
 - Assenza di degassatore per l'estrazione degli incondensabili
 
+L'architettura dell'impianto varia anche in base al tipo di fluido:
+- **ISOENTROPICO**
+	Pendenza della curva limite superiore verticale
+- **BAGNATO**
+	Pendenza della curva limite superiore negativa (come l’acqua): espandendo isoentropicamente si entra all’interno della campana, con formazione di condensato
+- **SECCO**
+	Pendenza della curva limite superiore positiva: espandendo isoentropicamente si arriva nella zona dei vapori surriscaldati
+![[Pasted image 20261014235036.png]]
+
 Le proprietà dei fluidi possono modificare il comportamento durante le trasformazioni all'interno di un sistema:
 - **fluidi bagnati**(come l'acqua)
 	Sviluppano condensa negli ultimi stadi di espansione. I fluidi bagnati solitamente hanno una temperatura critica abbastanza modesta, per queste si deve lavorare a pressioni elevate.
+	Per aumentare il rendimento dell'impianto si può surriscaldare, però questo fa lievitare i costi dell'impianto.
 - **fluidi asciutti e isoentropici**
 	Al termine dell’espansione si rientra nella zona dei vapori surriscaldati: non è necessario surriscaldare.
 	È possibile aumentare il rendimento tramite la rigenerazione utilizzando il calore residuo nel vapore.
+	La presenza del rigeneratore comporta un **costo aggiuntivo**, ma **aumenta l'efficienza** dell'impianto.
+	Però non sempre porta benefici poiché aumenta la temperatura d'uscita del fluido e questo potrebbe causare una riduzione del rendimento dell'impianto, per questo bisogna prestare particolare **attenzione** alla sua **progettazione**.
+	Infatti per **impianti piccoli** il rigeneratore **non viene utilizzato**.
 
+L'influenza di questi fluidi sul ciclo:
+- Per i **fluidi bagnati** il surriscaldamento **aumenta** l'efficienza del ciclo.
+- Per i **fluidi asciutti** il **surriscaldamento diminuisce** il rendimento del ciclo, se questo **non è dotato di rigeneratore**.
+- Per i fluidi asciutti il rendimento aumenta con il surriscaldamento solo se si utilizza il rigeneratore, in quanto il surriscaldamento incrementa la temperatura di uscita dalla turbina e incrementa il calore sensibile scambiabile nel rigeneratore. Si riduce in questo modo la fase di economizzazione.
+- Diversamente dall’acqua i fluidi organici soffrono il problema della **stabilità chimica** ad alta temperatura.
+- Altra problematica è la ==stabilità dei fluidi a contato con le pareti solide dei componenti dell’impianto. ==
+ - Molti dei fluidi di lavoro utilizzati negli ORC hanno un certo grado di **tossicità** e di **infiammabilità**. 
+ - La tossicità e l’infiammabilità possono diventare problematiche in caso di fughe di fluido. Per quanto riguarda l’infiammabilità (tipica dei fluidi appartenenti alla classe degli idrocarburi) è necessario utilizzare apparecchiature a norma ATEX. Per quanto riguarda la tossicità̀ è necessario mantenere una buona ventilazione dei locali. 
+ - I fluidi organici possono avere un impatto sull’ozono negli strati alti dell’atmosfera (ODP, Ozone Depletion Potential, ne misura la capacità di distruggere l’ozono) 
+ - I ==fluidi organici possono contribuire all’effetto serra== (l’indice è il GWP, Global Warming Potential, calcolato relativamente all’effetto della CO2)
