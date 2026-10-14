@@ -1,4 +1,4 @@
-# LEZIONE 1
+# IIOTO
 La diffusione dei dispositivi elettronici è esplosa soprattutto grazie all'avvento dei smartphone, che sono dispositivi che comunicano tra loro grazie ad un infrastruttura che si chaima **INTERNET**, questo vale per tutti i tipi di dispositivi che comunicano tramite internet.
 
 ## IOT
@@ -66,4 +66,102 @@ I possibili protocolli utilizzabili sono:
 Un sistema fatto da IoT, permette di comunicari tra più oggetti che fanno cose diverse per raccogliere e gestire dati in input dai sensori di questi oggetti.
 
 
+
+# SCAMBIO DI DATI
+Lo scambio di dati avviene tramite infrastrutture dedicate/create per un certo tipo di progetto, il quale però si basa comunque su tutti i **protoccolli** che vengono utilizzati da **Internet**.
+
+Alcuni di questi protocolli possono essere:
+
+|Layer|Protocol|Unit (PDU)|Adds|
+|---|---|---|---|
+|Application|HTTP|Data|Request/response message|
+|Transport|TCP|Segment|Ports, sequence numbers|
+|Network|IP|Packet|Source/destination IP address|
+|Data Link|Ethernet|Frame|MAC addresses, CRC trailer|
+
+Come è stato detto in precedenza la progettazione di sistemi IOT avviene tramite un approccio web, perché:
+- Il web viene utilizzato come base di questi sisetemi perché l'**esperienza**,**best practices** e il suo sviluppo sono maturati negli anni.
+- **HTTP** è il protocolle predominante per **l'application layer** dello stack internet, questo significa avere una compatibilita molto ampia grazie alle infrastrutture internet.
+- Una grande disposizione di **librerie** e **tools** utilizzabili da protocolli web a disposizione per ogni linguaggio di programmazione.
+- Metodi di progettazione consolidati negli anni per lo sviluppo di web app, possono essere messi in pratico per progettare **sistemi IOT**, basandosi su simili archittetture, metodi di lavoro.
+- L'architettura web ha dimostrato un **eccezionale scalabilità**, questo lo rende cruciale per supportare **miliardi di oggetti IOT connessi**.
+
+## HTTP
+Uno di questi protoclli può essere **HTTP**, il quale permette grazie ai suoi metodi di scambiare dati tra 2 oggetti, (**CLIENT/SERVER**).
+
+Per evitare che ognuno sviluppi i propri metodi e **garantire una standardizzazione**, si introduce l'approccio RESTful, che sono delle **convenzioni** che permettono agli sviluppatori di creare sistemi **interoperabili**, **scalabili** e facili da integrare con con altre soluzione che si basano sull'architettura di internet.
+
+## MESSAGGI HTTP
+- # GET
+	![[Pasted image 20261014190559.png]]
+	La richiesta HTTP è fondamentale per modellare le comunicazioni **client-server** sia sul web sia su sistemi IOT.
+	Questo messaggio rappresenta **come** un **client** inizia le interazioni con il **server**, per cercare, aggiornare o modificare risorse.
+	In IoT HTTP viene comunemente usato per utilizzare le **RESTful API**, le quali  permettono di utilizzare uno standardizzato e efficiente gestione di memoria degli oggetti e servizzi.
+	La richiesta HTTP è un messaggio che parte da un client vrso un server, chiedendo una specifica risorsa o una certa azione che il server deve fare.
+
+| **Field Type** | **Description**                                | **Example Value**               |
+| -------------- | ---------------------------------------------- | ------------------------------- |
+| Status Line    | Protocol version, status code, textual message | HTTP/1.0 200 OK                 |
+| Content-Type   | Format and encoding of returned content        | application/json; charset=utf-8 |
+| Content-Length | Size of response content body                  | 610                             |
+| Server         | Server software/version info                   | Werkzeug/1.0.1 Python/3.8.5     |
+| Date           | Timestamp of response                          | Fri, 02 Oct 2020 15:22:10 GMT   |
+| Content Body   | Requested data or output (after headers)       | { "location_info": [...] }      |
+Questa struttura va bene per un messaggio che utilizza il metodo GET.
+
+- # POST
+Però per utilizzare il metood **POST**, la struttura cambia anche se di poco.
+![[Pasted image 20261014192726.png]]
+Questo metodo permette al client di **trasmettere dati** ad un server, per eleaborare o memorizzazare questi dati.
+Bisogna **definire chiaramente** il **metodo**, il **percorso della risorsa**, gli **header** e un **body**, questo metodo fornisce un framework standardizzato per la modellazione di API **interoperabili** e **scalabili**.
+È formato da:
+- **content-type** $\to$ Dichiara il **formato** dei dati
+- **user-agent** $\to$ Identifica il software utilizzato dal client
+- **Host** $\to$ IP o Dominio del server
+
+ 
+Per lo scambip di dati si utilizzano dei formati speciali come:
+- **XML**
+	Utilizza sintassi html
+- **JSON**
+	Utilizza sintassi JavaScript
+- **YAML**
+Questo permette agli oggetti che ricevono e mandano dati, di non dover inventarsi un proprio formato, infatti questo tipo di formati sono diventati **standard**.
+
+
+# REST vs SOAP
+## RESTful HTTP
+Formato da più livelli:
+- **LIVELLO 0**
+- ### LIVELLO 1
+- # LIVELLO 2 
+	l livello 2 si basa sulle operazioni **CRUD** di HTTP, questo tipo di metodo permette la scalabilità e chiarezza nello scambio di dati.
+	Ogni dato/risorsa viene identificato da un **URI**.
+	
+	Il livello 2 mappa i metodi di HTTP per ottenere le operazioni CRUD:
+	- **GET**
+	- **POST**
+	- **PUT**
+	- **DELETE**
+	Ogni metodo ha un suo codice di risposta, i quali sono stati **standardizzati** sin dalla nascita di HTTP, per questo bisogna utilizzarli senza crearne di nuovi, alcuni di questi errori possono essere:
+	- **2xx** $\to$ **SUCCESSO**
+	- **3xx** $\to$ Server **Ridireziona** il client, la risorsa richiesta dal client è stata spostata
+	- **4xx** $\to$ **Errore** del **Client**, può essere una brutta richiesta da aprte del client al server
+	- **5xx** $\to$ **Errore** del **Server**, 
+	Per utilizzare le funzioni CRUD con un tipo di modellazione REST si divide in:
+	- **Create** $\to$ post
+	- **Read** $\to$ get
+	- **Update** $\to$ put
+	- **Delete** $\to$ delete
+
+I metodi CRUD vengono divisi in:
+
+| Method | Safe | Idempotent | CRUD Operation |
+| ------ | ---- | ---------- | -------------- |
+| GET    | Yes  | Yes        | Read           |
+| POST   | No   | No         | Create         |
+| PUT    | No   | Yes        | Update         |
+| DELETE | No   | Yes        | Delete         |
+
+- **LIVELLO 3**
 
