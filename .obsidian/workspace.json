@@ -11,30 +11,29 @@
             "id": "f11a05341faf1ecc",
             "type": "leaf",
             "state": {
+              "type": "pdf",
+              "state": {
+                "file": "macchine e sistemi energetici/slide/006_SistemiCogenerativi_MN.pdf"
+              },
+              "icon": "lucide-file-text",
+              "title": "006_SistemiCogenerativi_MN"
+            }
+          },
+          {
+            "id": "263d64a49956a8c5",
+            "type": "leaf",
+            "state": {
               "type": "markdown",
               "state": {
-                "file": "macchine e sistemi energetici/SISTEMI A GAS.md",
+                "file": "macchine e sistemi energetici/SISTEMI CON IMPIANTI COGENERATIVI.md",
                 "mode": "source",
                 "source": false
               },
               "icon": "lucide-file",
-              "title": "SISTEMI A GAS"
-            }
-          },
-          {
-            "id": "189ff913d506d906",
-            "type": "leaf",
-            "state": {
-              "type": "pdf",
-              "state": {
-                "file": "macchine e sistemi energetici/slide/004_SistemiAGas_MN.pdf"
-              },
-              "icon": "lucide-file-text",
-              "title": "004_SistemiAGas_MN"
+              "title": "SISTEMI CON IMPIANTI COGENERATIVI"
             }
           }
-        ],
-        "currentTab": 1
+        ]
       }
     ],
     "direction": "vertical"
@@ -201,17 +200,35 @@
       "bases:Crea nuova Base": false
     }
   },
-  "active": "189ff913d506d906",
+  "active": "f11a05341faf1ecc",
   "lastOpenFiles": [
-    "macchine e sistemi energetici/SISTEMI A GAS.md",
-    "macchine e sistemi energetici/slide/004_SistemiAGas_MN.pdf",
-    "macchine e sistemi energetici/Termodinamica di base.md",
-    "macchine e sistemi energetici/SISTEMI A VAPORE.md",
-    "Senza nome.md",
-    "macchine e sistemi energetici/slide/003_SistemiAVapore_MN.pdf",
     "macchine e sistemi energetici/SISTEMI CON IMPIANTI COGENERATIVI.md",
+    "macchine e sistemi energetici/slide/006_SistemiCogenerativi_MN.pdf",
+    "cogenerazione_ire_diagramma.png",
+    "Pasted image 20261017001807.png",
+    "macchine e sistemi energetici/slide/005_SistemiCombinatiGasVapore_MN.pdf",
+    "macchine e sistemi energetici/CICLI COMBINATI.md",
     "macchine e sistemi energetici/SISTEMI COGENERATIVI.md",
-    "macchine e sistemi energetici/slide/002_IntroduzioneAlleMacchine_MN.pdf",
-    "macchine e sistemi energetici/slide/001_Termodinamica_di_base_MN.pdf"
+    "macchine e sistemi energetici/slide/003_SistemiAVapore_MN.pdf",
+    "macchine e sistemi energetici/SISTEMI A VAPORE.md",
+    "macchine e sistemi energetici/SISTEMI A GAS.md",
+    "macchine e sistemi energetici/screenshot/Pasted image 20261014235036.png",
+    "Informatica industriale/Code/Lab_Pthreads/hello_multiple_threads.cpp",
+    "Informatica industriale/Code/13102026/src/stampa.cpp",
+    "Informatica industriale/Code/13102026/src/main.cpp",
+    "Informatica industriale/Code/13102026/inlcude/stampa.h",
+    "Informatica industriale/Code/13102026/stampa.o",
+    "Informatica industriale/Code/13102026/Makefile",
+    "Informatica industriale/Code/13102026/src",
+    "Image processing/image-processing-labs/labs/lab03/outputs/camera_frame.png",
+    "Image processing/image-processing-labs/labs/lab03/README.md",
+    "Image processing/image-processing-labs/README.md",
+    "IOT/python/laboratory-python-http-rest-api/README.md",
+    "IOT/img/Pasted image 20261014192726.png",
+    "IOT/img/Pasted image 20261014190559.png",
+    "IOT/2026-10-14.md",
+    "Cyber security/INFORMATICA FORENSE.md",
+    "macchine e sistemi energetici/Termodinamica di base.md",
+    "Senza nome.md"
   ]
 }
