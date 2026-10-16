@@ -67,4 +67,39 @@ Un pixel **non è un contenitore infinito**, quando un sensore supera la sua mas
 
 
 
+# COME ACQUISIRE UN'IMMAGINE
+Per acquisire un'immagine il componenete più importante è la **telecamera**, però per elaborarla servono un certo tipo di algortmi, nel nostro caso utilizzaeremo **OPENCV**.
 
+Per acquisire un frame tranite numpy si deve:
+```
+ok, frame = cap.read()
+
+print(farme.shape)
+print(frame.dtype)
+
+blue, green, red = frame[r,c]
+```
+
+Very important things to know from day 1: 
+- **Origin**: top left (pointing right and down) 
+- **Indexing**: frame[r, c] 0-based 
+- **Channel order**: BGR (not RGB) 
+- **Typical range**: 0-255
+
+Per lavorare in float per operazioni custom:
+
+```
+rame_float = frame.astype(np.float32) / 255 
+To go back to uint8 for opencv methods: 
+frame = np.clip(frame_float * 255, 0, 255).astype(np.uint8)
+```
+
+Ogni telecamera può avere un SDK proprietario, molto spesso se si cambia telecamera si deve anche cambiare il codice.
+
+**UVC = USB Video Class**
+
+Una camera UVC può descrivere:
+- Risoluzione e frame rates
+- Pixel o formati compressi
+- Comandi cdi controllo della camera e come impostarle
+- available video streams;
