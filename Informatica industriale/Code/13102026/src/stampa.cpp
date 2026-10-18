@@ -5,5 +5,5 @@
 using namespace std;
 
 void stampa(){
-    cout << "CIAO MONDO";
+    cout << "SONO MANUEL PESCI" << endl;
 }
