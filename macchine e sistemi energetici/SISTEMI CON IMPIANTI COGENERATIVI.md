@@ -148,5 +148,55 @@ $$
 P_{t} = \dot{m_{v}}\cdot(h_{a}-h_{b})
 $$
 
+---
+Per poter variare le $P_{e}$ e $P_{t}$ si deve avere un certo tipo di configurazione.
+Che introduce il camio di bypass, e anche una **seconda camera di combustione**.
 
+Bypass Fumi (_Diverter Damper_)
+- **Scopo**: Ridurre la potenza termica $\dot{Q}_{th}$ mantenendo elevata la potenza elettrica $P_{el}$.
+- **Principio**: Se l'utenza riduce la richiesta di calore ma necessita di piena potenza elettrica, una valvola a tre vie sul condotto dei fumi devia una quota dei fumi caldi direttamente al camino, "scavalcando" l'HRSG.
+![[gruppo_cogenerativo_tg_hrsg_bypass_layout-v2.png]]
+
+- $\alpha = 0$ **(Serranda al bypass completamente chiusa)**:
+    - **100% dei fumi entra nell'HRSG**. L'impianto opera nel massimo assetto cogenerativo (massima potenza termica erogabile $\dot{Q}_{th, max}$).
+- $0 < \alpha < 1$ **(Modulazione parziale del carico termico)**:
+    - Una frazione dei fumi viene scaricata dal camino di bypass. Ciò consente di **ridurre a piacimento la potenza termica erogata all'utenza (**$\dot{Q}_{th}$**)** per inseguire la domanda termica, **mantenendo la turbina a gas a pieno carico elettrico (**$P_{el}$ **costante)**.
+- $\alpha = 1$ **(Serranda verso l'HRSG completamente chiusa)**:
+    - **100% dei fumi viene inviato al camino di bypass**. L'impianto funziona in **assetto puramente elettrico (**$\dot{Q}_{th} = 0$**)**.
+    - _Vantaggio operativo_: consente la manutenzione o l'ispezione della caldaia HRSG senza dover spegnere la turbina a gas e senza interrompere la fornitura di energia elettrica alla rete.
+
+
+# Gruppo Cogenerativo con turbina a vapore
+**TURBINA IN CONTROPRESSIONE**
+
+L'Impianto si basa sul **cicli HIRN-RANKINE**
+![[Pasted image 20261019233357.png]]
+![[Pasted image 20261019233449.png]]
+
+- Le turbine in contropressione sono caratterizzate da una pressione di uscita simile a quella richiesta dall’utenza termica (5-6 bar). 
+- Queste **TV** non possono funzionare in mancanza di un utenza termica. 
+- Sono utilizzate quando l’**utenza termica è privilegiata su quella elettrica**. 
+- Sc (scaricatore di condensa) e la valvola V1 producono una laminazione isoentalpica.
+- **V1 parzializza la portata di vapore** togliendolo dalla disponibilità di TV. 
+- La richiesta dell’utenza termica incide sulla portata di TV e quindi su $P_{e}$. 
+
+Le potenze che genera questo gruppo sono:
+$$
+P_{c} = \dot{m_{c}}\cdot k_{i} = \frac{\dot{m_{v}}\cdot(h_{a}-h_{o})}{\eta_{g}}\\
+P_{e} = \dot{m_{T}}\cdot(h_{a}-h_{bt})\cdot \eta_{i}\cdot \eta_{m}\cdot \eta_{aux}\cdot \eta_{alt} \\
+P_{t} = \dot{m_{v}}\cdot(h_{d}-h_{e})
+$$
+Questo gruppo può avere dei casi estremi come:
+**POTENZA ELETTRICA MASSIMA**
+$$
+\dot{m_{T}} = \dot{m_{v}} \\
+P_{e} = \dot{m_{T}}\cdot(h_{a}-h_{bt})\cdot \eta_{i}\cdot \eta_{m}\cdot \eta_{aux}\cdot \eta_{alt} \\
+P_{t} = \dot{m_{v}}\cdot(h_{b}-h_{e})
+$$
+**POTENZA TERMICA MASSIMA**
+$$
+\dot{m_{T}} = 0 \\
+P_{e} = 0 \\
+P_{t} = \dot{m_{v}}\cdot(h_{c}-h_{e})
+$$
 

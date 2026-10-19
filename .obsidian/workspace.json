@@ -4,23 +4,11 @@
     "type": "split",
     "children": [
       {
-        "id": "9624eb30ed7f5b2f",
+        "id": "d317421b888e1aa7",
         "type": "tabs",
         "children": [
           {
-            "id": "f11a05341faf1ecc",
-            "type": "leaf",
-            "state": {
-              "type": "pdf",
-              "state": {
-                "file": "macchine e sistemi energetici/slide/006_SistemiCogenerativi_MN.pdf"
-              },
-              "icon": "lucide-file-text",
-              "title": "006_SistemiCogenerativi_MN"
-            }
-          },
-          {
-            "id": "263d64a49956a8c5",
+            "id": "6f051420c63a9c61",
             "type": "leaf",
             "state": {
               "type": "markdown",
@@ -32,8 +20,21 @@
               "icon": "lucide-file",
               "title": "SISTEMI CON IMPIANTI COGENERATIVI"
             }
+          },
+          {
+            "id": "eabb993a633b12c9",
+            "type": "leaf",
+            "state": {
+              "type": "pdf",
+              "state": {
+                "file": "macchine e sistemi energetici/slide/006_SistemiCogenerativi_MN.pdf"
+              },
+              "icon": "lucide-file-text",
+              "title": "006_SistemiCogenerativi_MN"
+            }
           }
-        ]
+        ],
+        "currentTab": 1
       }
     ],
     "direction": "vertical"
@@ -200,37 +201,38 @@
       "bases:Crea nuova Base": false
     }
   },
-  "active": "8f4a527975af6b83",
+  "active": "eabb993a633b12c9",
   "lastOpenFiles": [
     "macchine e sistemi energetici/SISTEMI CON IMPIANTI COGENERATIVI.md",
     "macchine e sistemi energetici/slide/006_SistemiCogenerativi_MN.pdf",
+    "Pasted image 20261019233449.png",
+    "Pasted image 20261019233437.png",
+    "Pasted image 20261019233357.png",
+    "macchine e sistemi energetici/screenshot/gruppo_cogenerativo_tg_hrsg_bypass_layout-v2.png",
+    "macchine e sistemi energetici/SISTEMI COGENERATIVI.md",
+    "Informatica industriale/slide/07 - Parallel programming.pdf",
+    "Informatica industriale/Code/19102026/Es2.cpp",
+    "Informatica industriale/Code/19102026/a.exe",
+    "Informatica industriale/Code/19102026/Ese.cpp",
+    "Informatica industriale/slide/08 - Concurrency.pdf",
+    "Informatica industriale/Code/19102026",
+    "Informatica industriale/Code/19/10/2026",
+    "Informatica industriale/Code/19/10",
+    "Informatica industriale/Code/19",
+    "Cyber security/INFORMATICA FORENSE.md",
+    "macchine e sistemi energetici/SISTEMI A VAPORE.md",
     "macchine e sistemi energetici/screenshot/Pasted image 20261019003741.png",
     "macchine e sistemi energetici/screenshot/gruppo_cogenerativo_tg_hrsg_layout-v2.png",
     "macchine e sistemi energetici/screenshot/cogenerazione_isec_diagramma.png",
     "macchine e sistemi energetici/screenshot/cogenerazione_ire_diagramma.png",
     "macchine e sistemi energetici/screenshot/Pasted image 20261017001807.png",
-    "macchine e sistemi energetici/slide/005_SistemiCombinatiGasVapore_MN.pdf",
     "macchine e sistemi energetici/CICLI COMBINATI.md",
-    "macchine e sistemi energetici/SISTEMI COGENERATIVI.md",
-    "macchine e sistemi energetici/slide/003_SistemiAVapore_MN.pdf",
-    "macchine e sistemi energetici/SISTEMI A VAPORE.md",
     "macchine e sistemi energetici/SISTEMI A GAS.md",
     "macchine e sistemi energetici/screenshot/Pasted image 20261014235036.png",
-    "Informatica industriale/Code/Lab_Pthreads/hello_multiple_threads.cpp",
-    "Informatica industriale/Code/13102026/src/stampa.cpp",
-    "Informatica industriale/Code/13102026/src/main.cpp",
-    "Informatica industriale/Code/13102026/inlcude/stampa.h",
-    "Informatica industriale/Code/13102026/stampa.o",
-    "Informatica industriale/Code/13102026/Makefile",
-    "Informatica industriale/Code/13102026/src",
-    "Image processing/image-processing-labs/labs/lab03/outputs/camera_frame.png",
     "Image processing/image-processing-labs/labs/lab03/README.md",
     "Image processing/image-processing-labs/README.md",
     "IOT/python/laboratory-python-http-rest-api/README.md",
-    "IOT/img/Pasted image 20261014192726.png",
-    "IOT/img/Pasted image 20261014190559.png",
     "IOT/2026-10-14.md",
-    "Cyber security/INFORMATICA FORENSE.md",
     "macchine e sistemi energetici/Termodinamica di base.md",
     "Senza nome.md"
   ]
