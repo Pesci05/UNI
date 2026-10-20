@@ -7,5 +7,15 @@
       ],
       "key": "M"
     }
+  ],
+  "workspace:undo-close-pane": [],
+  "editor:insert-table": [
+    {
+      "modifiers": [
+        "Mod",
+        "Shift"
+      ],
+      "key": "T"
+    }
   ]
 }

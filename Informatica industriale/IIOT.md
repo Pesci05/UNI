@@ -75,6 +75,75 @@ La dimensione del chunk viene calcolata $chunk = \frac{N}{T}$
 
 Ogni thread deve sapere che thread è, perché non sarebbe possibile dividere la memoria in base al numero di thread, questo è implementabile grazie ad un **identificatore**.
 
+Però è possibile che un thread possa avere **più lavoro** da fare rispetto agli altri, questo significa che questo thread ci impiegherà **più tempo a completare il lavoro**, questo può portare agli altri thread di finire prima e quindi che non **stia facendo nulla**.
+![[Pasted image 20261020104024.png|427]]
+
+Per evitare che si sia un thread a riposo, si deve dare lavoro al thread in modo **dinamico**, così che nessun thread abbi a un momento morto.
+![[Pasted image 20261020104300.png|339]]
+
+Per implementare questo tipo di divisione di lavoro, si deve implementare la **coda di lavoro**.
+Dove il lavoro viene visto come un'**unità**, e vengono gestite da delle funzione come **q_push** e **q_pop**.
+Questa coda è una **risorsa condivisa**, thread safe.
+
+
+| **Creational Threading** | **Sybchronization**        |
+| ------------------------ | -------------------------- |
+| Fork-join                | Barrier                    |
+| Master-slave             | Critical-section/atomic    |
+| Team of threads          | Locks, semaphores, mutexes |
+| **Work partitioning**    | **Behavioral**             |
+| Data-parallelismo        | Producer-consumer          |
+| Reduction                | Collaborative              |
+| Tasking/queue            | Competitive                |
+| Offloading               |                            |
+
+# CONCORRENZA
+Viene utilizzata per scelte sia **funzionali** sia di **performance**.
+
+Esistono due tipi di concorrenza:
+- **Competitive**
+	- Diverse attività competono per la stessa risorsa
+	- Un'attività non sa nulla sulle altre
+	- L'OS deve gestire la condivisione delle risorse tra le varie attivitò
+
+- **Cooperative**
+	- Più attività cooperano per fare un'operazione
+	- Ogni attività sà delle altre attività
+	- Devono sincronizzarsi in particali eventi
+
+## COMPETITIVE
+Ogni attività deve essere **protetta** dalle altre.
+L'**allocazione** delle risorse e la sincronizzazione deve essere **centralizzata**.
+Si basa sul modello **Client/Server**.
+
+## COOPERATIVE
+Ogni attività **conosce** le altre attività, significa che non hanno bisogno di una protezione sulla memoria.
+Devono avere accesso alle stesse strutture dati.
+- Allocazione delle risorse è **decentralizzato**
+- Modello **shared-memory**
+Molto simile ai modelli thread.
+
+## MODELLI DI CONCORRENZA
+### MESSAGE PASSING
+---
+Si basa sul concetto di messaggio, con 2 operazioni fondamentali:
+- **send(destination, message)**
+- **receive(source, &message)**
+In questo modello non c'è condivisione di memoria.
+La comunicazione di un messaggio può essere **sincrona** o **asincrona**.
+La ricezione di un dato può essere:
+- **asimmetrica** 
+	Ricevo da tutti non importa da chi.
+- **simmetrica**
+	Ricevo solo da un certo mittente ascoltando solo lui.
+Esistono anche le **Remote procedure call**, cioè una chiamata di una funzione che non viene eseguita dal programma che la chiama, ma viene eseguita da un altro computer.
+
+Ogni risorse devono avere un thread che le gestisce, chiamato **deamon**, ed è responsabile di dare accesso alle risorse.
+
+Esempio di uno scambio di messaggi **sincroni**:[[08 - Concurrency.pdf#page=18|08 - Concurrency, pagina 18]]
+Esempio di uno scambio di messaggi con solo **send asincrona**: [[08 - Concurrency.pdf#page=19|08 - Concurrency, pagina 19]]
+
+
 
 
 # POSIX

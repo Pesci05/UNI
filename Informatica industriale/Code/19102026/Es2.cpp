@@ -8,7 +8,7 @@ using namespace std;
 #define MAX 17
 #define NUM_THREADS 5
 
-struct ThreadData
+struct thread_data
 {
     int* arr;
     int sum;
@@ -16,26 +16,28 @@ struct ThreadData
 };
 
 
-void *mediaThread(void *args);
+void *sumThread(void *args);
 
 int main(){
     srand(time(NULL));
 
     int res;
-    ThreadData data[NUM_THREADS];
+    thread_data data[NUM_THREADS];
     pthread_t myThread[NUM_THREADS];
     int vec[MAX];
     
+    //INIZIALIZZAZIONE vettore/array
     for(int i = 0; i < MAX; i++){
         vec[i] = rand() % 10;
         cout << vec[i] << "\t";
     }
     cout << endl;
     
+    //FORK dei NUM_THREADS thread
     for(int i = 0; i < NUM_THREADS; i++){
         data[i].arr = vec;
         data[i].index = i;
-        res = pthread_create(&myThread[i],NULL,mediaThread,(void *)&data[i]);
+        res = pthread_create(&myThread[i],NULL,sumThread,(void *)&data[i]);
 
         if(res != 0)
         {
@@ -53,17 +55,16 @@ int main(){
     int sum = 0;
 
     for(int i = 0; i < NUM_THREADS;i++){
-        cout << data[i].sum << endl;
         sum = sum + data[i].sum;
     }
-    cout << "La somma :" << sum << "\tLa media : " << (double)sum/MAX << endl;
+    cout << "La somma: " << sum << "\tLa media: " << (double)sum/MAX << endl;
     
 
     return 0;
 }
 
-void *mediaThread(void *args) { 
-    ThreadData* data = (ThreadData*) args; // This cast might generate a warning
+void *sumThread(void *args) { 
+    thread_data* data = (thread_data*) args; // This cast might generate a warning
     int start,end,lastChunk;
     int index = data->index;
     int chunk = MAX/NUM_THREADS;
