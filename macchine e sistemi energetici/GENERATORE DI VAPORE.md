@@ -81,3 +81,72 @@ Il metodo indiretto suddivide l'energia non recuperata in tre contributi distint
 3. **Potenza Termica Dispersa dalle Pareti (**$\dot{q}_d$**)**:
     - È il calore ceduto verso l'ambiente esterno per convezione ed irraggiamento dalle pareti e dal rivestimento isolante della caldaia.
 
+# RUGIADE ACIDE
+Le **rugiade acide** (o condense acide) sono depositi liquidi ad alto contenuto acido  principalmente **acido solforico (**$\mathrm{H_2SO_4}$**)** che si formano quando i fumi di combustione vengono raffreddati al di sotto di una specifica temperatura, detta **temperatura di rugiada acida**.
+
+Il fenomeno origina dalla presenza di **zolfo (**$\mathrm{S}$**)** all'interno del combustibile2:
+
+1. **Formazione di Anidride Solforosa**: Durante la combustione, lo zolfo si ossida producendo anidride solforosa: $$S + O_2 \longrightarrow SO_2$$
+2. **Ossidazione ad Anidride Solforica**: In presenza di un eccesso d'ossigeno e di catalizzatori nei condotti fumi, una frazione di $\mathrm{SO_2}$ si ossida ulteriormente ad anidride solforica: $$SO_2 + \frac{1}{2}O_2 \longrightarrow SO_3$$
+3. **Sintesi di Acido Solforico**: L'anidride solforica reagisce prontamente con il vapore d'acqua generato dalla combustione: $$SO_3 + H_2O \longrightarrow H_2SO_4$$
+**Ridurre la temperatura** dei fumi **migliora il rendimento del generatore** (limita la perdita di calore nei fumi), ma al di sotto di certe temperature si formano condense acide corrosive e inquinanti.
+![[formazione_inquinanti_temperatura_fumi-v2.png]]
+
+# Parametri caratteristici del Generatore di Vapore
+## Carico TERMICO e Temperatura di Combustione
+![[Pasted image 20261021190219.png]]
+Il **carico termico volumetrico** ($C_t$) esprime la densità di potenza termica liberata dalla combustione per unità di volume della camera12:
+
+$$\mathbf{C_t = \frac{\dot{m}_c \cdot K_i}{V}} \quad \left[\frac{\text{kW}}{\text{m}^3} \text{ o } \frac{\text{kJ}}{\text{s}\cdot\text{m}^3}\right]$$
+V indica il volume della camera di combustione.
+
+In condizioni di **regime stazionario** (l'energia in ingresso eguaglia quella in uscita), il bilancio termico della c.c. riferito all'unità di massa di combustibile si scrive come:
+$$\mathbf{1 \cdot \varepsilon \cdot K_i + M_a \cdot c_{pm,a} \cdot t_a + 1 \cdot c_{pm,b} \cdot t_b = (M_a + 1) \cdot c_{pm,f} \cdot t_c + q_i}$$
+
+I singoli termini rappresentano:
+
+- $\varepsilon \cdot K_i$: Energia chimica effettivamente liberata (con $\varepsilon$ rendimento di combustione).
+- $M_a \cdot c_{pm,a} \cdot t_a$: Entalpia sensibile dell'aria comburente in ingresso.
+- $1 \cdot c_{pm,b} \cdot t_b$: Entalpia sensibile del combustibile.
+- $(M_a + 1) \cdot c_{pm,f} \cdot t_c$: Entalpia sensibile dei fumi in uscita alla temperatura media di combustione $t_c$.
+- $q_i$: **Calore ceduto per irraggiamento** dalla fiamma alle pareti/tubi vaporizzatori per unità di massa di combustibile
+
+Il calore radiativo $q_i$ ceduto ai tubi vaporizzatori che rivestono la camera segue la legge di Stefan-Boltzmann:
+
+$$\mathbf{q_i = \frac{\alpha \cdot \sigma_0 \cdot S_{irr} \cdot (T_c^4 - T_p^4)}{\dot{m}_c}}$$
+
+Dove:
+
+- $\sigma_0$: Costante d'irraggiamento del corpo nero ($5{,}67 \times 10^{-8} \text{ W/(m}^2\text{K}^4)$)3.
+- $\alpha$: Coefficiente correttivo per le proprietà geometriche, d'assorbimento ed emissività della camera3.
+- $S_{irr}$: Superficie radiante efficace delle pareti raffreddate3.
+- $T_c$: **Temperatura assoluta** media della **fiamma** $K$ ($T_c = t_c + 273{,}15$)3.
+- $T_p$: **Temperatura assoluta** superficiale dei **tubi vaporizzatori** $K$
+
+La **temperatura media di combustione (**$t_c$**)** rappresenta il livello termico dei fumi nella c.c. ed è condizionata dai seguenti parametri operativi4:
+
+1. **Carico termico superficiale (**$\frac{\dot{m}_c}{S_{irr}}$**)**: $t_c$ **aumenta** all'aumentare della portata di combustibile $\dot{m}_c$ o al diminuire delle superfici radianti $S_{irr}$.
+2. **Eccesso d'aria (**$e$**)**: $t_c$ **aumenta al diminuire dell'eccesso d'aria** $e$, poiché si riduce la massa d'aria inerte che diluisce il calore rilasciato4.
+3. **Preriscaldamento dei reagenti**: $t_c$ **aumenta** al crescere dell'entalpia iniziale dell'aria comburente.
+
+La temperatura di combustione si può calcolare per via grafica grazie a:
+1. **Curva del Calore Disponibile** $f(t)$: Si definisce la funzione della potenza termica netta rimanente nei fumi: $$f(t) = \varepsilon \cdot K_i + H_r - q_i(t) \quad$$dove $H_r = M_a c_{pm,a} t_a + c_{pm,b} t_b$ rappresenta l'entalpia dei reagenti. Per $t \le t_p$, l'irraggiamento netto è nullo ($q_i = 0$), quindi $f(t_p) = \varepsilon K_i + H_r$. A temperature superiori a $t_p$, $q_i$ cresce con la quarta potenza, facendo decrescere la curva $f(t)$.
+- **Curva dell'Entalpia dei Fumi** $H_f(t)$: Rappresenta l'energia contenuta nei fumi: $$H_f(t) = (M_a + 1) \cdot c_{pm,f}(t) \cdot t \quad$$Poiché $c_{pm,f}$ aumenta con la temperatura, la curva $H_f(t)$ ha un andamento leggermente parabolico/concavo verso l'alto.
+- **Punto d'Intersezione** $P$: La temperatura di combustione effettiva $t = t_c$ viene individuata dal **punto di intersezione** $P$ tra la curva del calore netto $f(t)$ e la curva entalpica dei fumi $H_f(t)$.
+![[determinazione_grafica_tc.png]]
+
+Una temperatura di combustione $t_c$ troppo elevata comporta gravi inconvenienti:
+
+- **Danneggiamento dei materiali**: Sollecitazioni termiche critiche sulle pareti e sui fasci tubieri.
+- **Inquinamento ambientale**: Marcata formazione di **ossidi di azoto (**$\text{NO}_x$ **termici)** per via cinetica ad alta temperatura.
+
+Per queste ragioni, nella progettazione della caldaia si sceglie con precisione il volume $V$, la geometria della camera e il grado di schermatura $\varphi$.
+Per limitare $t_{c}$ ci sono soluzioni come:
+- **Incremento** dell'**eccesso d'aria**, questo comporta ad una **diminuzione del rendimento del fgeneratore**($\eta_{gen}$).
+- **Ridurre** $\frac{\dot{m_{c}}}{S_{irr}}$, facendo così diventare il calcolo $C_{t} =\frac{\dot{m_{c}} \cdot K_{i}}{S\cdot l}$, con $S$ **area delle pareti di c.c.**, $l$ **lunghezza caratteristica della c.c.**
+Sia il **grado di raffreddamento** o di **schermatura** $\varphi$.
+$$
+\varphi = \frac{S_{irr}}{S} \to \frac{\dot{m_{c}}}{S_{irr}} = \frac{\dot{m_{c}}}{\varphi \cdot S} = \frac{C_{t}\cdot l}{\varphi \cdot K_{i}}
+$$
+Quindi si **agisce** sulle **dimensioni della camera di combustione**, $C_{t}$ e $\varphi$ **schermando** le pareti della camera di combustione.
+
