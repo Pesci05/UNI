@@ -199,4 +199,91 @@ $$
 P_{e} = 0 \\
 P_{t} = \dot{m_{v}}\cdot(h_{c}-h_{e})
 $$
+---
+**TURBINA IN DERIVAZIONE**
+Le turbine in **derivazione** consentono di **espandere** il fluido fino a raggiungere **pressioni inferiori a quella atm**.
+Sono utilizzate quando è **privilegiata l’utenza elettrica rispetto a quella termica**.
+
+Questo gruppo è formato da:
+- **Generatore di Vapore (Caldaia)**: Produce la portata totale di vapore surriscaldato ad alta pressione ($\dot{m}_v, p_{HP}, T_{HP}$).
+- **Sezione di Alta Pressione (Turbina AP)**: Il vapore si espande producendo la prima quota di lavoro elettrico fino a raggiungere una pressione intermedia ($p_{spill}$).
+- **Nodo di Derivazione / Spillevamento**: All'uscita dalla sezione AP, il flusso si sdoppia tramite una valvola di regolazione:
+    - **Quota Spillata/Derivata (**$\dot{m}_{th}$**)**: Viene estratta alla pressione $p_{spill}$ e inviata all'**Utenza Termica** (condensatore utile), dove condensa cedendo la **potenza termica utile (**$\dot{Q}_{th}$**)**.
+    - **Quota Rimanente (**$\dot{m}_{cond} = \dot{m}_v - \dot{m}_{th}$**)**: Prosegue l'espansione nella **Sezione di Bassa Pressione (Turbina BP)** fino alla pressione di vuoto del **Condensatore Freddo** ($p_{cond} \approx 0{,}04\text{–}0{,}08\text{ bar}$).
+- **Condensatore Freddo**: Dissipa verso l'ambiente (es. torre evaporativa o fiume) il calore del vapore non richiesto dall'utenza termica.
+- **Ritorno Condensa**: Le condense provenienti sia dall'utenza che dal condensatore freddo si uniscono e vengono ricondotte in caldaia tramite la **Pompa di Alimento (PA)**.
+![[gruppo_cogenerativo_tv_derivazione_layout_ts.png]]
+- **Tratto** $1 \rightarrow 2 \rightarrow 3 \rightarrow 4$ **(Rosso)**: Riscaldamento dell'acqua, evaporazione isotermo-isobara ed elevato surriscaldamento fino a $T_4 = 500\text{ °C}$ sulla pressione massima $p_{HP} = 80\text{ bar}$ (Stato **4**).
+- **Tratto** $4 \rightarrow M$ **(Verde Chiaro)**: Prima espansione nella **Turbina AP** fino alla pressione intermediata di spillevamento $p_{spill} = 5\text{ bar}$ (Stato **M**).
+- **Biforcazione del Flusso al Punto** $M$:
+    - **Tratto** $M \rightarrow 6_U$ **(Linea Tratteggiata Viola)**: La quota di vapore spillata $\dot{m}_{th}$ condensa a pressione e temperatura costanti ($T_{sat} \approx 152\text{ °C}$) cedendo il calore latente all'**Utenza Termica** (effetto cogenerativo $Q_{th}$).
+    - **Tratto** $M \rightarrow 5_C$ **(Verde Scuro)**: La frazione restante $\dot{m}_v - \dot{m}_{th}$ prosegue l'espansione nella **Turbina BP** fino alla pressione di vuoto $p_{cond} = 0{,}05\text{ bar}$ (Stato $5_C$).
+- **Tratto** $5_C \rightarrow 6_C$ **(Azzurro Puntinato)**: Condensazione nel **Condensatore Freddo** a $T \approx 33\text{ °C}$ con rigetto del calore non recuperabile $Q_{lost}$.
+- **Tratto** $6_C / 6_U \rightarrow 1$ **(Blu Tratteggiato)**: Ricircolo e pompaggio delle condense miscelate alla pressione $p_{HP}$.
+$$
+h_{6c} = \frac{(\dot{m_{v}}-\dot{m}_{TAP})\cdot h_{c}+\dot{m}_{TAP}\cdot h_{b}}{\dot{m_{v}}}\\
+P_{c} = \dot{m_{c}}\cdot k_{i} = \frac{\dot{m_{v}}\cdot(h_{a}-h_{o})}{\eta_g}\\
+P_{e} = [\dot{m}_{TAP}\cdot(h_{a}-h_{bt})\cdot \eta_{i,TAP}\cdot \eta_{m,TAP} + \dot{m}_{TBP} \cdot (h_{d}-h_{kt}) \cdot \eta_{i,TBP} \cdot \eta_{m,TBP}] \eta_{aux}\cdot \eta_{alt}\\
+P_{t} = \dot{m}_{UT}\cdot(h_{d}-h_{e})
+$$
+Questo gruppo può avere dei casi estremi come:
+**POTENZA ELETTRICA MASSIMA**
+$$
+\dot{m}_{TAP} = \dot{m}_{TBP} = \dot{m_{v}}\\
+P_{e} = \dot{m_{v}}\cdot[(h_{a}-h_{bt})\cdot \eta_{i,TAP} \cdot \eta_{m,TAP} +  (h_{b}-h_{kt}) \cdot \eta_{i,TBP} \cdot \eta_{m,TBP}]\cdot \eta_{aux} \cdot \eta_{alt} \\
+P_{t} = 0
+$$
+
+**POTENZA TERMICA MASSIMA**
+$$
+\dot{m}_{TAP} = \dot{m}_{TBP} = 0 ; \space \dot{m}_{UT} = \dot{m_{v}}\\
+P_{e} = 0 \\
+P_{t} = \dot{m_{v}}\cdot(h_{c}-h_{e})
+$$
+
+**PORTATA DISTRIBUITA**
+$$
+\dot{m}_{UT} = \dot{m}_{TBP} ; \space \dot{m}_{TAP} = \dot{m_{v}}\\
+P_{e} = [\dot{m_{v}}\cdot(h_{a}-h_{bt})\cdot \eta_{i,TAP} \cdot \eta_{m,TAP} +  \dot{m}_{TBP}\cdot(h_{b}-h_{kt}) \cdot \eta_{i,TBP} \cdot \eta_{m,TBP}]\cdot \eta_{aux} \cdot \eta_{alt} \\
+P_{t} = \dot{m}_{UT}\cdot(h_{b}-h_{e})
+$$
+
+# GRUPPO COMBINATO COGENERATIVO - VAPORE COGENERATIVO
+In una caldaia a recupero ad un solo livello di pressione, il processo di evaporazione dell'acqua avviene a una singola temperatura fissa $T_{sat}$. Di conseguenza, sul diagramma dello scambio termico $T-Q$, si crea un considerevole "divario" (salto termico) tra la linea di raffreddamento dei fumi e la curva dell'acqua/vapore. Questo divario rappresenta una forte **distruzione di energetica (irreversibilità)**.
+
+Il layout del gruppo è definito da:
+1. **Sezione Turbina a Gas (TG)**:
+    - Il turbogas brucia il combustibile ($\dot{Q}_{in}$), produce la prima quota di **potenza elettrica (**$P_{el, TG}$**)** e scarica i fumi esausti ad alta temperatura ($550\text{--}600\ ^\circ\text{C}$).
+2. **Caldaia a Recupero a 2 Livelli (HRSG 2LP)**: I fumi attraversano in sequenza 6 banchi di scambiatori disposti in controcorrente:
+    - **Sezione AP**: Surriscaldatore AP ($SH_{AP}$), Evaporatore AP con corpo d'allevamento ($EVA_{AP} + D_{AP}$), Economizzatore AP ($ECO_{AP}$).
+    - **Sezione BP**: Surriscaldatore BP ($SH_{BP}$), Evaporatore BP con corpo d'allevamento ($EVA_{BP} + D_{BP}$), Economizzatore BP ($ECO_{BP}$).
+    - **Camino**: I fumi esausti vengono espulsi a $\sim 100\ ^\circ\text{C}$.
+3. **Turbina a Vapore a Spillevamento & Utenza Termica (CHP)**:
+    - Il vapore surriscaldato AP ($80\text{--}100\text{ bar}, 520\ ^\circ\text{C}$) entra nella **Turbina a Vapore AP (**$TV_{AP}$**)**.
+    - Il vapore uscente da $TV_{AP}$ si miscela con il vapore prodotto dalla sezione BP ($6\text{--}10\text{ bar}$) ed entra nella **Turbina a Vapore BP (**$TV_{BP}$**)**.
+    - **Spillamento Cogenerativo**: Dalla sezione intermedia/BP viene estratta la portata di vapore inviata all'**Utenza Termica** per soddisfare il carico di processo/riscaldamento ($\dot{Q}_{th}$).
+    - La frazione rimanente espande fino al vuoto nel **Condensatore Freddo** per massimizzare la **potenza elettrica (**$P_{el, TV}$**)**.
+    - Le condense raccolte vengono ripressurizzate dalle pompe di alimento $P_{BP}$ e $P_{AP}$ e ricircolate all'HRSG.
+![[ciclo_combinato_cogenerativo_2lp_layout-v2.png]]![[Pasted image 20261020235607.png]]
+
+Il calore scambiato in questo impianto viene calcolato:
+$$
+\dot{Q}_{scambiato} = \dot{m_{a}}\cdot c_{p} \cdot(T_{4'}-T_{5})
+$$
+Invece le potenze sono:
+$$
+P_{c} = \dot{m_{c}}\cdot K_{i} = \frac{\dot{m_{a}}\cdot c_{p} \cdot (T_{3}-T_{4'})}{\eta_{cc}} \\
+P_{e} = P_{g} + P_{v} \\
+P_{t} = \dot{m}_{UT} \cdot (h_{d} - h_{e})
+$$
+# Gruppo cogenerativo con motore a combustione interna
+![[gruppo_cogenerativo_mci_layout.png]]
+A differenza di una turbina a gas (dove il calore recuperabile si trova concentrato esclusivamente nei fumi ad alta temperatura), un motore a combustione interna (solitamente un 4 tempi ad accensione comandata a gas naturale o ciclo Diesel) rende disponibile il calore su **due livelli termici distinti**:
+1. **Alta Temperatura (AT) — Fumi di Scarico**:
+    - I fumi fuoriescono dai cilindri a $400\text{--}500\text{ °C}$.
+    - Attraversano uno **Scambiatore Fumi** (a fascio tubiero) per riscaldare il vettore termico (acqua o vapore a bassa pressione) fino a $90\text{--}110\text{ °C}$, prima di essere espulsi dal camino a $110\text{--}120\text{ °C}$.
+2. **Media / Bassa Temperatura (BT/MT) — Circuito di Raffreddamento e Olio**:
+    - Il calore generato dalla combustione all'interno delle pareti dei cilindri viene asportato dall'**Acqua di Camicia (*jacket water*)**  $80\text{--}90\text{ °C}$.
+    - A questo si aggiungono il calore sottratto dall'**Olio di Lubrificazione** e la refrigerazione dell'aria di alimentazione (**Intercooler** del turbocompressore).
+    - Questo calore viene trasferito all'acqua dell'utenza tramite uno **Scambiatore a Piastre (HT)**.
 

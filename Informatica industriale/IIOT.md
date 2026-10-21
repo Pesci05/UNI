@@ -144,8 +144,6 @@ Esempio di uno scambio di messaggi **sincroni**:[[08 - Concurrency.pdf#page=18|0
 Esempio di uno scambio di messaggi con solo **send asincrona**: [[08 - Concurrency.pdf#page=19|08 - Concurrency, pagina 19]]
 
 
-
-
 # POSIX
 I POSIX Threads sono chiamati **PTHreads**, e sono un modello di esecuzione che esiste **indipendentemente dal linguaggio di programmazione**, come **modello di esecuzione in parallelo**.
 

@@ -103,3 +103,4 @@ Una camera UVC può descrivere:
 - Pixel o formati compressi
 - Comandi cdi controllo della camera e come impostarle
 - available video streams;
+
