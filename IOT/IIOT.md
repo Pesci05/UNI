@@ -133,7 +133,7 @@ Questo permette agli oggetti che ricevono e mandano dati, di non dover inventars
 ## RESTful HTTP
 Formato da più livelli:
 - **LIVELLO 0**
-- ### LIVELLO 1
+- # LIVELLO 1
 - # LIVELLO 2 
 	l livello 2 si basa sulle operazioni **CRUD** di HTTP, questo tipo di metodo permette la scalabilità e chiarezza nello scambio di dati.
 	Ogni dato/risorsa viene identificato da un **URI**.

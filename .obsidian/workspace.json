@@ -4,33 +4,21 @@
     "type": "split",
     "children": [
       {
-        "id": "ac6890e9d044c098",
+        "id": "5133ff0165a677e4",
         "type": "tabs",
         "children": [
           {
-            "id": "9aaca4c04c50b80b",
-            "type": "leaf",
-            "state": {
-              "type": "pdf",
-              "state": {
-                "file": "macchine e sistemi energetici/slide/007_Generatori_di_Vapore_MN.pdf"
-              },
-              "icon": "lucide-file-text",
-              "title": "007_Generatori_di_Vapore_MN"
-            }
-          },
-          {
-            "id": "0d6ad10920518123",
+            "id": "0fab69a4760ca34a",
             "type": "leaf",
             "state": {
               "type": "markdown",
               "state": {
-                "file": "macchine e sistemi energetici/GENERATORE DI VAPORE.md",
+                "file": "IOT/IIOT.md",
                 "mode": "source",
                 "source": false
               },
               "icon": "lucide-file",
-              "title": "GENERATORE DI VAPORE"
+              "title": "IIOT"
             }
           }
         ]
@@ -197,35 +185,44 @@
       "daily-notes:Apri nota giornaliera": false,
       "templates:Inserisci modello": false,
       "command-palette:Apri riquadro comandi": false,
-      "bases:Crea nuova Base": false
+      "bases:Crea nuova Base": false,
+      "vscode-editor:Create Code File": false
     }
   },
-  "active": "9aaca4c04c50b80b",
+  "active": "0fab69a4760ca34a",
   "lastOpenFiles": [
+    "IOT/2026-10-22.md",
+    "IOT/2026-10-14.md",
+    "IOT/IIOT.md",
+    "Image processing/IMAGE FORMATION.md",
+    "Image processing/image-processing-labs/labs/common/__pycache__/__init__.cpython-313.pyc",
+    "Image processing/image-processing-labs/labs/common/__pycache__/io.cpython-313.pyc",
+    "Image processing/image-processing-labs/labs/common/__pycache__",
+    "Image processing/image-processing-labs/labs/__pycache__/__init__.cpython-313.pyc",
+    "Image processing/image-processing-labs/labs/__pycache__",
+    "Image processing/image-processing-labs/labs/lab05/pyproject.toml",
+    "Image processing/image-processing-labs/labs/lab05/main.py",
+    "Image processing/image-processing-labs/labs/lab05/solutions/__init__.py",
+    "Image processing/image-processing-labs/labs/lab05/solutions/ex05_full_color_chart.py",
+    "Image processing/image-processing-labs/labs/lab05/solutions/ex04_template_matching.py",
+    "Image processing/image-processing-labs/labs/lab05/assets/template.png",
+    "Image processing/image-processing-labs/labs/lab05/README.md",
+    "Image processing/lab05/assets/template.png",
+    "Image processing/lab05/README.md",
+    "Image processing/IMAGE PROCESSING.md",
+    "Image processing/2026-10-22.md",
+    "Image processing/2026-10-13.md",
     "macchine e sistemi energetici/GENERATORE DI VAPORE.md",
-    "macchine e sistemi energetici/slide/007_Generatori_di_Vapore_MN.pdf",
-    "determinazione_grafica_tc.png",
-    "formazione_inquinanti_temperatura_fumi-v2.png",
-    "Pasted image 20261021190219.png",
-    "automazione/slide/AuIn08.2 - Progettazione del controllore.pdf",
-    "automazione/slide/AuIn08.1 - Luogo delle radici.pdf",
-    "automazione/slide/AuIn07.3 - Esercizi sul controllo in retroazione_svolti.pdf",
-    "automazione/slide/AuIn07.2 - Controllo in Retroazione.pdf",
-    "automazione/slide/AuIn04.1-Antitrasformate e modi.pdf",
-    "automazione/slide/AuIn07.1 - Controllo in Retroazione.pdf",
-    "automazione/slide/AuIn06.4 - Analisi Armonica.pdf",
-    "automazione/slide/AuIn06.2 - Analisi Armonica.pdf",
-    "automazione/slide/AuIn06.3 - Analisi Armonica.pdf",
-    "Pasted image 20261021173159.png",
-    "Pasted image 20261021161558.png",
+    "macchine e sistemi energetici/screenshot/determinazione_grafica_tc.png",
+    "macchine e sistemi energetici/screenshot/formazione_inquinanti_temperatura_fumi-v2.png",
+    "macchine e sistemi energetici/screenshot/Pasted image 20261021190219.png",
+    "macchine e sistemi energetici/screenshot/Pasted image 20261021173159.png",
+    "macchine e sistemi energetici/screenshot/Pasted image 20261021161558.png",
     "generatore_vapore_schema-v2.png",
     "macchine e sistemi energetici/SISTEMI CON IMPIANTI COGENERATIVI.md",
     "macchine e sistemi energetici/SISTEMI COGENERATIVI.md",
     "macchine e sistemi energetici/screenshot/gruppo_cogenerativo_mci_layout.png",
     "Pasted image 20261021001120.png",
-    "macchine e sistemi energetici/screenshot/ciclo_combinato_cogenerativo_2lp_layout-v2.png",
-    "macchine e sistemi energetici/screenshot/Pasted image 20261020235607.png",
-    "Image processing/IMAGE FORMATION.md",
     "Informatica industriale/IIOT.md",
     "Informatica industriale/LAB_MATERIAL.md",
     "Cyber security/INFORMATICA FORENSE.md",
@@ -235,7 +232,6 @@
     "Image processing/image-processing-labs/labs/lab03/README.md",
     "Image processing/image-processing-labs/README.md",
     "IOT/python/laboratory-python-http-rest-api/README.md",
-    "IOT/2026-10-14.md",
     "macchine e sistemi energetici/Termodinamica di base.md"
   ]
 }

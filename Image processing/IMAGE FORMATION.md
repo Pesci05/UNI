@@ -104,3 +104,42 @@ Una camera UVC può descrivere:
 - Comandi cdi controllo della camera e come impostarle
 - available video streams;
 
+
+# LOOKING FOR OBJECTS
+## LABELING
+Ha come input un'immagine binaria,e come output un'immagine **assegnando un'etichetta**, ad ogni pixel.
+
+Alternativa al **find countours**.
+La differenza più grande sono le informazioni date, Find countour ci dà più informazioni.
+
+Per un pixel di **foreground**, possiamo definire i pixel che lo circondano.
+$$
+N_{4} = {(x-1,y),(x+1,y),(x,y-1),(x,y+1)} \\
+N_{8} = N_{4} u
+$$
+
+Il suo algoritmo funziona:
+1. **Passi l'immagine binaria e ispeziona tutti i pixel vicini**
+	- Assegna una uova label quando i vicini non hanno ancora una label assegnata
+	- Riusare una label quando è presenta solo una label
+	- Segnare quando avviene un'equivalenza temporanea nel momento in cui si incontrano 2 label diverse
+2. **Rimpiazzare le equivalenze temporanee** con una label che include tutti i pixel
+
+```
+count, labels, stats, centroids =
+	cv2.connectedComponentsWithStats(
+	mask,
+	connectivity = 4,
+	)
+```
+- labels $[x,y]$: componente intero che **identifica ogni pixel**.
+- stats $[i]$: LEFT,TOP,WIDTH, HEIGHT, and AREA, per la lable i.
+
+Per aver assegnata una label la regione di pixel deve avere:
+- Un'**area plausibile**
+- Un centroid all'interno della regione ispezionata.
+Per risolvere dei problemi su delle immagini, si può risolvere tramite le **conoscenze a priori** riguardo il problema stesso.
+## TEMPLATE MATCHING
+
+
+

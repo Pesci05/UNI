@@ -22,6 +22,11 @@ dev = [
 [tool.uv]
 package = true
 
+[tool.uv.workspace]
+members = [
+    "labs/lab05",
+]
+
 [tool.hatch.build.targets.wheel]
 packages = ["labs"]
 
