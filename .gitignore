@@ -1,2 +1,12 @@
 /basi di dati/
 **/[sS][lL][iI][dD][eE]/
+.copilot
+.obsidian
+.opencode
+.smart-env
+copilot
+
+
+
+# Ignore Smart Environment folder
+.smart-env

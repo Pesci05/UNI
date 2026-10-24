@@ -1,4 +1,4 @@
-# IIOTO
+# IIOT
 La diffusione dei dispositivi elettronici è esplosa soprattutto grazie all'avvento dei smartphone, che sono dispositivi che comunicano tra loro grazie ad un infrastruttura che si chaima **INTERNET**, questo vale per tutti i tipi di dispositivi che comunicano tramite internet.
 
 ## IOT
