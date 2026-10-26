@@ -144,11 +144,153 @@ Esempio di uno scambio di messaggi **sincroni**:[[08 - Concurrency.pdf#page=18|0
 Esempio di uno scambio di messaggi con solo **send asincrona**: [[08 - Concurrency.pdf#page=19|08 - Concurrency, pagina 19]]
 
 
-# POSIX
-I POSIX Threads sono chiamati **PTHreads**, e sono un modello di esecuzione che esiste **indipendentemente dal linguaggio di programmazione**, come **modello di esecuzione in parallelo**.
+# Modello a memoria condivisa
+Le risorse in memoria condivisa possono essere allocate in modo:
+- **statico**
+- **dinamico**
+L'accesso alla risorsa può essere:
+- **Dedicato**
+- **Condiviso**
+## Mutua esclusione e Data races
+Un problema di questo modello è la **Mutua esclusione** e **data races**.
 
-Specifica ad un Sistema Operativo un'**interfaccia** simile ai sistemi UNIX.
-POSIX mantiene una differenza tra **thread** e **processi**.
-Ogni processi ha almeno un thread detto **main**, tutti i thread **condividono** lo steso indirizzo di memoria, ma mantengono uno **stack privato**.
-[[Lab_PThreads.pdf#page=4|Lab_PThreads, pagina 4]]
+Questo è un problema quando le operazioni fatte da un thread non sono atomiche.
+[[08 - Concurrency.pdf#page=28|08 - Concurrency, pagina 28]]
 
+Un'istruzione si definisce **atomica**, viene eseguita come un'**unità singola e indivisibile o viene completata interamente, oppure non viene eseguita affatto**, senza che nessun altro processo o thread possa intercettarla, modificarne lo stato intermedio o interromperla a metà.
+
+Una **critical section** è una porzione di codice deve operare soltanto un thread alla volta, deve essere visto come una **regione atomica** di codice, questo significa che la risorsa che i thread devono lavorare deve avere un accesso di tipo **mutua esclusione**, questo si può fare con:
+- **Opreazioni atomiche**
+- **Semafori**
+- **Mutex**
+
+## Semafori
+Meccanismo proposto da Djikstra.
+
+Un **semaforo** è un oggetto, che consiste in:
+- **contatore**
+- **una coda**
+
+Con 2 funzioni principali:
+- **Wait**
+	1. Decrementa il valore del semaforo: 𝑆 =𝑆 −1.
+	2. **Se 𝑆 <0**: il contatore indica che non ci sono risorse disponibili. Il thread chiamante viene **bloccato** (sospeso) e inserito nella coda del semaforo.
+	3. **Se 𝑆 ≥0**: la risorsa è disponibile, il thread decremente il valore e continua l'esecuzione senza bloccarsi
+	- **Logica concettuale:**
+
+```c
+void wait(Semaphore S) {
+    S.value--;
+    if (S.value < 0) {
+        // aggiungi il thread chiamante a S.queue;
+        // blocca il thread (block/suspend);
+    }
+}
+```
+
+- **Signal**(Post):
+	Viene chiamata quando un thread finisce di utilizzare un risorsa così da **rilasciarla**
+	1. Incrementa il valore del semaforo: 𝑆 =𝑆 +1.
+    2. **Se 𝑆 ≤0**: significa che c'era almeno un thread bloccato in attesa nella coda del semaforo. Ne estrae uno dalla coda e lo **risveglia** (lo passa allo stato _ready_).
+    3. **Se 𝑆 >0**: non c'erano thread in attesa, il permesso restituito rimane disponibile per richieste future.
+	- **Logica concettuale:**
+```c
+void signal(Semaphore S) {
+    S.value++;
+    if (S.value <= 0) {
+        // rimuovi un thread P dalla coda S.queue;
+        // risveglia il thread P (wakeup/unblock);
+    }
+}
+```
+
+>Queste operazioni devono essere gestite come **operazioni atomiche**
+
+Per implementare una **Muta esclusione** si utilizza un **semaforo binario**.
+
+**Init**: Inizializzare un semaforo:
+```c++
+int sem_init(sem_t *sem, int pshared, unsigned int value);
+int sem_destroy(semt_t *sem);
+```
+
+**Wait** di un semaforo:
+```c++
+int sem_wait(sem_t* sem);
+int sem_trywait(sem_t* sem);
+```
+
+
+## MUTEX
+Sono na struttura dati che si utilizzano soltanto per la **mutua esclusione**.
+**Eempio Mutex:**
+```c
+#include <stdio.h>
+#include <pthread.h>
+#include <semaphore.h> 
+
+typedef struct
+{
+    pthread_mutex_t* mut;
+    char car[3];
+    int id;
+}Mutex;
+
+void * body(void * arg);
+
+int main()
+{
+    pthread_t thread[3];
+    pthread_attr_t myattr;
+    int err;
+    pthread_mutex_t mut;
+    Mutex m[3];
+
+    err = pthread_mutex_init(&mut,0);
+
+    for(int i = 0; i < 3 ;i++){
+        m[i].id = i;
+        m[i].mut = &mut;
+    }
+    m[0].car[0] = '.';
+    m[1].car[1] = '#';
+    m[2].car[2] = 'o';
+
+    pthread_attr_init(&myattr);
+    
+    for(int i = 0; i < 3; i++){
+        err = pthread_create(&thread[i],&myattr,body,(void*)&m[i]);
+    }
+
+    /*err = pthread_create(&t1, &myattr, body, (void *)&s1); // Boxing of parameters
+
+    err = pthread_create(&t2, &myattr, body, (void *)&s2);
+
+    err = pthread_create(&t3, &myattr, body, (void *)&s3);*/
+    pthread_attr_destroy(&myattr);
+
+    for(int i = 0; i < 3; i++){
+        pthread_join(thread[i],NULL);
+    }
+
+    err = pthread_mutex_destroy(&mut);
+    return 0;
+}
+void * body(void * arg)
+{
+    Mutex* m = (Mutex *) arg; // Unboxing of function params
+    pthread_mutex_lock(m->mut);
+    //printf("%d",s->id);
+    for (int i=0; i<40; i++)
+    {
+        for (int j=0; j<20; j++)
+        {
+            printf("%c", m->car[m->id]);
+        }
+        printf("\n");
+    }
+    pthread_mutex_unlock(m->mut);
+}
+```
+
+aa

@@ -411,3 +411,64 @@ Poichè $P = 2\pi n\cdot M$, la potenza dipende sia da regime n sia dalla coppia
 - $n>n_{p}$: Il calo della coppia M diventa così rapido e marcato da superare l'aumento del regime n, causando un crollo repentino della potenza erogata.
 ---
 
+# Processo di combustione nei motori 
+
+## Combustione premiscelata
+Nei motori AS (a benzina o gas), la miscela aria-combustibile viene formata **prima dell'innesco** della combustione.
+
+### Caratteristiche principali
+1. **Carica premiscelata** 
+	- Il combustibile viene iniettato nei condotti di aspirazione (iniezione indiretta) o direttamente in camera con forte anticipo rispetto all'accensione (iniezione diretta)
+	- La miscelazione è migliore quanto più è alta la turbolenza in camera
+	- All'istante di accensione la miscela si trova nelle condizione di **dosatura stechiometrica**($\lambda = 1$) 
+2. **Accensione comandata**
+	- L'accensione comandata è prodotta dalla **candela**, la quale produce una scintilla, data da una scarica elettrica, che innalza localmente la temperatura al di sopra del valore di autoaccensione, avendo la miscela già in condizione stechiometrica. 
+3. **Tipologia di combustione con propagazione di fronte di fiamma**
+	- La reazione innescata dalla candela si propaga dal quel punto con una determinata velocità di spostamento detta **velocità di propogazione del fronte di fiamma**.
+
+### Fenomeni anomali e non desiderati
+- **Spegnimento della fiamma**
+	A causa di **temperature delle pareti troppo basse**, **scarsa turbolenza o miscela troppo magra** ($\lambda > 1$), la velocità del fronte di fiamma crolla e la **fiamma si spegne prima di aver bruciato tutta la carica**
+- **Accensione anticipata**
+	- Causata dalle **alte temperature della carica e delle pareti**, in un **punto diverso della candela** e in un istante qualsiasi la **carica si autoaccende innescando un fronte dei fiamma non desiderato**.
+	- Anche da bassa velocità del motore, che porta anche a bassa valocità di propagazione, questo significa che la miscela ha il tempo per autoaccendersi se si trova nelle condizioni opportune
+- **Detonazione**
+	- Alta temperatura della carica e delle pareti (temperatura motore): in più di un punto diverso dalla candela e in un instante qualsiasi la **carica si autoaccende innescando diversi fronti di fiamma non desiderati**.
+	- La detonazione comporta a, onde d'urto ad alta frequenza, fortissima rumorosità, picchi di pressione e potenziale rottura o crollo delle prestazioni.
+	- Per contenere e rimediare alla detonazione si deve:
+		- **Aumentare** il **numero di ottano(NO)**
+		- Aumentata turbolenza
+		- Camera di combustione compatta
+		- Doppia candela
+		- Dosatura grassa ($\lambda < 1$)
+---
+## Combutione diffusiva
+Nei motori AC (diesel), la camera racchiude inizialmente solo aria ad alta temperatura e pressione. Il combustibile viene iniettato direttamente poco prima del PMS.
+
+### Caratteristiche principali
+1. **Carica disomogenea**
+	- Il combustibile viene iniettato solo nell’istante in cui si vuole che si inneschi il processo di combustione.
+	- Il combustibile viene inettato ad altissima pressione, deve **atomizzarsi** dividendosi in piccolissime gocce, **evaporare** e miscelarsi con il comburente.
+	- Solo la parte della miscela in condizione stechiometrica **reagisce**, il resto non è in questa condizione.
+2. **Accensione spontanea**
+	- La combustione si innesca autonomamente nei punti della camera in cui la miscela locale raggiunge le condizioni limite di pressione e temperatura.
+3. **Assenza del fronte di fiamma**
+	- Non esiste un fronte di fiamma propagante; la fiamma **si diffonde lungo il getto di combustibile** man mano che questo si miscela con il comburente.
+4. **Il combustibile deve essere tale da accendersi nel tempo minore possibile, in modo da minimizzare il ritardo chimico**
+5. **Ritardo dell'accensione**
+	- Tra l'inizio dell'iniezione e l'effettivo innesco della combustione intercorre un intervallo di tempo noto come **ritardo all'accensione**, composto da:
+	1. **Ritardo Fisico** ($Rit_{fisico}$): Tempo necessario al getto per penetrare, atomizzarsi, evaporare e miscelarsi con l'aria
+	2. **Ritardo chimico**($Rit_{chimico}$): Tempo impiegato dalle reazioni chimiche di pre-ossidazione per avviarsi. (**NUMERO DI CETANO**)
+
+>**Importanza della Qualità del Combustibile:** Nei motori AC si richiede un elevato **Numero di Cetano (NC)** per **minimizzare il ritardo chimico** ed evitare che un ritardo eccessivo porti all'accumulo di troppo combustibile incombusto in camera, provocando un'accensione troppo violenta e rumorosa
+---
+### Tabella Comparativa dei Processi di Combustione
+
+| Parametro                      | Combustione Premiscelata (AS / Otto)     | Combustione Diffusiva (AC / Diesel)              |
+| :----------------------------- | :--------------------------------------- | :----------------------------------------------- |
+| **Formazione Miscela**         | Esteriore / Anticipata (Carica omogenea) | Iniezione Diretta in camera (Carica disomogenea) |
+| **Innesco**                    | Esterno comandato (Candela)              | Autoaccensione per alta 𝑝 e 𝑇                  |
+| **Modalità di Fiamma**         | Propagazione del Fronte di Fiamma        | Fiamma di diffusione lungo il getto              |
+| **Dosatura globale**           | Stechiometrica (𝜆 ≈1)                   | Magra (𝜆 >1)                                    |
+| **Proprietà del Combustibile** | Elevato **Numero di Ottano**             | Elevato **Numero di Cetano**                     |
+| **Anomalia Principale**        | Detonazione (_Knocking_)                 | Eccessivo ritardo all'accensione                 |

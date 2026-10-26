@@ -1,0 +1,17 @@
+filters:
+  and:
+    - file.ext == "md"
+properties:
+  file.name:
+    displayName: Nota
+  file.mtime:
+    displayName: Ultima modifica
+views:
+  - type: table
+    name: Tutti i file
+    order:
+      - file.name
+      - file.mtime
+    sort:
+      - property: file.mtime
+        direction: DESC
