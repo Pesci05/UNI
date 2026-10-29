@@ -472,3 +472,64 @@ Nei motori AC (diesel), la camera racchiude inizialmente solo aria ad alta tempe
 | **Dosatura globale**           | Stechiometrica (𝜆 ≈1)                   | Magra (𝜆 >1)                                    |
 | **Proprietà del Combustibile** | Elevato **Numero di Ottano**             | Elevato **Numero di Cetano**                     |
 | **Anomalia Principale**        | Detonazione (_Knocking_)                 | Eccessivo ritardo all'accensione                 |
+
+---
+# Inquinanti emessi dai motori MCI
+I principali inquinanti emessi dai motori endotermici alternativi si dividono in **inquinanti gassosi**, **solidi**(particolato) e **prodotti dall'aossidazione di impurità**, oltre all'anidride carbonica ($CO_{2}$).
+
+
+## Inquinanti gassosi
+### 1. Monossido di Carbonio($CO$)
+- **Natura:** Deriva dall'**ossidazione incompleta** del carbonio contenuto nel combustibile. IL $CO$ formatosi sul fronte di reazione non completa la sua ossidazione in anidride carbonica ($CO_{2}$)
+- **Cause Principali:** Repentina diminuzione della temperatura durante la fase di espansione
+- **Parametri d'influenza:** Il rapporto d'aria o dosatura ($\frac{A}{F} /\lambda$). Al diminuire dell'aria disponibile, la formazione di $CO$ aumenta notevolmente.
+---
+### 2. Idrocarburi incombusti ($HC$)
+- **Natura:** Detti anche _emissioni organiche_, derivano anc'essi dall'ossidazione incompleta del combustibile e dell'idrogeno..
+- **Cause principali:**
+	1. **Flame Quenching**(Spegnimento della fiamma): Raffreddamento della fiamma a contato con le pareti calde/fredde della camera di combustione.
+	2. **Combustione incompleta**.
+	3. **Adsorbimento nel film d'olio**: Il combustibile viene assorbito dall'olio lubrificante sulle pareti dei cilindri e rilasciato incombusto durante l'espansione/scarico.
+	4. **Crevices filling**(Volumi meandri): Miscela che penetra negli anfratti della camera dove la fiamma non riesce ad entrare
+	
+- **Parametri d'influenza:** 
+	- Parametri $\frac{A}{F}$
+	- Anticipo di accensione
+	- Rapporto superficie/volume della camera di combustione
+	- Depositi in camera
+	- Regime a carico del motore
+	- Angolo d'incrocio delle valvole 
+	- Contropressione allo scarico
+---
+### 3. Ossidi di azoto ($NO_{x}:NO,NO_{2},NO_{3},\dots$)
+- **Natura:** Derivano dall'ossidazione dell'azoto contenuto principalmente nel comburente (aria) o nel combustibile.
+- **Cause principali:**
+	1. Elevate temperature medie raggiunte nella zona della fiamma
+	2. Rapida diminuzione della temperatura durante l'espansione, che causa il "congelamento" delle reazioni di riduzione de monossido di azoto ($NO$)
+- **Parametri d'influenza:**
+	- Rapporto $\frac{A}{F}$
+	- Anticipo d'accensione
+	- Ricircolo dei gas di scarico (EGR)
+	- Regime e craico del motore
+	- Rapporto di compressione 
+	- Grado di sovralimentazione
+---
+## Inquinanti Solidi (Particolato)
+- **Natura:** Costituito da particelle solide/composite derivanti dall'ossidazione incompleta dal combustibile e da composti metallici e additivi. Sono composti gassosi ad alta temperatura che, condensando e adsorbendo altri gas durante lo scarico e il raffreddamento, solidificano.
+- **Cause principali:** Scarso miscelamento locale tra combustibile e comburente.
+- **Parametri d'influenza:**
+	- Rapporto $\frac{A}{F}$
+	- Qualità del sistema di iniezione
+---
+## ALtri prodotti di combustione
+- **Prodotti dall'ossidazione di impurità**: Derivano dall'ossidazione di composti presenti nel combustibile come zolfo e piombo. 
+- **Anidride carbonica**: Deriva dall'ossidazione **completa** del carbonio. Non è inquinante tossico in senso stretto, ma è il principale gas a effetto serra.
+![[emissioni_inquinanti_dosatura.png]]
+---
+
+## Sistemi di abbattimento delle emissione alla scarico
+Per rispettari i limiti normativi sulle emissioni, i motori adottano specifici sistemi di post-trattamento:
+
+1. **Reattore catalitico trivalente (motori AS/benzina):**
+2. **Catalizzatore Selettivo SCR (Selective Catalyti Reduction, per motori diesel):**
+3. **Filtro antiparticolato**

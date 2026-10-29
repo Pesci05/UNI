@@ -165,3 +165,23 @@ I metodi CRUD vengono divisi in:
 
 - **LIVELLO 3**
 
+# The Constrained Application Protocol (CoAP)
+Le reti IOT, soprattutto quelle a **bassa potenza e lossy network**, hanno caratteristiche molto diverse da quelle di internet.
+
+- **Pacchetti dalla grandezza ridotta**
+- **Larghezza di banda minore**
+- **Bassa potenza**
+- **Bassi costi**
+- **Inaffidabilità**
+- **Duty cycling**
+
+## HTTP e TCP non sono adatti
+Per utilizzare i protocolli di livello applicativo, in un'applicazione di tipo IOT dve essere progettata in modo tale che il prtocollo, debba mantenere le **limitazioni dei layer sottostanti** e dalla natura del **smart object**.
+
+- **HTTP**: Prtocollo testuale che può facilmente fuoriuscire dalla dimensione massima che un sistema IOT possa contenere in un network frame. Analizzare il testo del messaggio HTTP serve potenza di calcolo che degli oggetti non posseggono.
+- **TCP**: Protocollo bastato sulle connessione, e le procedure di connessione possono essere molto aggravanti su oggetti, perchè sono lavori pesanti per dispositivi molto limitati.
+
+Però l'adozione di API RESTful nell'application layer può trasformare la rete di dispositivi in una rete con **architetura simile a quella di Internet**.
+
+## Protocollo CoAP
+Il protocolla **Contrained Application Protocol**, è un protocolla di livello applicativo

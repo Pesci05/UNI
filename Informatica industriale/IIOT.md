@@ -217,7 +217,7 @@ int sem_destroy(semt_t *sem);
 **Wait** di un semaforo:
 ```c++
 int sem_wait(sem_t* sem);
-int sem_trywait(sem_t* sem);
+int sem_trywait(sem_t* sem); //funzione non bloccante
 ```
 
 
@@ -293,4 +293,20 @@ void * body(void * arg)
 }
 ```
 
-aa
+E' un **semaforo binario**, specializzato nelle **mutue esclusioni**.
+
+# Pattern producer/consumer
+Per implementare questo tipo di pattern di programmazione, si deve implementare una **libreria**.
+
+Questo tipo di pattern viene utilizzato soprattutto sulle risorse che vengono condivise tra più thread.
+Per implementare un array circolare gestito da più array in pattern producer consumer, deve essere gestito da **funzioni primitive**(pop,push), e queste funzioni devono essere gestite da:
+- Semaforo per gestire la **sincronizzazione tra producer e consumer**
+- Semaforo per proteggere la **struttura data**
+Questi thread devono essere gestiti da dei semafori che però possono casuare un **deadlock**, evento che causa il completo blocco di un programma.
+[[08 - Concurrency.pdf#page=48|08 - Concurrency, pagina 48]]
+
+Per ovviare al deadlock, si deve **evitare di** **inserire parti di codice bloccante** all'interno di una critical sections.
+[[08 - Concurrency.pdf#page=50|08 - Concurrency, pagina 50]]
+
+
+

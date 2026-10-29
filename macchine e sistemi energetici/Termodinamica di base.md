@@ -36,9 +36,9 @@ Le trasformazioni termodinamiche sono un qualsiasi processo fisico in cui un sis
 Ogni stato di una trasformazione termodinamica, viene determinato quando si conoscono i valori delle variabili, **==pressione, volume e temperatura==**.
 
 Un sistema termodinamico è in **equilibrio** quando:
-- **Equilibrio termico**
-- **Equilibrio meccanico**
-- **Equilibrio chimico**
+- **Equilibrio termico**: non c’è scambio di calore con l'ambiente esterno 
+- **Equilibrio meccanico**: non viene esercitato lavoro tra sistema e ambiente esterno
+- **Equilibrio chimico**: non avvengono reazioni chimiche né alterazioni chimiche nel sistema, né a livello quantitativo, né a livello qualitativo 
 [[001_Termodinamica_di_base_MN.pdf#page=6|001_Termodinamica_di_base_MN, pagina 6]]
 
 Esistono 2 tipi di trasformazioni:
@@ -87,7 +87,7 @@ $\Delta U = Q - L$
 U ->  energia Interna
 $\Delta U \to$  variazione dell'energia interna
 Q -> calore scambiato
-L -> Lavoro scambiato
+L -> Lavoro compiuto
 
 **Il 1° principio - ENRGIA INTERNA:** 
 - stabilisce la conservazione delle energie
@@ -144,7 +144,14 @@ L'entropia misura quanto è **probabile lo stato in cui si trova il sistema**.
 
 
 # Principi generali
-#prinicipi_generali
+#prinicipi_generali 
+Una **macchina a fluido** è un dispositivo meccanico che scambia e trasforma energia con un fluido operatore (acqua, vapore, aria, gas combusti).
+
+- **Macchine Motrici:** Trasformano l'energia del fluido in lavoro meccanico sull'albero (es. _turbine a vapore, turbine a gas, motori a combustione interna_).
+- **Macchine Operatrici:** Assorbono lavoro meccanico per incrementare l'energia del fluido (es. _pompe, compressori, ventilatori_).
+- **Macchine Volumetriche (a flusso periodico):** Lo scambio avviene tramite la variazione di volume di una camera (es. _pistone/cilindro nei motori_).
+- **Macchine Dinamiche (Turbomacchine, a flusso continuo):** Lo scambio avviene tramite l'interazione dinamica tra le pale di una girante in rotazione e il fluido.
+
 v = cost $\to$ Isocora
 p = cost $\to$ **Isobara**
 h = cost $\to$ **Isoentalpica**
@@ -191,7 +198,6 @@ Attraverso la turbina il fluido subisce:
 - Diminuzione di temperatura
 - Incremento del volume specifico
 Questo porta ad un ==**AUMENTO DELLA PORTATA VOLUMETRICA**== 
-
 [[002_IntroduzioneAlleMacchine_MN.pdf#page=13|002_IntroduzioneAlleMacchine_MN, pagina 13]]
 
 ### Lavoro di espansione isonentropica
@@ -264,3 +270,30 @@ $q_{CO} = q_2 = h_C - h_O$ -> **Raffredamento del fluido**
 ![[Screenshot From 2025-10-01 13-35-56.png]]
 **RENDIMENTO TERMODINAMICO**
 ![[Screenshot From 2025-10-01 13-43-17.png]]
+
+
+# Scambiatori di calore
+Gli **scambiatori di calore** sono apparecchiature termiche progettate per trasferire energia termica (calore) tra due o più fluidi che si trovano a temperature differenti, **senza che i fluidi entrino in contatto diretto** tra loro (scambio a superficie o a contatto indiretto).
+
+---
+
+### 1. Come Funzionano
+Il calore si trasferisce spontaneamente dal fluido più caldo a quello più freddo attraverso una parete divisoria (solitamente metallica). Il processo combinato comprende:
+1. **Convezione** dal fluido caldo alla parete.
+2. **Conduzione** attraverso lo spessore della parete metallica.
+3. **Convezione** dalla parete al fluido freddo.
+
+*Negli impianti energetici (come le centrali termoelettriche o i cicli combinati), esempi tipici di scambiatori sono i generatori di vapore, i condensatori, i surriscaldatori e le caldaie a recupero (HRSG).*
+
+---
+
+### 2. Configurazioni Principali del Flusso
+A seconda della direzione in cui si muovono i due fluidi all'interno dello scambiatore, si distinguono due configurazioni fondamentali:
+
+1. **Scambiatore in Equicorrente (parallelo):**
+   * I due fluidi entrano dallo stesso lato e scorrono **nella stessa direzione**.
+   * *Caratteristica:* La temperatura del fluido freddo non può mai superare la temperatura di uscita del fluido caldo. L'efficienza termica è limitata.
+
+2. **Scambiatore in Controcorrente:**
+   * I due fluidi entrano da lati opposti e scorrono **in direzioni opposte**.
+   * *Caratteristica:* È la configurazione termodinamicamente più efficiente. Permette al fluido freddo di raggiungere temperature superiori alla temperatura di uscita del fluido caldo, massimizzando il recupero di calore a parità di superficie.
