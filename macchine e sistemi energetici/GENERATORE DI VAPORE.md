@@ -8,12 +8,12 @@ All'interno dei **sistemi energetici a vapore (cicli Rankine-Hirn)** e degli **i
 
 Per ottimizzare lo scambio termico ed evitare shock termici, la trasformazione dell'acqua in vapore avviene attraversando **tre sezioni principali disposte in serie**:
 1. **ECONOMIZZATORE**
-	Riceve l'acqua liquida compressa dalla pompa di alimento e la preriscalda sfruttando i fumi a temperatura più bassa, portandola in prossimità della temperatura di saturazione.
+	Riceve l'acqua liquida compressa dalla pompa di alimento e la preriscalda sfruttando i fumi a temperatura più bassa, portandola in prossimità della temperatura di saturazione. ^1676a5
 2. **EVAPORIZZATORE**
-	Compie il cambio di fase da acqua liquida satura a vapore saturo secco a pressione e temperatura costanti.
+	Compie il cambio di fase da acqua liquida satura a vapore saturo secco a pressione e temperatura costanti. ^2726ef
 3. **SURRISCALDATORE**
 	Riceve il vapore saturo secco e ne innalza ulteriormente la temperatura al di sopra della temperatura di saturazione, producendo **vapore surriscaldato** ad alta entalpia prima dell'ingresso in turbina a vapore.
-![[Pasted image 20261021161558.png|549]]
+![[Pasted image 20261021161558.png|549]] ^16978c
 # Prametri caratteristici delle combustione
 ## Massa d'aria stechiometrica
 La **miscela stechiometrica** rappresenta il rapporto aria/combustibile corrispondente alla **minima quantità teorica d'aria** affinché la combustione del combustibile sia completa.

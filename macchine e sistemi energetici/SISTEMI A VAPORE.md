@@ -1,11 +1,23 @@
-# Ciclo HIRN
+mo# Ciclo HIRN
 #ciclo_surriscaldamento
 [[003_SistemiAVapore_MN.pdf#page=2|003_SistemiAVapore_MN, pagina 2]]
 Utilizza un liquido operatore, di solito l'acqua, ed essendo un ciclo ad ogni cambiamento alla fine torna sempre ai valori di partenza.
 
 ![[Pasted image 20251009094214.png]]
 
-Per ogni trasformazione il fluido operatore in questo ciclo ottiene 4 trasformazioni,:
+L'impianto è costituito da:
+-  **[[GENERATORE DI VAPORE]]** a sua volta formato da:
+	- **[[GENERATORE DI VAPORE#^1676a5|Economizzatore]]** 
+	- **[[GENERATORE DI VAPORE#^2726ef|Vaporizzatore]]**
+	- **[[GENERATORE DI VAPORE#^16978c|Surriscaldatore]]**
+	Questa macchina converte l'energia chimica del combustibile in energia termica.
+- **Turbina a vapore**: Macchina motrice, che utilizzando il vapore surriscaldato ad alta pressione ed entalpia si espande fino alla pressione di condensazione, durante l'espansione l'energia del vapore viene convertita in **lavoro meccanico**
+- **Condensatore**: Scambiatore di calore in cui il vapore uscente dalla trubina viene condensato completamente cedendo calore al fuido refrigerante.
+- **Pompa di estrazione/alimento**: La pompa di **alimento** **aspira acqua** dal serbatoio e la invia al generatore di vapore, invece quella di **estrazione** estrae la condensa raccolta sul fondo del condensatore e la invia al serbatoio. 
+- **Alternatore**: Converte l'energia meccanica prodotta dalla turbina in energia elettrica.
+- **Serbatoio**: Serbatoio a pressione atmosferica.
+
+Per ogni trasformazione il fluido operatore in questo ciclo subisce 4 trasformazioni,:
 - **Pressurizzazione**
 	Avviene nel tratto **o - o"** 
 - **Riscaldamento**
@@ -13,7 +25,7 @@ Per ogni trasformazione il fluido operatore in questo ciclo ottiene 4 trasformaz
 	$q_{oa} = q_{1} = h_{a}-h_{o}$
 - **Espansione**
 	Avviene nel tratto **a - b**
-	$l_{ab} = h_{a} - h_{b}$
+	$l_{ab} = h_{a} - h_{b} = l_{is}$
 - **Condensazione**
 	Avviene nel tratto **b - o**
 	$q_{bo} = q_{2} = h_{b} - h_{o}$
@@ -21,6 +33,30 @@ Per ogni trasformazione il fluido operatore in questo ciclo ottiene 4 trasformaz
 Queste trasformazione avvengono nel momento che il fluido attraverso le corrispettive macchine.
 [[003_SistemiAVapore_MN.pdf#page=8|003_SistemiAVapore_MN, pagina 8]]
 
+Il rendimento termodinamico di questo impianto viene definito da:
+$$
+\eta_{th} = \frac{l_{is}}{q_{1}} = \frac{h_{a}-h_{b}}{h_{a}-h_{o}}
+$$
+La potenza termica fornita invece è:
+$$
+\dot{Q_{1}} = \dot{m_{v}}\cdot q_{1} = \dot{m_{v}}\cdot (h_{a}-h_{o})
+$$
+La potenza utila fornita dalla turbina è:
+$$
+P_{ut} = \dot{m_{v}} \cdot (h_{a}-h_{b'})\eta_{mt} = \dot{m_{v}} \cdot (h_{a}-h_{b'})\eta_{mt}\eta_{it}
+$$
+dove i rendimenti aggiunti sono rispettivamente il rendimento **interno della turbina** e il rendimento **meccanico della turbina**.
+
+La potenza elettrica fornita dall'alternatore è:
+$$
+P_{e} = P_{ut}\cdot \eta_{aux}\cdot \eta_{alt} = \dot{m_{v}}\cdot(h_{a}-h_{b'})\eta_{it}\eta_{mt}\eta_{aux}\eta_{alt}
+$$
+I rendimenti aggiunti nell'operazione centrale sono rispettivamente il rendimento dei  **componenti ausiliari** come pompe e altri, invece l'altro rendimento indica quello dell'**alternatore**.
+
+Il rendimento totale dell'impianto viene definito da:
+$$
+\eta_{imp} = \frac{P_{e}}{\dot{m_{c}}\cdot k_{i}} = \frac{\dot{m_{v}}\cdot(h_{a}-h_{b'})\eta_{it}\eta_{mt}\eta_{aux}\eta_{alt}}{\dot{m_{v}}\cdot (h_{a}-h_{o}) / \eta_{g}} = \eta_{it}\eta_{mt}\eta_{aux}\eta_{alt}\eta_{th}\eta_{g}
+$$
 ## Ottimazzazione del rendimento termodinamico
 1. **Influenza della pressione a condensazione**
 	Più la differenza di temperatura fra le trasformazioni **isoterme**, più **migliora** il rendimento ad una certe pressione di condensazione $p_k$ , come succede nel [[Termodinamica di base#Teorema di Carnot|Ciclo di trasformazione di carnot]].
@@ -29,7 +65,8 @@ Queste trasformazione avvengono nel momento che il fluido attraverso le corrispe
  	[[003_SistemiAVapore_MN.pdf#page=15|003_SistemiAVapore_MN, page 15]]
 
 2. **Influenza della pressione di vaporizzazione**
-	La variazione di pressione di vaporizzazione causa un aumento del rendimento più la variazione **avviene lontano** dalla cuspide della curva termodinamica.
+	La variazione di pressione di vaporizzazione causa un aumento del rendimento se nel campo delle basse pressioni, noi **aumentiamo** la **pressione di vaporizzazione** determina un **aumento del rendimento termodinamico**.
+	Però più ci si avvicina alla cuspide della campa, ci sia avvicina alla **pressione critica**, questo comporta una **diminuzione del rendimento termodinamico** all'aumentare della pressione di vaporizzazione.
 	[[003_SistemiAVapore_MN.pdf#page=17|003_SistemiAVapore_MN, page 17]]
 
 3. **Influenza del grado di surriscaldamento**

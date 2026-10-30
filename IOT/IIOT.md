@@ -184,4 +184,30 @@ Per utilizzare i protocolli di livello applicativo, in un'applicazione di tipo I
 Però l'adozione di API RESTful nell'application layer può trasformare la rete di dispositivi in una rete con **architetura simile a quella di Internet**.
 
 ## Protocollo CoAP
-Il protocolla **Contrained Application Protocol**, è un protocolla di livello applicativo
+Il protocolla **Contrained Application Protocol**, è un protocollo di livello applicativo progettato per essere utilizzato da dispositivi con basse capacità computazionali, batteria limitata e opareno in reti circoscritte.
+
+**FUNZIONI CHIAVE**
+---
+- Standardizzazione
+- Protocollo RESTful
+- Protocollo binario
+- Facile da mappare con HTTP
+- Trasporto leggero
+- Funzioni IOT
+
+## CoAP vs HTTP
+![[Pasted image 20261029150050.png]]
+
+CoAP si basa sul modello di comunicazione **richiesta/risposta**, ma si basa su **UDP**.
+- **Affidabilità** non è proposta dal livello di trasporto, servono le ritrasmissioni e sono gestite da CoAP stesso
+- **Comunicazione asincrona** richiede un meccanismo per accoppiare la richiesta alla sua risposta.
+
+Per questo CoAP è formato logicamente da **2 livelli**:
+- **Messaging layer**
+	- Si occupa della comunicazione tra 2 endpoint
+	- Supporta la rilevazione di duplicati
+	- Affidabilità fornita da messaggi ACK e ritrasmissioni (**opizionale**)
+- **Layer richiesta/risposta**
+	- Implementa interazioni RESTful
+	- Richieste e risposte sono trasportate da messaggi del messaging layer
+
