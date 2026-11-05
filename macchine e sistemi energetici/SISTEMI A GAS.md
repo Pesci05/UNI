@@ -8,7 +8,7 @@ Sono anche produttori di inquinanti.
 # Turbo-gas semplice
 ![[Pasted image 20251022103036.png]]
 - **C**
-	**Compressore** dinamico assiale, aspira l'aria comprimendola portandola alla **pressione di esercizio**, $\frac{p_{1}}{p_{2}}$ è detto **rapporto di compressione**$\beta$.
+	**Compressore** dinamico assiale, aspira l'aria comprimendola portandola alla **pressione di esercizio**, $\frac{p_{2}}{p_{1}}$ è detto **rapporto di compressione**$\beta$, per azionare il compressore serve lavoro.
 - **CC**
 	**Camera di combustione**, l'aria compressa subisce un riscaldamento portando un **conseguente aumento di volume**. I prodotti della combustione diventano parte integrante del fluido operatore. 
 - **TG**
@@ -90,7 +90,8 @@ $$
 
 **MASSIMO RENDIMENTO**
 ![[Pasted image 20251023101418.png]]
-
+Punto dove il **rapporto tra lavoro utile e rapporto di compressione e maggiore**, questo significa che il punto dove si trova non è lo stesso di dove si trova il punot di massimo lavoro utile.
+Infatti il primo indica la massima quantità di lavoro prodotto, invece il secondo indica la massima frazione di calore convertita in lavoro.
 ### GRUPPO TURBO-GAS CON RECUPERO DI CALORE
 Si utilizzano i fumi caldi uscenti dalla turbina, che verrebbero scartati, per **PRERISCALDARE** il fluido operatore prima che entri in **CAMERA DI COMBUSTIONE**.
 
@@ -101,13 +102,22 @@ $$\eta_{rig} = \frac{L_{netto}}{c_p (T_3 - T_x)} > \eta_{semplice} = \frac{L_{ne
 
 ### REGOLAZIONE DEI GRUPPI TURBOGAS
 Si può regolare la potenza elettrica in uscita da una turbna grazie a vari paramentri come, densità e velocità del fluido in ingresso al compressore, e alla sezione d'ingresso del compressore.
+
+La potenza elettrica nei gruppi a turbo-gas è data da:
+$$
+P_{e} = \dot{m_{a}}\cdot l_{reale}\cdot \eta_{m}\cdot \eta_{aux}\cdot \eta_{alt} = \rho_{a}\cdot c_{a}\cdot \Omega \cdot l_{reale}\cdot \eta_{m}\cdot \eta_{aux} \cdot \eta_{alt}
+$$
+
 [[004_SistemiAGas_MN.pdf#page=22|004_SistemiAGas_MN, pagina 22]]
 
 Esistono **3 metodi di regolazione**:
 1. **Ciclo termodinamico**
+	Riducendo la temperatura $T_{3}$ all'ingresso della trubina diminuendo il combustibile. Scendendo il lavoro prodotto e, in genere, anche il rendimento. 
 	![[Pasted image 20251023110359.png]]
-2. Variare lo stato fisico del fluido in ingresso del compressione
+2. **Variare lo stato fisico del fluido in ingresso del compressione**
+	La portata dell'aria dipende dalla sua densità, aria più fredda e densa permette di aspirarne una quantità maggiore e tende ad aumentare la potenza, invece aria calde e rarefatta la riduce. 
 3. **Velocità di rotazione**
+	Cambiando velocità si può cambiare la poratta d'aria e quindi la potenza, ma per farlo bisgona disaccoppiare l'alternatore dalla trubina perchè l'alternatore deve girare a frequenza costante, per questo si deve utilizzare un **turbina di potenza** come in un **[[SISTEMI A GAS#TURBOGAS SU 2 ASSI|Sistema a 2 assi]]**
 	![[Pasted image 20251023110437.png]]
 
 # TURBOGAS SU 2 ASSI
@@ -119,9 +129,9 @@ Un ciclo a 2 assi in questo caso, la turbina viene separata in 2:
 	Il primo asse comprende Camera di combustione, Compressore, e **turbina ad alta pressione**.
 	In questo ramo la turbina tramite l'espansione del gas fino ad una pressione intermedia, produce il lavoro **strettamente necessario** per trascinare il compressore.
 	Quindi lavora in condizione di autosufficienza.
-	$T_{3}-T_{in}\eta_{mTap} =\frac{T_{2}-T_{1}}{\eta_{m,C}}$ ^65da47
+	$T_{3}-T_{in}\eta_{mTap} =\frac{T_{2}-T_{1}}{\eta_{m,C}}$ 
 - **SECONDO ASSE (ASSE DI POTENZA)**
-	Il secondo asse comprende la **turbin a bassa pressione** e l'alternatore, i gas che sono parzialmente espansi entrano nella turbina ad bassa pressione per espandersi fino a pressione ambientale, in questo caso il lavoro estratto dalla turbina costituirà il **lavoro erogato deall'impianto**.
+	Il secondo asse comprende la **turbina bassa pressione** e l'alternatore, i gas che sono parzialmente espansi entrano nella turbina a bassa pressione per espandersi fino a pressione ambientale, in questo caso il lavoro estratto dalla turbina costituirà il **lavoro erogato deall'impianto**.
 
 Il suo diagramma sarà:
 - **Tratto 1 → 2 (Compressione)**: L'aria passa da $p_1$ a $p_2$ assorbendo il lavoro $L_c = c_p(T_2 - T_1)$.
@@ -130,7 +140,7 @@ Il suo diagramma sarà:
 - **Tratto 4a → 4 (Espansione Turbina LP)**: Espansione reale dalla pressione intermedia $p_{int}$ alla pressione di scarico $p_1$. Il salto entalpico fornisce il lavoro utile: $$L_{netto} = c_p (T_{4a} - T_4) = L_{t,LP}$$
 - **Tratto 4 → 1 (Scarico Fumi)**: Raffreddamento/espulsione dei fumi esausti a pressione atmosferica $p_1$.
 
-In questo caso le turbine sono **disaccoppiate**, questo significa che l'asse di potenza può rotare a velocità costante o variabile al carico meccanico, invece l'asse generatore varia la sua velocità per modulare la portata d'aria aspirata.
+In questo caso le turbine sono **disaccoppiate**, questo significa che l'asse di potenza può rotare a velocità costante o variabile in funzione del carico meccanico, invece l'asse generatore varia la sua velocità per modulare la portata d'aria aspirata.
 
 ## 2 ASSI CON POST-COMBUSTIONE
 ![[Pasted image 20261010001552.png]]
@@ -150,7 +160,14 @@ Il diagramma termodinamico sarà:
 - **Tratto 4a → 3b (Post-Combustione)**: Riscaldamento isobaro a **pressione intermedia** $p_{int}$ che riporta la temperatura del fluido al valore di picco ($TIT_2 = 1400\text{ K}$, punto 3b).
 - **Tratto 3b → 4 (Seconda Espansione LP)**: Espansione finale in turbina LP dall'isobara $p_{int}$ alla pressione atmosferica $p_1$ (punto 4).
 - **Tratto 4 → 1 (Scarico Fumi)**: Raffreddamento/espulsione dei fumi a pressione atmosferica.
-
+La potenza elettrica di questo tipo di impianto viene calcolata:
+$$
+P_{e} = \dot{m_{a}}L_{netto}\eta_{m}\eta_{aux}\eta_{alt}
+$$
+Invece il rendimento termodinamico:
+$$
+\eta_{th} = \frac{L_{netto}}{q_{in,1}+q_{in,2}}
+$$
 Gli assi di questo tipo di ciclo lavorano come quello del **[[#TURBOGAS SU 2 ASS|Ciclo a 2 assi]]**.
 
 

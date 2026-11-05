@@ -1,4 +1,4 @@
-	**Con** un campo elettrico $q\vec{E}$ = $\vec{F}$  
+**Con** un campo elettrico $q\vec{E}$ = $\vec{F}$  
 $\vec{E} = -\vec{\nabla{}}\circ{V}$ 
 **Potenziale elettrico** è di definizione una misura differenziale, infatti non si può misurare il potenziale elettrico in un solo punto, ma si deve fare la differenza tra 2 punti.
 

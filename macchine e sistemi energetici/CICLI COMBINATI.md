@@ -7,11 +7,11 @@ La combinazio dei due cicli può avvenire grazie ai rendimenti delle **turbine a
 ![[Pasted image 20251029105627.png]]
 ![[Pasted image 20261011233256.png]]
 
-L'efficienze di questo tipo d'impianto viene determianta da $\sigma$:
+L'efficienza della caldaia a recupero (HRSG) viene determianta da $\sigma$:
 ![[Pasted image 20251029114833.png]]
 
 Il **pinch point**, è la **differenza minima di temperatura** tra i fumi in raffreddamento e l'acqua in evaporazione. Si verifica esattamente all'**uscita dell'evaporatore lato fumi**: $$\Delta T_{pp} = T_{fumi, EVA, out} - T_{sat}(p)$$
-Questo dato serve anche per definire l'**efficienza dello scmabiatore di calore**, per aumentarne l'efficienza si devono utilizzare HSRG a più livelli di pressione.
+Questo dato serve anche per definire l'**efficienza dello scambiatore di calore**, per aumentarne l'efficienza si devono utilizzare HSRG a più livelli di pressione.
 ![[Pasted image 20261012000635.png]]
 - **SURRISCALDATORE**
 	I fumi a massima temperatura incontrano il vapore saturo secco proveniente dal corpo d'allevamento (_drum_) e lo riscaldano fino alla temperatura finale di surriscaldamento $T_{sh}$.
@@ -20,9 +20,16 @@ Questo dato serve anche per definire l'**efficienza dello scmabiatore di calore*
 - **ECONOMIZZATORE**
 	I fumi oramai raffreddati incontrano l'acqua liquida ad alta pressione spinta dalla pompa d'alimento e la preriscaldano fino a una temperatura vicina a quella di saturazione.
 
+La potenza elettrica vine calcolata con:
+$$
+P_{e} = P_{g} + P_{v} \\
+P_{g} = \dot{m_{a}}\cdot q_{1g}\cdot\eta_{thg}\cdot \eta_{iTG} \cdot\eta_{mTG}\cdot \eta_{aux} \cdot \eta_{altTG} \implies Parte \space gas \\
+P_{v} = \dot{m_{a}}\cdot q_{1v}\cdot\eta_{thv}\cdot \eta_{iV}\cdot \eta_{mTV}\cdot \eta_{aux} \cdot\eta_{altTV} \implies Parte \space Vapore
+$$
 
-Il rendimento si ricava sempre nello stesso modo cioè:
-![[Pasted image 20251029114910.png|237]]
+Il rendimento dell'impianto viene calcolato:
+$$
+\eta_{imp} = \frac{P_{e}}{\dot{m_{c}}\cdot k_{i}} = \frac{P_{g}+P_{v}}{\dot{m_{c}}\cdot k_{i}}$$
 
 Per migliorare ancora di più il rendimento di questo **Ciclo si può introdurre la post-combustione:**
 ![[Pasted image 20261012001634.png|700]]
@@ -31,8 +38,8 @@ Per migliorare ancora di più il rendimento di questo **Ciclo si può introdurre
 
 | Parametro                                              | Ciclo Combinato **Senza Post-Combustione**                                                    | <br>Ciclo Combinato **Con Post-Combustione**                                                                              |
 | ------------------------------------------------------ | --------------------------------------------------------------------------------------------- | ------------------------------------------------------------------------------------------------------------------------- |
-| **Apporto di Combustibile**                            | Esclusivamente nella camera di combustione della Turbina a Gas (TG).                          | In due punti: nella TG e nei **bruciatori integrati (****duct burners****)** nei condotti dell'HRSG.                      |
-| **Temperatura Fumi in HRSG**                           | Pari alla temperatura di scarico del Turbogas (**550–600 °C**).<br>                           | Fumi riscaldati ulteriormente fino a **700–900 °C** prima di entrare nello scambiatore2.                                  |
+| **Apporto di Combustibile**                            | Esclusivamente nella camera di combustione della Turbina a Gas (TG).                          | In due punti: nella TG e nei **bruciatori integrati** <br>(**duct burners***) nei condotti dell'HRSG.                     |
+| **Temperatura Fumi in HRSG**                           | Pari alla temperatura di scarico del Turbogas (**550–600 °C**).<br>                           | Fumi riscaldati ulteriormente fino a **700–900 °C** prima di entrare nello scambiatore.                                   |
 | **Potenza della Turbina a Vapore (TV)**<br>            | Vincolata rigidamente dalle condizioni operative e dal carico del Turbogas.                   | **Aumentabile su richiesta (+20% fino a +50%)** grazie alla maggiore portata di vapore generata.                          |
 | **Rendimento Elettrico Globale (**$\eta_{cc}$**)**<br> | **Massimo teorico e pratico (60–62%)**; tutto il calore entra alla temperatura di picco $TIT$ | **Leggermente inferiore a bruciatore acceso (56–58%)**, poiché il calore extra ha un rendimento di conversione inferiore. |
 | **Flessibilità Operativa**<br>                         | Meno flessibile; la produzione di vapore segue passivamente la turbina a gas.                 | **Molto elevata**; ideale per il _peak shaving_ (copertura dei picchi di domanda) e la cogenerazione flessible.           |

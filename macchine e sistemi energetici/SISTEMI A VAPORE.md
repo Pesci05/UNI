@@ -84,12 +84,15 @@ Dato un ciclo termodinamico generico, si può comparare con un ciclo termodinami
 ![[Pasted image 20251009105813.png]]
 In questo tipo di ciclo il fluido una volta uscito dalla caldaia, esce ad una certa pressione di vaporizzazione $P_v$ passando attraverso una turbina di **alta pressione(AP)**, uscendo e passando di nuovo nella caldaia per risurriscaldarsi e attraversare la turbina di **bassa pressione(BP)**.
 
-Per questo tipo di ciclo se si vuole utilizzare il terzo tipo di [[SISTEMI A VAPORE#Ottimazzazione del rendimento termodinamico|Ottimizzazione del rendimento termodinamico]] , le aree questa volta saranno, la prima il ciclo di HIRN, invece la seconda la parte di risurriscaldamento.
+Per questo tipo di ciclo se si vuole utilizzando il terzo tipo di [[SISTEMI A VAPORE#Ottimazzazione del rendimento termodinamico|Ottimizzazione del rendimento termodinamico]] , le aree questa volta saranno, la prima il ciclo di HIRN, invece la seconda la parte di risurriscaldamento.
 
 Il rendimento in questo ciclo aumenta rispetto a quello di HIRN solo quando $P_k< P_{rs}^* < P_v$    
 [[003_SistemiAVapore_MN.pdf#page=20|003_SistemiAVapore_MN, pagina 20]]
 
 # CICLO RIGENERATIVO
+nel ciclo con spillamento una parte dle vapore viene prelevato dalla turbina per **preriscaldare l'acqua** di alimento prima che entri in caldaia. Il vapore spillato cede calore nel rigeneratore, l'acqua si riscalda e il vapore spillato condensa, oppure si miscela con essa, a seconda del tipo di rigeneratore.
+Questo permette all'acqua in entrata della caldaia di entrare già a temperature più alte.
+
 ![[Pasted image 20251009121138.png]]
 Si Divide il classico ciclo di HIRN in tre cicli:
 ![[Pasted image 20251009121247.png]]

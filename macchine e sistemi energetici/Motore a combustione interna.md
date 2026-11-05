@@ -107,7 +107,7 @@ Il diagramma di un motore a 4 tempi si compone di **due cappi (o anelli)**:
 	    Queste 2 assieme cereano un **angolo di incrocio** questo permette di sfrutare  l'inerzia dei gas combusti per:
 	    - migliorare il lavaggio
 	    - richiamare aria fresca
-	    - risurre il lavoro di pompaggio
+	    - ridurre il lavoro di pompaggio
 		Oltre a questi 2 esistono anche:
 		- **RCA**(Ritardo chiusura aspirazione): sfrìutta l'inerzia delle masse in movimento per migliorare il riempimento
 		- **AAS**(Anticipo apertura scarico): Riduce la pressione all'interno del cilindro prima del PMI per ridurre il lavoro di pompaggio al costo di una piccola parte del lavoro di espansione
@@ -123,7 +123,7 @@ Per confrontare motori di cilindrate diverse, dal diagramma di indicatore si ric
 $$
 P_{mi} = \frac{L_{i}}{V_{c}} = \frac{1}{V_{c}}\oint pdV
 $$
-𝑝𝑚𝑖=𝐿𝑖𝑉𝑐=1𝑉𝑐∮𝑝𝑑𝑉Rappresenta quella pressione ipotetica e costante che, agendo sul pistone durante un'unica corsa di espansione, compirebbe lo stesso lavoro netto del ciclo reale.
+Rappresenta quella pressione ipotetica e costante che, agendo sul pistone durante un'unica corsa di espansione, compirebbe lo stesso lavoro netto del ciclo reale.
 
 ---
 ## Cicli termodinamici ideali
@@ -144,12 +144,12 @@ $$
 $$
 3.  **Somministrazione di calore**(2-3)
 	Dal momento che in un ciclo ideale non ci sono reazioni chimiche reali, l'energia cioè il **calore** viene **assorbito interamente** dall'esetrno grazie ad uno scambiatore di calore ideale.
-	- **Ciclo Otto** $\to$ Somministrazione di calore di tipo **isocora**, cioè a **colume costante**, simulando la combustione della miscela benzian-aria.
+	- **Ciclo Otto** $\to$ Somministrazione di calore di tipo **isocora**, cioè a **volume costante**, simulando la combustione della miscela benzina-aria.
 	- **Ciclo Diesel** $\to$ Somministarzione di calore di tipo **isobara**, cioè a pressione costante, simulando la combustione progressiva del gasolio.
 	
 4. **Espansione isoentropica**(3-4)
 	Il fluido ad alta pressione e temperatura si espande dal PMS al PMI spingendo il pistone, grazie ad una **trasformazione adiabatica e reversibile** molto simile alla compressione avvenuta nel tratto 1-2, nel tratto 3-4 il motore compie **il lavoro utilie**.
-	- Nel quart punto si individa il l'istante nel quale si apre la valvola di scarico al PMI 
+	- Nel quarto punto si individa l'istante nel quale si apre la valvola di scarico al PMI 
 5. **Cessione di calore**(4-1)
 	Rappresenta la fase di scarico/rinnovo della carica.
 	In un ciclo ideale viene rappresentata come una **cessione istantanea e reversibile di calore verso l'esterno a volume costante**.
@@ -170,7 +170,7 @@ Il calore viene calcolato nei diversi cicli:
 1. **Calore introdotto**
 	- **Otto**
 $$
-	q_{1} = c_{v} =(T_{3}-T_{4})
+	q_{1} = c_{v} =(T_{3}-T_{2})
 $$
 	- **Diesel**
 $$
@@ -180,7 +180,7 @@ $$
 $$
 	q_{1} = c_{v}(T_{3'}-T_{2})+ c_{p}(T_{3}-T_{3'})
 $$
-1. **Calore ceduto**
+2. **Calore ceduto**
 	- **Per tutti e 3 i cicli:**
 $$
 	q_{2} = c_{v}(T_{4}-T_{1})
@@ -234,11 +234,11 @@ Poiché il termine tra parentesi quadre nel Ciclo Diesel $\left[ \frac{𝑏^�
 > $\eta_{thO}>\eta_{thS}>\eta_{thD}$
 
 ## Confronto tra Benzina e Diesel
-Sebbene a parità di 𝛽 il Ciclo Otto sia teoricamente più efficiente, **nella realtà i motori Diesel sono più efficienti dei motori ad accensione comandata (benzina)**. Le differenze si spiegano analizzando due diverse condizioni di confronto:
+Sebbene a parità di $\beta$ il Ciclo Otto sia teoricamente più efficiente, **nella realtà i motori Diesel sono più efficienti dei motori ad accensione comandata (benzina)**. Le differenze si spiegano analizzando due diverse condizioni di confronto:
 ![[confronto_rendimento_otto_diesel_beta.png]]
 
 ### A parità di rapporto di compressione (𝛽) e calore introdotto ($q_{1}$)
-- **Condizione:** $\beta_{0}=\beta_{D}$ e $q_{1,o}=q_{1D}$
+- **Condizione:** $\beta_{O}=\beta_{D}$ e $q_{1,o}=q_{1D}$
 - **Esito:** $\eta_{thO} > \eta_{thD}$
 - **Motivazione Grafica (𝑇 −𝑠):** Il calore ceduto dal Diesel $q_{2,D} = c_{v}(T_{4D}-T_{1})$ è **maggiore** di quello ceduto dall'Otto $q_{2,0} = c_{v}(T_{4o}-T_{1})$ perché $T_{4D} > T_{4O}$.           Poiché $\eta = 1 - \frac{q_{2}}{q_{1}}$, il ciclo Otto ha un rendimento maggiore.
 ![[confronto_otto_diesel_ts_beta.png]]
@@ -256,6 +256,7 @@ Poichè $T_{4D} < T_{4O}$ il calore scaricato all'esterno dal ciclo Diesel è mi
 $$
 q_{2D}<q_{2O} \implies \eta_{thD} > \eta_{thO}
 $$
+Questo perché il diesel lavora fino ad un rapporto di pressione $\beta_{D}$ che sarà sicuramente maggiore del rapporto di pressione del ciclo benzina che si deve limitare alla pressione massima $P_{max}$ dettata dai componenti del motore.
 
 | Caratteristica                           | Ciclo Otto                 | Ciclo Sabathé (Misto)                       | Ciclo Diesel                   |
 | :--------------------------------------- | :------------------------- | :------------------------------------------ | :----------------------------- |
@@ -339,9 +340,8 @@ $$
     
 - **Rendimento Globale / Totale (𝜂𝑡𝑜𝑡):** Rapporto tra il lavoro effettivo reso all'albero e l'energia chimica introdotta con il combustibile: 
 $$
-\eta_{tot} = \frac{L_{e}}{Q_{1}} = \eta_{th} \cdot \eta_{i} \eta_{m}
+\eta_{tot} = \frac{L_{e}}{Q_{1}} = \eta_{th} \cdot \eta_{i} \cdot \eta_{m}
 $$
-    𝜂𝑡𝑜𝑡=𝐿𝑒𝑄1=𝜂𝑡ℎ⋅𝜂𝑖⋅𝜂𝑚
     
 - **Rendimento Volumetrico (𝜂𝑣):** Misura la capacità del motore di riempire il cilindro con aria/miscela rispetto alla sua capacità geometrica teorica:
 $$
@@ -397,9 +397,9 @@ L'intervallo della **velocità della rotazione n**, è definito da:
 ![[curve_caratteristiche_slide008-v2.png]]
 ### Curva della coppia motrice
 - **Tratto iniziale crescente:** A bassi regimi partendo da $n_{min}$ la coppia aumenta con l'aumentare di n. In questo intervallo il **rendimento volumetrico** $\eta_{v}$ cresce grazie al miglioramento degli effetti dinamici d'inerzia di aspirazione.
-- **Punto di massimo($n_{M}$):** La coppia raggiunge il suo valore massimo al regime $n_{M}$. IN questa zona il motore lavora nelle condizioni ottimali di riempimento, con $\eta_{v}$ al massimo, e rendimento globale.
+- **Punto di massimo($n_{M}$):** La coppia raggiunge il suo valore massimo al regime $n_{M}$. In questa zona il motore lavora nelle condizioni ottimali di riempimento, con $\eta_{v}$ al massimo, e rendimento globale.
 - **Tratto decrescente:** Oltre $n_{M}$ la coppia inizia a scendere perchè:
-	1. Il rendimento volumetrico 𝜂𝑣 crolla per via dell'aumento delle perdite di carico nei condotti (proporzionali al quadrato della velocità del fluido).
+	1. Il rendimento volumetrico $\eta_{v}$ crolla per via dell'aumento delle perdite di carico nei condotti (proporzionali al quadrato della velocità del fluido).
 	2. Le perdite per attrito meccanico e di pompaggio aumentano notevolmente, riducendo $\eta_{tot}$.
 
 >**Nota:** Nei motori **Diesel**, la curva della coppia 𝑀 è tendenzialmente più "piatta" rispetto ai motori a benzina (Ciclo Otto) perché il rendimento volumetrico è meno variabile e la regolazione del carico avviene per _qualità_ (variando la quantità di combustibile iniettato) anziché per _quantità_ tramite farfalla
@@ -410,7 +410,13 @@ Poichè $P = 2\pi n\cdot M$, la potenza dipende sia da regime n sia dalla coppia
 - $n_{M} < n < n_{p}$: Anche se la coppia M comincia a diminuire, l'aumento di n prevale, facendo continuare a salire fino al suo picco massimo al regime $n_{p}$ con ($N_{p} > n_{M}$)
 - $n>n_{p}$: Il calo della coppia M diventa così rapido e marcato da superare l'aumento del regime n, causando un crollo repentino della potenza erogata.
 ---
+### Curva del Consumo Specifico di Combustibile
+Poiché $c_s = \frac{1}{\eta_{tot} \cdot H_i}$, la curva del consumo specifico $c_s(n) \left[\frac{g}{kWh}\right]$ ha un andamento a conca (a "U") speculare a quello del rendimento globale $\eta_{tot}$:
 
+- **Tratto iniziale decrescente ($n_{min} < n < n_M$):** Partendo dal regime minimo, $c_s$ diminuisce al crescere di $n$ grazie all'aumento del rendimento volumetrico $\eta_v$ e alla riduzione delle perdite termiche alle pareti per ciclo.
+- **Punto di minimo ($n_{M}$):** Il minimo consumo specifico si registra in corrispondenza (o nelle vicinanze) del regime di **coppia massima $n_M$**, dove il rendimento globale $\eta_{tot}$ raggiunge il suo valore massimo.
+- **Tratto finale crescente ($n > n_M$):** Oltre $n_M$, $c_s$ torna ad aumentare a causa del crollo di $\eta_v$ (aumento delle perdite di carico nei condotti) e del forte incremento delle perdite per attrito meccanico (proporzionali a $n^2$).
+---
 # Processo di combustione nei motori 
 
 ## Combustione premiscelata
@@ -442,9 +448,8 @@ Nei motori AS (a benzina o gas), la miscela aria-combustibile viene formata **p
 		- Doppia candela
 		- Dosatura grassa ($\lambda < 1$)
 ---
-## Combutione diffusiva
+## Combustione diffusiva
 Nei motori AC (diesel), la camera racchiude inizialmente solo aria ad alta temperatura e pressione. Il combustibile viene iniettato direttamente poco prima del PMS.
-
 ### Caratteristiche principali
 1. **Carica disomogenea**
 	- Il combustibile viene iniettato solo nell’istante in cui si vuole che si inneschi il processo di combustione.
@@ -475,9 +480,7 @@ Nei motori AC (diesel), la camera racchiude inizialmente solo aria ad alta tempe
 
 ---
 # Inquinanti emessi dai motori MCI
-I principali inquinanti emessi dai motori endotermici alternativi si dividono in **inquinanti gassosi**, **solidi**(particolato) e **prodotti dall'aossidazione di impurità**, oltre all'anidride carbonica ($CO_{2}$).
-
-
+I principali inquinanti emessi dai motori endotermici alternativi si dividono in **inquinanti gassosi**, **solidi**(particolato) e **prodotti dall'ossidazione di impurità**, oltre all'anidride carbonica ($CO_{2}$).
 ## Inquinanti gassosi
 ### 1. Monossido di Carbonio($CO$)
 - **Natura:** Deriva dall'**ossidazione incompleta** del carbonio contenuto nel combustibile. IL $CO$ formatosi sul fronte di reazione non completa la sua ossidazione in anidride carbonica ($CO_{2}$)
@@ -485,7 +488,7 @@ I principali inquinanti emessi dai motori endotermici alternativi si dividono in
 - **Parametri d'influenza:** Il rapporto d'aria o dosatura ($\frac{A}{F} /\lambda$). Al diminuire dell'aria disponibile, la formazione di $CO$ aumenta notevolmente.
 ---
 ### 2. Idrocarburi incombusti ($HC$)
-- **Natura:** Detti anche _emissioni organiche_, derivano anc'essi dall'ossidazione incompleta del combustibile e dell'idrogeno..
+- **Natura:** Detti anche _emissioni organiche_, derivano anc'hessi dall'ossidazione incompleta del combustibile e dell'idrogeno..
 - **Cause principali:**
 	1. **Flame Quenching**(Spegnimento della fiamma): Raffreddamento della fiamma a contato con le pareti calde/fredde della camera di combustione.
 	2. **Combustione incompleta**.
@@ -510,7 +513,7 @@ I principali inquinanti emessi dai motori endotermici alternativi si dividono in
 	- Rapporto $\frac{A}{F}$
 	- Anticipo d'accensione
 	- Ricircolo dei gas di scarico (EGR)
-	- Regime e craico del motore
+	- Regime e carico del motore
 	- Rapporto di compressione 
 	- Grado di sovralimentazione
 ---
@@ -521,15 +524,43 @@ I principali inquinanti emessi dai motori endotermici alternativi si dividono in
 	- Rapporto $\frac{A}{F}$
 	- Qualità del sistema di iniezione
 ---
-## ALtri prodotti di combustione
+## Altri prodotti di combustione
 - **Prodotti dall'ossidazione di impurità**: Derivano dall'ossidazione di composti presenti nel combustibile come zolfo e piombo. 
 - **Anidride carbonica**: Deriva dall'ossidazione **completa** del carbonio. Non è inquinante tossico in senso stretto, ma è il principale gas a effetto serra.
 ![[emissioni_inquinanti_dosatura.png]]
 ---
 
 ## Sistemi di abbattimento delle emissione alla scarico
-Per rispettari i limiti normativi sulle emissioni, i motori adottano specifici sistemi di post-trattamento:
+Per rispettare i limiti normativi sulle emissioni (Euro 6d/7), i motori adottano specifici sistemi di post-trattamento dei fumi:
 
-1. **Reattore catalitico trivalente (motori AS/benzina):**
-2. **Catalizzatore Selettivo SCR (Selective Catalyti Reduction, per motori diesel):**
-3. **Filtro antiparticolato**
+1. **Reattore catalitico trivalente (motori AS / benzina):**
+   - Lavora solo con miscela stechiometrica ($\lambda = 1$).
+   - Abbatte simultaneamente tre inquinanti: riduce i $NO_x$ ad $N_2$ e $O_2$, ed ossida il $CO$ e gli idrocarburi $HC$ in $CO_2$ ed $H_2O$.
+2. **Catalizzatore Selettivo SCR (per motori Diesel):**
+   - Necessario nei motori a combustione magra ($\lambda > 1$) dove il catalizzatore trivalente non può ridurre i $NO_x$.
+   - Inietta una soluzione di urea (AdBlue) che nei fumi idrolizza in ammoniaca ($NH_3$), la quale riduce i $NO_x$ trasformandoli in $N_2$ e $H_2O$.
+3. **Filtro antiparticolato (DPF / FAP):**
+   - Matrice ceramica porosa ad alveoli che intrappola meccanicamente il particolato solido (PM10/PM2.5).
+   - Richiede rigenerazioni periodiche ad alta temperatura ($>550^\circ\text{C}$) innescate dalla centralina tramite post-iniezioni per bruciare la fuliggine accumulata.
+
+4. **Sonda lambda (controllo della dosatura):**
+   - Misura l'ossigeno residuo nei gas di scarico e invia un segnale alla centralina.
+   - Permette il controllo in retroazione della quantità di combustibile iniettato, mantenendo la dosatura vicina a quella stechiometrica ($\lambda \approx 1$), necessaria per il funzionamento efficace del catalizzatore trivalente.
+   - **Principio di funzionamento:** confronta la pressione parziale dell'ossigeno nell'aria di riferimento con quella nei gas di scarico. La differenza di potenziale dipende dalla temperatura e dal rapporto tra le pressioni parziali:
+     $$
+     \Delta V \propto T \cdot \log\left(\frac{p_{O_2,\,\mathrm{aria}}}{p_{O_2,\,\mathrm{gas}}}\right)
+     $$
+   - **è formato da:**
+     1. Contatto elettrico.
+     2. Supporto di ceramica.
+     3. Elemento ceramico della sonda.
+     4. Tubo protettivo lato gas di scarico.
+     5. Collegamento elettrico.
+     6. Molla a tazza.
+     7. Guaina protettiva lato aria.
+     8. Carcassa (elettrodo negativo).
+     9. Elettrodo negativo.
+     10. Elettrodo positivo.
+
+La sonda trasforma quindi la differenza di ossigeno tra aria di riferimento e gas di scarico in un segnale elettrico, usato dalla centralina per correggere la combustione. 
+[[008_MotoriACombustioneInterna_MN.pdf#page=60|008_MotoriACombustioneInterna_MN, pagina 60]]

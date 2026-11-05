@@ -69,7 +69,7 @@ Dove:
 - $t_u$: Temperatura dei fumi in uscita al camino.
 - $t_a$: Temperatura dell'aria comburente all'ingresso (con $t_b \approx t_a$).
 
-Il metodo indiretto suddivide l'energia non recuperata in tre contributi distinti12:
+Il metodo indiretto suddivide l'energia non recuperata in tre contributi distinti:
 
 1. **Perdita per Incombusti (Rendimento di Combustione** $\varepsilon$**)**:
     - Misura la quota di energia chimica del combustibile effettivamente liberata dalle reazioni di ossidazione.
@@ -84,7 +84,7 @@ Il metodo indiretto suddivide l'energia non recuperata in tre contributi distint
 # RUGIADE ACIDE
 Le **rugiade acide** (o condense acide) sono depositi liquidi ad alto contenuto acido  principalmente **acido solforico (**$\mathrm{H_2SO_4}$**)** che si formano quando i fumi di combustione vengono raffreddati al di sotto di una specifica temperatura, detta **temperatura di rugiada acida**.
 
-Il fenomeno origina dalla presenza di **zolfo (**$\mathrm{S}$**)** all'interno del combustibile2:
+Il fenomeno origina dalla presenza di **zolfo (**$\mathrm{S}$**)** all'interno del combustibile:
 
 1. **Formazione di Anidride Solforosa**: Durante la combustione, lo zolfo si ossida producendo anidride solforosa: $$S + O_2 \longrightarrow SO_2$$
 2. **Ossidazione ad Anidride Solforica**: In presenza di un eccesso d'ossigeno e di catalizzatori nei condotti fumi, una frazione di $\mathrm{SO_2}$ si ossida ulteriormente ad anidride solforica: $$SO_2 + \frac{1}{2}O_2 \longrightarrow SO_3$$
@@ -95,7 +95,7 @@ Il fenomeno origina dalla presenza di **zolfo (**$\mathrm{S}$**)** all'interno d
 # Parametri caratteristici del Generatore di Vapore
 ## Carico TERMICO e Temperatura di Combustione
 ![[Pasted image 20261021190219.png]]
-Il **carico termico volumetrico** ($C_t$) esprime la densità di potenza termica liberata dalla combustione per unità di volume della camera12:
+Il **carico termico volumetrico** ($C_t$) esprime la densità di potenza termica liberata dalla combustione per unità di volume della camera:
 
 $$\mathbf{C_t = \frac{\dot{m}_c \cdot K_i}{V}} \quad \left[\frac{\text{kW}}{\text{m}^3} \text{ o } \frac{\text{kJ}}{\text{s}\cdot\text{m}^3}\right]$$
 V indica il volume della camera di combustione.
@@ -118,15 +118,15 @@ $$\mathbf{q_i = \frac{\alpha \cdot \sigma_0 \cdot S_{irr} \cdot (T_c^4 - T_p^4)}
 Dove:
 
 - $\sigma_0$: Costante d'irraggiamento del corpo nero ($5{,}67 \times 10^{-8} \text{ W/(m}^2\text{K}^4)$)3.
-- $\alpha$: Coefficiente correttivo per le proprietà geometriche, d'assorbimento ed emissività della camera3.
-- $S_{irr}$: Superficie radiante efficace delle pareti raffreddate3.
-- $T_c$: **Temperatura assoluta** media della **fiamma** $K$ ($T_c = t_c + 273{,}15$)3.
+- $\alpha$: Coefficiente correttivo per le proprietà geometriche, d'assorbimento ed emissività della camera.
+- $S_{irr}$: Superficie radiante efficace delle pareti raffreddate.
+- $T_c$: **Temperatura assoluta** media della **fiamma** $K$ ($T_c = t_c + 273{,}15$).
 - $T_p$: **Temperatura assoluta** superficiale dei **tubi vaporizzatori** $K$
 
-La **temperatura media di combustione (**$t_c$**)** rappresenta il livello termico dei fumi nella c.c. ed è condizionata dai seguenti parametri operativi4:
+La **temperatura media di combustione (**$t_c$**)** rappresenta il livello termico dei fumi nella c.c. ed è condizionata dai seguenti parametri operativi:
 
 1. **Carico termico superficiale (**$\frac{\dot{m}_c}{S_{irr}}$**)**: $t_c$ **aumenta** all'aumentare della portata di combustibile $\dot{m}_c$ o al diminuire delle superfici radianti $S_{irr}$.
-2. **Eccesso d'aria (**$e$**)**: $t_c$ **aumenta al diminuire dell'eccesso d'aria** $e$, poiché si riduce la massa d'aria inerte che diluisce il calore rilasciato4.
+2. **Eccesso d'aria (**$e$**)**: $t_c$ **aumenta al diminuire dell'eccesso d'aria** $e$, poiché si riduce la massa d'aria inerte che diluisce il calore rilasciato.
 3. **Preriscaldamento dei reagenti**: $t_c$ **aumenta** al crescere dell'entalpia iniziale dell'aria comburente.
 
 La temperatura di combustione si può calcolare per via grafica grazie a:
@@ -182,12 +182,12 @@ $$
 
 ### Sintesi dell'impatto complessivo
 
-|Scambiatore / Parametro|Ruolo sul diagramma 𝑇 −𝑞|Effetto sul Generatore di Vapore|
-|:--|:--|:--|
-|**Surriscaldatore (𝑆)**|Eleva il vapore da 𝑇𝑣 a 𝑇1 a valle della camera di combustione|Fornisce vapore surriscaldato alla turbina; la disposizione in equicorrente/controcorrente (𝑆1/𝑆2) evita il surriscaldamento critico delle pareti (𝑇𝑝).|
-|**Vaporizzatore (𝑉)**|Tratto orizzontale a 𝑇𝑣 =𝑇𝑠𝑎𝑡(𝑝) costante; irraggiamento in c.c.|𝛼𝑣 ≫𝛼𝑓 mantiene 𝑇𝑝 ≈𝑇𝑣 protetta dai fumi; limita 𝑇𝑐 e riduce la formazione di 𝑁𝑂𝑥 e i danni ai materiali refrattari.|
-|**Economizzatore (𝐸)**|Preriscalda il liquido da 𝑇𝑂 a 𝑇𝑂′ nella zona a 𝑇𝑓𝑢𝑚𝑖 più bassa|Riduce la temperatura dei fumi 𝑇𝑢 aumentando il rendimento 𝜂𝑔𝑒𝑛; il limite inferiore di 𝑇𝑢 è fissato per prevenire le **rugiade acide** (𝐻2𝑆𝑂4).|
-|**Profilo Fumi (𝑇𝑐 →𝑇𝑢)**|Irraggiamento a 𝑇𝑐 costante in c.c., seguito da decadimento parabolico convettivo|Definisce la disponibilità termica sfilabile per il salto entalpico totale dell'acqua/vapore fino alla temperatura di camino 𝑇𝑢.|
+| Scambiatore / Parametro       | Ruolo sul diagramma 𝑇 −𝑞                                                          | Effetto sul Generatore di Vapore                                                                                                                            |
+| :---------------------------- | :---------------------------------------------------------------------------------- | :---------------------------------------------------------------------------------------------------------------------------------------------------------- |
+| **Surriscaldatore (𝑆)**      | Eleva il vapore da 𝑇𝑣 a 𝑇1 a valle della camera di combustione                   | Fornisce vapore surriscaldato alla turbina; la disposizione in equicorrente/controcorrente (𝑆1/𝑆2) evita il surriscaldamento critico delle pareti (𝑇𝑝). |
+| **Vaporizzatore (𝑉)**        | Tratto orizzontale a 𝑇𝑣 =𝑇𝑠𝑎𝑡(𝑝) costante; irraggiamento in c.c.             | 𝛼𝑣 ≫𝛼𝑓 mantiene 𝑇𝑝 ≈𝑇𝑣 protetta dai fumi; limita 𝑇𝑐 e riduce la formazione di 𝑁𝑂𝑥 e i danni ai materiali refrattari.                           |
+| **Economizzatore (𝐸)**       | Preriscalda il liquido da 𝑇𝑂 a 𝑇𝑂′ nella zona a 𝑇𝑓𝑢𝑚𝑖 più bassa            | Riduce la temperatura dei fumi 𝑇𝑢 aumentando il rendimento 𝜂𝑔𝑒𝑛; il limite inferiore di 𝑇𝑢 è fissato per prevenire le **rugiade acide** (𝐻2𝑆𝑂4). |
+| **Profilo Fumi (𝑇𝑐 →𝑇𝑢)** | Irraggiamento a 𝑇𝑐 costante in c.c., seguito da decadimento parabolico convettivo | Definisce la disponibilità termica sfilabile per il salto entalpico totale dell'acqua/vapore fino alla temperatura di camino 𝑇𝑢.                          |
 # Caldaia di Cornovaglia
 La **caldaia Cornovaglia** (o _Cornish boiler_) è uno dei primi e più storici modelli di caldaia industriale a grande volume d'acqua, ampiamente utilizzata nel XIX secolo per la produzione di vapore a bassa e media pressione.
 
@@ -283,7 +283,7 @@ Il ciclo dell'acqua/vapore all'interno di una caldaia ad irraggiamento si svilup
 
 - **Circolazione Naturale:** È garantita dalla differenza di volume specifico (e quindi di densità) tra la fase liquida e la fase gassosa all'interno del circuito. Funziona finché la pressione di esercizio è **inferiore a quella critica** (circa 221 bar).
 - **Limiti dell'alta pressione e Circolazione Forzata:**  
-    Al crescere della pressione di esercizio, il differenziale di pressione indotto dalla differenza di volume specifico diminuisce progressivamente (perché l'acqua e il vapore diventano via via simili come densità). **Sopra i 160 bar**, la circolazione naturale non è più sufficiente e si applica obbligatoriamente la **circolazione forzata** mediante pompe di circolazione dedicate.
+    Al crescere della pressione di esercizio, il differenziale di pressione indotto dalla differenza di volume specifico diminuisce progressivamente (perché l'acqua e il vapore diventano via via simili come densità). **Sopra i 160 bar**, la circolazione naturale non è più sufficiente e si applica obbligatoriamente la **circolazione forzata** mediante pompe di circolazione dedicate.
 
 ## Preriscaldatore a masse di accumulo Ljungström
 Il **preriscaldatore a masse di accumulo Ljungström** (noto anche come preriscaldatore rigenerativo rotativo) è un dispositivo utilizzato per recuperare il calore termico dai fumi di scarico di una caldaia e cederlo all'aria fresca in ingresso.

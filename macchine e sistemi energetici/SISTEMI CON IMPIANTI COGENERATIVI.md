@@ -23,7 +23,7 @@ Esistono diversi tipi di sistemi HCP, i quali possono essere divisi in:
 	Definisce il **confronto** fra la **produzione separata** e la **produzione cogenerativa** della stessa potenza elettrica e termica.
 	
 	Per capire se conviene mantenere 2 centrali (1 termica, 1 elettrica), o avere un sistema cogenerativo, bisogna ideare un metodo di comparazione tra i 2 metodi.
-	per questo si usa **IRE**, un indice che avente la stessa gli stessi valori nelle uscite di $P_e$ e $P_t$ in base a quanto combustibile viene consumato dai 2 metodi. 
+	per questo si usa **IRE**, un indice che, descrive il risparmio di un impianto cogenerativo rispetto alla generazione separata, grazie ai parametri $P_{t},P_{e}$.
 	$$
 		IRE = \frac{P_{cs} - P_{c}}{P_{cs}} = 1-\frac{P_{c}}{P_{cs}} = 1-\frac{P_{c}}{P_{cse}+P_{cst}} = 1 - \frac{1}{\frac{P_{cse}}{P_{c}} + \frac{P_{cst}}{P_{c}}} =1 - \frac{1}{\frac{P_{cse}}{P_{e}} \frac{P_{e}}{P_{c}} + \frac{P_{cst}}{P_{t}} \frac{P_{t}}{P_{c}}} \\= 1 - \frac{1}{\frac{\eta_{e}}{\eta_{es}} + \frac{\eta_{t}}{\eta ts}} 
 	$$
@@ -44,9 +44,9 @@ Esistono diversi tipi di sistemi HCP, i quali possono essere divisi in:
 	\end{align}
 	$$
 	- $\eta_{e}  = \frac{E_{e}}{E_{c}} \to$ **Rendimento elettrico impianto cogenerativo**
-	- $\eta_{t}  = \frac{E_{t}}{E_{c}} \to$ **Rendimento elettrico impianto cogenerativo**
+	- $\eta_{t}  = \frac{E_{t}}{E_{c}} \to$ **Rendimento termico impianto cogenerativo**
 	- $\eta_{es}  = \frac{E_{e}}{E_{cse}} \to$ **Rendimento elettrico impianto separato**
-	- $\eta_{ts}  = \frac{E_{t}}{E_{cst}} \to$ **Rendimento elettrico impianto cogenerativo**
+	- $\eta_{ts}  = \frac{E_{t}}{E_{cst}} \to$ **Rendimento termico impianto separato**
 - # INDICE RISPARMIO ECONOMICO (IREC)
 	L’IREC valuta l’impianto cogenerativo rispetto all’**acquisto** di energia elettrica e/o termica. 
 	$$
@@ -103,7 +103,7 @@ Questi vengono scelti in base all'applicazione dell'impianto, e vengono decisi g
 	- $< 5MW\to$ ICE a ciclo diesel
 	- $<1MW\to$ ICE  a ciclo Otto
 - **Produzione principale**
-- **Temperatura**
+- **Temperatura utenza termica**
 - **Variabilità delle utenze**
 
 # GRUPPO Cogenerativo con Turbina a Gas
@@ -139,7 +139,7 @@ A sua volta la potenza elettrica si deve calcolare tenendo conto anche dalla pot
 $$
 \begin{align}
 P_{c} = \dot{m_{c}}k_{i} = \frac{\dot{m_{a}}c_{p}(T_{3}-T_{2'})}{\eta_{cc}} \\
-P_{e} = \dot{m_{a}}c_{p}\left[ (T_{3}-T_{4})\eta_{i,T}- \frac{T_{2}-T_{2}}{\eta_{iC}} \right]\eta_{mTG}\cdot\eta_{auxTG}\cdot\eta_{altTG} 
+P_{e} = \dot{m_{a}}c_{p}\left[ (T_{3}-T_{4})\eta_{i,T}- \frac{T_{2}-T_{1}}{\eta_{iC}} \right]\eta_{mTG}\cdot\eta_{auxTG}\cdot\eta_{altTG} 
 \end{align}
 $$
 ---
@@ -207,7 +207,7 @@ Sono utilizzate quando è **privilegiata l’utenza elettrica rispetto a quella 
 Questo gruppo è formato da:
 - **Generatore di Vapore (Caldaia)**: Produce la portata totale di vapore surriscaldato ad alta pressione ($\dot{m}_v, p_{HP}, T_{HP}$).
 - **Sezione di Alta Pressione (Turbina AP)**: Il vapore si espande producendo la prima quota di lavoro elettrico fino a raggiungere una pressione intermedia ($p_{spill}$).
-- **Nodo di Derivazione / Spillevamento**: All'uscita dalla sezione AP, il flusso si sdoppia tramite una valvola di regolazione:
+- **Nodo di Derivazione / Spillamento**: All'uscita dalla sezione AP, il flusso si sdoppia tramite una valvola di regolazione:
     - **Quota Spillata/Derivata (**$\dot{m}_{th}$**)**: Viene estratta alla pressione $p_{spill}$ e inviata all'**Utenza Termica** (condensatore utile), dove condensa cedendo la **potenza termica utile (**$\dot{Q}_{th}$**)**.
     - **Quota Rimanente (**$\dot{m}_{cond} = \dot{m}_v - \dot{m}_{th}$**)**: Prosegue l'espansione nella **Sezione di Bassa Pressione (Turbina BP)** fino alla pressione di vuoto del **Condensatore Freddo** ($p_{cond} \approx 0{,}04\text{–}0{,}08\text{ bar}$).
 - **Condensatore Freddo**: Dissipa verso l'ambiente (es. torre evaporativa o fiume) il calore del vapore non richiesto dall'utenza termica.
@@ -258,7 +258,7 @@ Il layout del gruppo è definito da:
     - **Sezione AP**: Surriscaldatore AP ($SH_{AP}$), Evaporatore AP con corpo d'allevamento ($EVA_{AP} + D_{AP}$), Economizzatore AP ($ECO_{AP}$).
     - **Sezione BP**: Surriscaldatore BP ($SH_{BP}$), Evaporatore BP con corpo d'allevamento ($EVA_{BP} + D_{BP}$), Economizzatore BP ($ECO_{BP}$).
     - **Camino**: I fumi esausti vengono espulsi a $\sim 100\ ^\circ\text{C}$.
-3. **Turbina a Vapore a Spillevamento & Utenza Termica (CHP)**:
+3. **Turbina a Vapore a Spillamento & Utenza Termica (CHP)**:
     - Il vapore surriscaldato AP ($80\text{--}100\text{ bar}, 520\ ^\circ\text{C}$) entra nella **Turbina a Vapore AP (**$TV_{AP}$**)**.
     - Il vapore uscente da $TV_{AP}$ si miscela con il vapore prodotto dalla sezione BP ($6\text{--}10\text{ bar}$) ed entra nella **Turbina a Vapore BP (**$TV_{BP}$**)**.
     - **Spillamento Cogenerativo**: Dalla sezione intermedia/BP viene estratta la portata di vapore inviata all'**Utenza Termica** per soddisfare il carico di processo/riscaldamento ($\dot{Q}_{th}$).
