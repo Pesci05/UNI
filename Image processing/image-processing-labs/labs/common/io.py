@@ -1,8 +1,7 @@
-"""Small image, camera, and montage helpers provided to students."""
+"""Small camera and montage helpers provided to students."""
 
 from collections.abc import Iterator, Sequence
 from contextlib import contextmanager
-from pathlib import Path
 import sys
 
 import cv2
@@ -10,15 +9,6 @@ import numpy as np
 
 Panel = tuple[str, np.ndarray]
 CameraRequest = tuple[str, int, float]
-
-
-def load_bgr(path: str | Path) -> np.ndarray:
-    """Load one colour image or raise a useful error."""
-
-    image = cv2.imread(str(path), cv2.IMREAD_COLOR)
-    if image is None:
-        raise FileNotFoundError(f"Could not load image: {path}")
-    return image
 
 
 @contextmanager

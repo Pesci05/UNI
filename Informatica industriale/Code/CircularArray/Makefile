@@ -14,5 +14,5 @@ main.o: main.c CircularArray.h
 	$(CC) $(CFLAGS) -c $< -o $@
 
 clean:
-	del *.o main
+	del *.o main.exe
 

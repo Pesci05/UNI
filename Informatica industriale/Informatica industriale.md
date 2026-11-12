@@ -295,7 +295,7 @@ void * body(void * arg)
 
 E' un **semaforo binario**, specializzato nelle **mutue esclusioni**.
 
-# Pattern producer/consumer
+## Pattern producer/consumer
 Per implementare questo tipo di pattern di programmazione, si deve implementare una **libreria**.
 
 Questo tipo di pattern viene utilizzato soprattutto sulle risorse che vengono condivise tra più thread.
@@ -308,5 +308,65 @@ Questi thread devono essere gestiti da dei semafori che però possono casuare un
 Per ovviare al deadlock, si deve **evitare di** **inserire parti di codice bloccante** all'interno di una critical sections.
 [[08 - Concurrency.pdf#page=50|08 - Concurrency, pagina 50]]
 
+# Engineering embedded software
+## SOLID programming
+Nato dal linguaggio ad oggetti.
+
+Si basa su 5 pilastri, ma che su sistemi di embedding diventano 3, e sono:
+1. **Single responsibility**
+	Un modulo deve avere al suo interno un unica funzionalità
+2. Open/Close principle
+3. Liskov substitution
+4. **Interface integration**
+	Qualsiasi funzionalità deve essere nascosta da un'**interfaccia**.
+5. **Dependency inversion**
+	Un progetto non deve dipendere dalle proprie dipendenze.
+	Una dipendenza deve essere introdotta all'interno di un unico modulo.
+
+## Design patterns
+Un design pattern può dare:
+- Un vocabolario **condiviso** 
+- Risolve problemi complessi prima che accadano
+- Una base per utilizzare le scelte di design
+Però non possono:
+- Una soluzione **esatta** per tutti i tipi di progetti
+
+I desgin patterns ti **forzano** a:
+- Trovare il modo di tradurre in codice il proprio dominio
+- Detrmine objects granularity
+Definire chiaramente interfacce (.h) e moduli (.c/.cpp)
+Implementare codici **riutilizzabile**
+
+La struttura di un design pattern è formato da:
+1. **Nomi, scopi e alias**
+2. **Motivazione**
+3. **Applicabilità**
+
+Contengono un insieme di codice di esempio per implementarli con:
+- Codice già fatto
+- Pattern correlati
+- Effetti collaterali
+
+## State pattern
+Utilizzato per implementare una **Finite State Machine**.
+Questo viene usato per evitare che il codice divenga illeggibile per colpa dei troppi stati delle macchina.
+Per questo si crea un modulo per stato, il quale implementerà le sue funzioni.
+Questo porta ad avere un main ordinato, e una struttura del progetto elegante.
+
+## HAL
+**Hardware Abstraction Layer**
+Layer utilizzato soprattutto per sistemi embedded, che **permette di utilizzare lo stesso codice anche con sistemi diversi**.
+
+Questo pattern serve per **astrarre l'hardware**, separando logicamente software da hardware.
+
+![[Pasted image 20261109152041.png]]
+
+L'HAL è formtato da:
+- **Proxy**
+	Permette la comunicazione tra client e HW grazie a strutture dati come quelle di C, e provvede all'accesso a quelle strutture dati.
+	
+- **Adapter**
+	Adatta per una specifica interfaccia HW al formato richiesto dall'applicazione
 
 
+# PROCESSORI INDUSTRIALI

@@ -1,0 +1,24 @@
+[project]
+name = "laboratory-python-coap"
+version = "0.1.0"
+description = "Python CoAP Laboratory - Coffee Machine CoAP server (sensors, observable actuator) and test clients with aiocoap"
+readme = "README.md"
+requires-python = ">=3.10"
+dependencies = [
+    "aiocoap>=0.4.17,<0.5",
+    "pyyaml>=6.0",
+]
+
+[project.scripts]
+coffee-machine-server = "coap_laboratory.process.coffee_machine_server:main"
+coffee-get-client = "coap_laboratory.client.coffee_get_client:main"
+coffee-observe-client = "coap_laboratory.client.coffee_observe_client:main"
+coffee-post-client = "coap_laboratory.client.coffee_post_client:main"
+coffee-put-client = "coap_laboratory.client.coffee_put_client:main"
+
+[build-system]
+requires = ["uv_build>=0.13.0,<0.14"]
+build-backend = "uv_build"
+
+[tool.uv.build-backend]
+module-name = "coap_laboratory"

@@ -262,6 +262,12 @@ $$
 
 # RUMORE E FILTRI NON LINEARI
 Quando si acquisisce un'immagine, si possono creare degli **errori, degradazioni** dell'immagine, questo si chiama ==**RUMORE**==.
+Il rumore può essere causato da:
+- Focus Blurring
+- Blurring due to camera motion
+- Analog to digital convertions errors
+- Transimission errors
+- etc...
 
 ## IMAGE RESTORATION
 È la pratica di **rimozione del rumore** da un'immagine.
@@ -272,8 +278,48 @@ Può essere fatta:
 
 ## TIPI DI RUMORE
 - **SALT AND PEPPER NOISE**
-	
-- 
+	Causato da transmission errors, interferenze elettromagnetiche,...
+- **Gaussian Noise**
+	è un tipo di rumore bianco aggiunto ad un’immagine e distribuito seguendo una distribuzione Gaussiana con media .
+	Ogni pixel dell'immagine è soggetto ad una perturnazione *additiva n*:
+	$$
+	l'(u,v) = l(u,v)+n 
+	$$
+	Dove *n* è un rumore casuale i cui valori possibili sono distibuiti in maniera *Gaussaiana*![[Pasted image 20261110224105.png]]
+-  **Speckle Noise**
+	Simile al rumore Gaussiano, con pixel perturbati in maniera casuale.
+	Il rumore in questo caso non è additivo ma moltiplicativo.
+	$$
+	l'(u,v) = l(u,v)\cdot n 
+	$$
+	con n variabile da pixel a pixel.
+- **Periodic noise**
+	Causato da disturbi hardware di natura periodica 
+
+Salt and pepper, Gaussian e speckle possono essere **eliminati o ridotti tramite i filtri spaziali.**
+Periodic invece può essere eliminato **usando** i **filtri nel frequency domain**.
+
+Di solito per fare un Image restoration si preferisce utilizzare un filtro **non lineare**.
+
+## Filtri non lineari
+I pixel contenuti nella finestra R del filtro sono combinati utilizzando una funzione non lineare.
+![[Pasted image 20261110224809.png]]
+
+### MIN e MAX
+$$
+I'(u,v) = f(R_{u,v})=min\{ I(u+i,v+j)|-k\leq i\leq k,-k\leq j\leq k \} \\
+I'(u,v) = f(R_{u,v})=max\{ I(u+i,v+j)|-k\leq i\leq k,-k\leq j\leq k \} 
+$$
+[[06_Rumore e filtri non lineari.pdf#page=13|06_Rumore e filtri non lineari, pagina 13]]
+
+### Median filter
+Riesce a rimuovere meglio il rumore mantendendo gran parte della struttura dell’immagine.
+$$
+I'(u,v) = f(R_{u,v})=median\{ I(u+i,v+j)|-k\leq i\leq k,-k\leq j\leq k \} 
+$$
+![[Pasted image 20261110225358.png]]
+[[06_Rumore e filtri non lineari.pdf#page=15|06_Rumore e filtri non lineari, pagina 15]]
+
 # EDGE DETECTION
 Un **edge** viene definito come un cambio drastico della luminosità, spesso avviene in corrispondenza dei bordi.
 
