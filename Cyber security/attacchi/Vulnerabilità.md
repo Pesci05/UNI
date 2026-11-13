@@ -275,7 +275,26 @@ Oltre a normali permessi esiste un altro permesso, rappresentato dal bit SETUID:
 - Rappresentazione ottale
 e dal bit SETGUID:
 
-SETUID $\to$ user ID di chi ha lanciato il programma
+SETUID $\to$ user ID di chi ha lanciato il programma se è attivo, rappresenta l'user ID del creatore del file
+GROUPID $\to$ group ID primario di chi ha lanciato il comando, se attivo group ID primario del file.
+
+é possibile cambiare la persona **effettiva** che esegue il file.
+
+I sistemi UNIX il descrittore di un processo memorizza:
+
+| **User ID Reale**                        | **Group ID Reale**                                  | **User ID Effettivo**                 | **Group ID Effettivo**                          |
+| ---------------------------------------- | --------------------------------------------------- | ------------------------------------- | ----------------------------------------------- |
+| User Id di chi ha lanciato<br>il comando | group ID primario di chi <br>ha lanciato il comando | user ID di chi ha lanciato il comando | group ID primario di chi ha lanciato il comando |
+
+Se i bit di **SETUID e SETGID = 1** $\to$ **File = Effettivo**
+
+![[Pasted image 20261113104453.png]]
+Gli ID reali rappresentano gruppo e utemte di chi ha eseguito il file, invece quelli effettivi rappresentano l'utente che ha creato il file.
+
+
+## MEDIAZIONE INCOMPLETA
+
+
 
 
 

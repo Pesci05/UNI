@@ -345,7 +345,7 @@ Però questo crea problemi nel calcolo della derivata poiche la funzione dell'im
 - l() non è definita in modo analitico
 Soluzione:
 La derivata l() può essere calcolata usando le **differenze finite**.
-Le differenze possono essere:
+Le differenze possono essere: ^7031da
 - **Destra**
 	$\Delta+f(x)=f(x+1)-f(x)$
 - **Sinistra**
@@ -355,7 +355,7 @@ Le differenze possono essere:
 
 Però un'immagine è formata da 2 dimensioni, per cui dobbiamo estendere questo approccio nelle funzioni a 2 variabili, questo si può fare grazie al **gradiente**(derivate parziali).
 
-Per utilizzare il gradiente su un'immagine si deve calcolare le derivate pariali sia per la direzione verticael, sia per quella orizzontale.
+Per utilizzare il gradiente su un'immagine si deve calcolare le derivate parziali sia per la direzione verticale, sia per quella orizzontale.
 $$\frac{\partial l}{ \partial u} \space e \space \frac{\partial l}{ \partial v}$$
 Il gradiente dell'immagine sarà:
 $$
@@ -364,5 +364,67 @@ $$
 \frac{\partial l}{\partial v}(u,v)
 \end{matrix}  \right]
 $$
+**Proprietà del gradiente**
+- Il gradiente calcolato in *p* corrisponde ad un **vettore** che punta nella direzione di *massima crescita locale* di f in p, e ha un modulo proporzionale alla quantità di crescita in quella direzione.
+- I valori delle derivate parziali in p rappresentano le componenti di questo vettore rispetto ad ogni dimensione del dominio di f()
 
+![[Pasted image 20261113232506.png]]
+
+Nel caso delle immagini, il gradiente è **perpendicolare** ad un eventuale edge, per questo si utilizza il gradiente per **inidividuare** gli edge.
+
+## GRADIENTE DI UN'IMMAGINE
+Per calcolare il gradiente di un'immagine si deve calcolare le derivate parziali **rispetto alle direzioni**, *orizzontali*(u) e *verticali*(v).
+$$
+\frac{\partial I}{\partial u}(u,v) \space and \space \frac{\partial I}{\partial v}(u,v)
+$$
+Per fare quest si devono utilizzare le **[[IMAGE PROCESSING#^7031|differenze]]**, rispetto alle 2 direzioni.
+
+Il gradiente di un'immagine alla posizione (u,v) è:
+$$
+\nabla l(u,v) =\left[   \begin{matrix}
+\frac{\partial l}{\partial u}(u,v) \\
+\frac{\partial l}{\partial v}(u,v)
+\end{matrix}  \right]
+$$
+
+Il **modulo** del gradiente è:
+$$
+M(u,v) = |\nabla I|(u,v) = \sqrt{  \left( \frac{\partial l}{\partial u}(u,v) \right)^2 + \left( \frac{\partial l}{\partial v}(u,v) \right)^2}
+$$
+Il modulo non varia rispetto alla direzione dell'immagine ed è usato per l'edge detection.
+
+In alcuni casi è utile anche calcolare la direzione del gradiente:
+$$
+\phi(u,v) = \arctan\left( \frac{\frac{\partial l}{\partial u}(u,v)}{ \frac{\partial l}{\partial v}(u,v)}  \right)
+$$
+![[Pasted image 20261113233929.png]]
+
+Per calcolare il gradiente per ogni coordinata si deve fare:
+$$
+\frac{\partial I}{\partial u} = \lim_{ h \to 0 } \frac{I(u+h,v) - I(u,v)}{h} \\
+\frac{\partial I}{\partial v} = \lim_{ h \to 0 } \frac{I(u,v+h) - I(u,v)}{h} \\
+$$
+Per farlo posso utilizzare anche le differenze.
+Per esempio nella **differenza cebtrata**:
+$$
+\frac{\partial I}{\partial u} = \frac{1}{2}(I(u+1,v)-I(u-1,v)) \\
+\frac{\partial I}{\partial u} = \frac{1}{2}(I(u,v+1)-I(u,v-1))
+$$
+Queste derivate devono essere calcolate per **ogni pixel** dell'immagine.
+
+La derivate parziale sono formate anche da delle funzioni lineari, che prendono in considerazione anche i pixel vicini a quello preso in esame, questo significa che èer calcolare il gradiente possiamo utilizzare anche **dei filtri lineari**(possono essere diversi per direzione),  questi filtri vengno poi applicati grazie alla *convoluzione*.
+
+Nel caso della prima derivata parziale(*orizzontale*) si utilizzerà un **filto orizzontale**, e il kernel di questo filtro sarà:
+$$
+H_{u} = [-0,5 \space 0 \space 0.5] \\
+\frac{\partial I}{\partial u}(u,v) =(I*H_{u})(u,v) 
+$$
+FILTRO per il calcolo delle derivate: [[08_Edge detection.pdf#page=30|08_Edge detection, pagina 30]]
+
+In questo caso però il filtro sarà sensibile anche a **basse variazione di luminosità**(edge piccoli) che però vorremmo ignorare, questo si può fare grazie a filtri 2D(**UTILIZZATI SOLITAMENTE**), in modo che il risultato tenga conto di una differenza di luminosità calcolata in un’area più ampia.
+
+Per questo si utilizzano filtri a 2 dimensioni di size 3x3.
+![[Pasted image 20261113235438.png]]
+
+**ESEMPIO SOBEL**: [[08_Edge detection.pdf#page=32|08_Edge detection, pagina 32]]
 

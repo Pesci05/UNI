@@ -1,3 +1,5 @@
+# IMAGE FORMATION
+## Rifrazione e lenti sottili
 
 # APERTURE
 L'apertura focale **limita** il cono di luce che passa attraverso la lente, il quale raggiunge il piano dell'immagine.

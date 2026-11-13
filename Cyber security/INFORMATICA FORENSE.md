@@ -1,3 +1,36 @@
+# Informatica in tribunale
+Gli attori di un processo penale sono:
+![[Pasted image 20261112235104.png]]
+Gli attori di un processo penale sono **suddivisi in 3 parti**:
+- ## Necessarie
+	- # Pubblico Ministero (PM)
+		- È il _dominus_ e responsabile dell'azione penale.
+		- Dirige le indagini preliminari (delegando la Polizia Giudiziaria) e valuta gli esiti per chiedere l'archiviazione o il rinvio a giudizio.
+		- Formula l'imputazione e sostiene l'accusa in giudizio.
+	- ## Giudice
+		Parte giudicante, può essere **individuale** o **colleggiale**, è arbitro del processo e decide sulle ipotesi accusatorie del PM e su tette le richieste delle parti processuali, stabilisce il reato sussiste e l'imputato l'ha commesso.
+		Il giudice si distingue in base alle fasi del processo:
+		- **G.I.P. (Giudice per le Indagini Preliminari):** decide sulle istanze e sulle misure cautelari/probatorie nella fase d'indagine.
+		- **G.U.P. (Giudice per l'Udienza Preliminare):** valuta se l'accusa è sostenibile in giudizio o se emettere sentenza di non luogo a procedere, non è sempre presente.
+		- **Giudice del Dibattimento (Monocratico o Collegiale):** conduce il dibattimento vero e proprio ed emette la sentenza finale.
+	- ## Imputato
+		Persona fisica a cui è attribuita la commissione di uno o più fatti penalmente rilevanti, di cui è chiamato a rispondere.
+		Fino alla fase delle indagini preliminari è qualificata come **indagato**, diventa imputato nel momento in cui il P.M. esercita l’azione penale.
+		Può difendersi nel processo tramite vari atti:
+		- Nomina dell'**[[INFORMATICA FORENSE#^44c5ea|avvocato diefensore]]** di fiducia e nomina del consulente tecnico di parte
+		- Può **interloquire** **rilasciando** **spontanee dichiarazioni** (scritte o verbali) **senza** sottoporsi a esame e controesame; oppure può **sottoporsi a esame e controesame** da parte di tutti gli attori; oppure può **restare in silenzio**
+		Non è obbligato a **presenziare** all'udienza, ma ci deve essere **obbligatoriamente** il difensore.
+- ## Eventuali
+- ## Difensori delle parti
+	- **Avvocato difensore**
+		**Difensore di fiducia,** **nominato** dall'imputato, o d'**ufficio** assegnato dal tribunale.
+		Senza il difensore non si può tenere l'udienza, e rappresenta in tutte le pratiche realative al processo l'imputato.
+		^44c5ea
+	- **Difensori delle altre parti:**
+	    - Rappresentano la parte civile, la parte offesa o gli altri soggetti coinvolti.
+- ## Ausiliari tecnici
+
+
 # ANALISI
 L'analisi di un dato/dispositivo deve rispondere a delle domande che sono:
 - **chi?**
