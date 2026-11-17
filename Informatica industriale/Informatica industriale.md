@@ -370,3 +370,53 @@ L'HAL è formtato da:
 
 
 # PROCESSORI INDUSTRIALI
+
+# PLC
+I **PLC** (*Programmable Logic Controllers*, nati alla fine degli anni '60) sono controllori progettati per avere una stretta interazione con altri dispositivi elettrici, in particolare **sensori** e **attuatori** (tramite interruttori, relè, ecc.).
+
+A differenza di microcontrollori e microprocessori (MC/PU):
+- Sono progettati per **non informatici**: i programmi sono costituiti da operazioni semplici (aritmetica, logica, timer, contatori) e sono facilmente programmabili senza l'uso di linguaggi ad alto livello.
+- Implementano operazioni software semplici che potrebbero essere realizzate anche con circuiti dedicati, ma con il vantaggio di poter essere **riprogrammati**.
+- Hanno un'architettura semplice, priva di sistema operativo (no OS) e connessa.
+
+Dal punto di vista fisico devono essere:
+- **Robusti** a vibrazioni, temperature estreme, umidità e rumore.
+- Dotati di **ricca connettività I/O** (es. relè).
+- **Più affidabili** (*more reliable*, cioè meno soggetti a crash).
+
+[[05 - Programmable logic controllers.pdf|05 - Programmable logic controllers]]
+
+## Struttura
+![[Pasted image 20261117102522.png]]
+
+### SISTEMA IO
+![[Pasted image 20261117102704.png]]
+
+Soprattutto dalla parte degli input, serve un certo di  **isolamento**, poichè gli input possono avere un segnale con una voltaggio troppo alto.
+
+Gli input possono essere dati da **sensori**, la misurazione del sensore però è influenzata da vari parametri come:
+- **Accuratezza**
+- **Range di misurazione**
+- **Tempo di risposta**
+- **Sensibilità**
+- **Stabilità**
+- **Ripetibilità**
+- **Reliability**
+
+Di recente stanno prendendo piede un certo tipo di sensori, gli **smart sensor**, i quali producono dati pronti per l'elaborazione senza dover fare conversioni o altro. 
+### OUTPUT
+Il canale di output è formato da **latch**, e possono essere di 3 tipi:
+- **Relays**
+- **Transistor**
+- **Triac**
+- **Attuatori**
+
+![[Pasted image 20261117103250.png]]
+ 
+### ALIMENTAZIONE
+L'alimentazione di un PLC può essere data da 2 tipi:
+- **Sourcing**: Alimentazione data dall'input
+- **Sinking**: ALimentazione data dall'output
+
+
+

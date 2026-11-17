@@ -143,5 +143,3 @@ Per aver assegnata una label la regione di pixel deve avere:
 Per risolvere dei problemi su delle immagini, si può risolvere tramite le **conoscenze a priori** riguardo il problema stesso.
 ## TEMPLATE MATCHING
 
-
-

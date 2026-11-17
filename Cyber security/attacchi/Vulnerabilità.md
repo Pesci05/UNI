@@ -1,4 +1,3 @@
-**[[Attacchi e vulnerabilità#Vulnerabilità Software e bug|Le vulnerabilità sono]]**
 ## Metriche base
 - **Attack Vector**
 - **Attack Complexity**
@@ -9,8 +8,6 @@ Dalle metriche base si dividono altre 6 metriche dette **qualcosa** le quali son
 - **Confidentiality**(VS/SC): Impatto sulla confidenzialità delle informazioni gestote dal sistema (VC) e dai sistemi collegati (SC)
 - **Integrity**(VI/SI): Impatto siull'integrità delle informazioni gestite dal sistema (VI) e dai sistemi collegati (SI)
 - **Availability**(VA/SA): Impatto sulla disponibilità delle informazioni gestite dal sistema (VA) e dai sistemi collegati (SA)
-
-## Metriche di minaccia
 
 
 ## Metriche ambientali
@@ -299,3 +296,24 @@ Gli ID reali rappresentano gruppo e utemte di chi ha eseguito il file, invece qu
 
 
 
+# CODE INJECTION
+Tecnica per **iniettare** codice arbitrario in un applicazione sfruttando il mancato controllo dell'input.
+
+Esistono vari tipi di code injection, e questi variano in base a:
+- **target dell'injection**
+Questo attacco sfrutta le vulnerabilità data dalla **non validazione degli input**.
+L'unico modo per evitare questo è controllare l'input, sia limitando l'utente da parte del client, e il controllo dell'input all'interno del server, un'altra causa di questa vulnerabilità è la **consusione tra DATI e CODICE**.
+
+>[!note] Un attaccante può sfruttare anche lo stesso compilatore per offuscare il codice, cioè dà come **base pointer**(puntatore alla prima funzione che deve essere caricata nello stack) il valore di memoria il quale rappresenta quella funzione, di solito `__libc_start_main` ma si può modificare con un indirozzo di memoria ascelta, così da poter decidere dove far partire il proprio programma. 
+
+# BUFFER OVERFLOW
+Di solito viene considerato come un **semplice bug**, ma se viene sfruttata in un certo modo diventa una **vulnerabilità**.
+
+Ci sono diversi tipi di buffer overflow, in base al tipo di memoria e al modo di allocazione:
+- **Stack segment**
+- Heap segment
+- Format segment
+
+**BUFFER**: spazio contiguo di memoria contenente di solito, dati dello stesso tipo
+### STACK SEGMENT
+**STACK**:

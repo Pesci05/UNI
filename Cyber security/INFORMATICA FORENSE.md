@@ -21,6 +21,7 @@ Gli attori di un processo penale sono **suddivisi in 3 parti**:
 		- Può **interloquire** **rilasciando** **spontanee dichiarazioni** (scritte o verbali) **senza** sottoporsi a esame e controesame; oppure può **sottoporsi a esame e controesame** da parte di tutti gli attori; oppure può **restare in silenzio**
 		Non è obbligato a **presenziare** all'udienza, ma ci deve essere **obbligatoriamente** il difensore.
 - ## Eventuali
+	
 - ## Difensori delle parti
 	- **Avvocato difensore**
 		**Difensore di fiducia,** **nominato** dall'imputato, o d'**ufficio** assegnato dal tribunale.
@@ -29,6 +30,13 @@ Gli attori di un processo penale sono **suddivisi in 3 parti**:
 	- **Difensori delle altre parti:**
 	    - Rappresentano la parte civile, la parte offesa o gli altri soggetti coinvolti.
 - ## Ausiliari tecnici
+	Nel processo penale informatico, data la natura complessa e altamente specialistica della prova digitale (_bit stream image_, acquisizione _live/dead_, analisi dei log, sequestri di server), il ruolo dei tecnici è cruciale:
+	- **Perito**
+		Viene nominato dal giudicequando occorre svolgere un'indagine tecnica imparziale o valutare prove informatiche particolarmente complesse.
+	- **Consulente tecnico**
+		Nominato dalle parti per affiancarle nella ricerca, reportamento, analisi e interpretazione dei dati informatici, nonchè nella definizione della startegia accusatoria o difensiva.
+		
+	- 
 
 
 # ANALISI
