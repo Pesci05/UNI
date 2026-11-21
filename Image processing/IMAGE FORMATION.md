@@ -1,9 +1,111 @@
-# IMAGE FORMATION
-## Rifrazione e lenti sottili
 
+# Rifrazione e lenti sottili
+
+La **rifrazione** avviene ogni volta che la luce attraversa il confine tra due mezzi con **indici di rifrazione** diversi.
+- In una lente standard avviene **due volte**: quando il raggio entra nella lente e quando esce.
+- Nel modello di **lente sottile** (*thin lens*), si approssima la deviazione complessiva come una **singola deviazione** al centro della lente.
+![[Pasted image 20261119172637.png]]
+## Convessità e densità
+- Il caso più comune è una lente **biconvessa** immersa in un mezzo meno denso (es. aria): si osserva un comportamento **convergente** (i raggi paralleli all'asse ottico si incontrano dopo la lente).
+- Una lente **biconcava** in aria ha invece un comportamento **divergente**.
+![[Pasted image 20261119172825.png|342]]
+- La convergenza dipende anche dalla **densità ottica** relativa: se il mezzo esterno è otticamente più denso della lente, si osserva il comportamento opposto.
+![[Pasted image 20261119172841.png|380]]
+
+## Legge di Snell
+La legge di Snell descrive come si piega la luce:
+$$
+n_{\text{air}} \sin\theta_{\text{air}} = n_{\text{glass}} \sin\theta_{\text{glass}}
+$$
+dove gli angoli sono misurati rispetto alla **normale** alla superficie.
+- Se il raggio entra in un mezzo otticamente più denso ($n_{\text{glass}} > n_{\text{air}}$), l'angolo diminuisce ($\theta_{\text{glass}} < \theta_{\text{air}}$), e viceversa.
+![[Pasted image 20261119175157.png]]
+
+Su **superfici sferiche**, assumendo:
+1. lente sferica,
+2. oggetto a distanza infinita ($d \to \infty$, raggi paralleli),
+3. angoli piccoli ($h$ piccolo, $\sin\theta \approx \tan\theta \approx \theta$),
+
+si ottiene il punto $x$ in cui il raggio incontra l'asse ottico:
+$$
+x = \frac{n_2}{n_2 - n_1} R
+$$
+Poiché $x$ **non dipende da $h$**, tutti i raggi paralleli convergono nello stesso punto.
+![[Pasted image 20261119175313.png]]
+## Equazione del costruttore di lenti (Lens maker equation)
+Applicando la legge di Snell due volte (entrata e uscita), si mette in relazione la forma della lente con il punto focale $f$:
+$$
+\frac{1}{f} = \left(\frac{n_{\text{glass}}}{n_{\text{air}}} - 1\right)\left(\frac{1}{R_1} - \frac{1}{R_2}\right)
+$$
+- Cambiando la curvatura della lente ($R_1, R_2$) si cambia la lunghezza focale $f$.
+![[Pasted image 20261119175413.png]]
+## Distanza focale (Focal length)
+Ogni lente convergente ha un **punto focale** $F$ su entrambi i lati, a distanza $f$ (**lunghezza focale**), dove convergono i raggi paralleli all'asse ottico.
+Per tracciare l'immagine di un oggetto si usano **3 raggi speciali**:
+1. Il raggio **parallelo** all'asse ottico $\rightarrow$ passa per il fuoco $F$ dopo la lente.
+2. Il raggio che **passa per il fuoco** $F$ $\rightarrow$ esce parallelo all'asse ottico.
+3. Il raggio che **passa per il centro** della lente $\rightarrow$ prosegue dritto senza deviazioni (approssimazione di lente sottile).
+![[Pasted image 20261119175544.png]]
+La distanza focale di una lente descrive come gli oggetti del **mondo reale**(sinistra della lente), vengono trasformati nel **mondo delle immagini**(destra della lente).
+## Equazione delle lenti sottili (Thin lens equation)
+I 3 raggi speciali si incontrano nello stesso punto a distanza $d_i$ dalla lente (**piano dell'immagine**). La distanza dell'oggetto $d_o$, la distanza dell'immagine $d_i$ e la lunghezza focale $f$ sono legate da:
+$$
+\frac{1}{f} = \frac{1}{d_o} + \frac{1}{d_i}
+$$
+Da questa equazione derivano due effetti: **zoom** e **focus**.
+
+## Ingrandimento (Magnification) e Zoom
+L'ingrandimento è dato da:
+$$
+m = -\frac{d_i}{d_o}
+$$
+- A parità di $d_o$, **aumentare $f$** fa aumentare $d_i$ $\rightarrow$ effetto **zoom in**.
+- A parità di $d_o$, **diminuire $f$** fa diminuire $d_i$ $\rightarrow$ effetto **zoom out**.
+- Nelle fotocamere consumer si cambia lo zoom modificando la configurazione relativa delle lenti; nei setup industriali si sceglie invece direttamente la lente con la focale adatta.
+![[Pasted image 20261120163218.png]]
+## Messa a fuoco (Focusing)
+La lunghezza focale vincola $d_o$ e $d_i$: con una lente biconvessa standard **non tutto può essere a fuoco contemporaneamente**, Se:
+- **Aumentiamo $d_i$**, $d_o$ diminuisce $\rightarrow$ si mette a fuoco **più vicino** alla lente.
+- **Diminuiamo $d_i$**, $d_o$ aumenta $\rightarrow$ si mette a fuoco **più lontano** dalla lente.
+![[Pasted image 20261120171134.png]]
+## Maximum field angle
+La lunghezza focale influenza anche il **maximum field angle** $\theta_{\max}$ (legato al cerchio d'immagine $D_{ic}$):
+$$
+\theta_{\max} = 2\arctan\left(\frac{D_{ic}}{2d_i}\right)
+$$
+- A parità di $D_{ic}$, **aumentare $f$** (quindi $d_i$) **restringe** il maximum field angle (zoom in, meno scena inquadrata), e viceversa.
+![[Pasted image 20261120171929.png|301]]
 # APERTURE
-L'apertura focale **limita** il cono di luce che passa attraverso la lente, il quale raggiunge il piano dell'immagine.
-- Questo significa che si può **controllare la luminosità** dell'immagine
+L'apertura (o **diaframma**) **limita** il cono di luce che passa attraverso la lente e raggiunge il piano dell'immagine.
+- **Primo effetto**: si può **controllare la luminosità** dell'immagine (meno raggi $\rightarrow$ immagine più scura).
+- Nel modello ideale di lente sottile, l'apertura **non influenza** il maximum field angle.
+- Viene espressa tramite l'**f-number**:
+$$
+N = \frac{f}{D}
+$$
+dove $D$ è il diametro della pupilla/apertura. Gli **f-stops** variano tipicamente a passi di $\sqrt{2}$: aumentare $N$ di un fattore $\sqrt{2}$ **dimezza** l'irradianza, diminuirlo di $\sqrt{2}$ la **raddoppia**.
+![[Pasted image 20261120174617.png]]
+![[Pasted image 20261120174628.png]]
+## Depth of focus
+- **Secondo effetto** di un'apertura più piccola: i raggi divergono più lentamente lontano dal piano dell'immagine ($d_i$).
+- Quando un punto è fuori fuoco, la luce non converge in un punto ma in un disco chiamato **circle of confusion (CoC)**.
+- La **depth of focus** è l'intervallo nello spazio immagine in cui il diametro della sfocatura rimane sotto una soglia accettabile di CoC.
+- Aumenta con aperture più piccole e quando si mette a fuoco **più vicino** alla lente ($d_i$ più grande).
+![[Pasted image 20261120230256.png|291]]
+
+## Depth of field
+- È l'intervallo attorno a $d_o$ nello spazio oggetto in cui la luce converge in un CoC accettabile.
+- Aumenta con aperture più piccole e quando si mette a fuoco **più lontano** dalla lente ($d_o$ più grande).
+- Depth of focus e depth of field sono due facce della stessa medaglia, legate dall'equazione delle lenti sottili.
+![[Pasted image 20261120235136.png|277]]
+
+## Diffrazione e Airy disk
+- Ridurre l'apertura all'infinito non produce un'immagine perfetta a causa della **diffrazione** (diffusione dell'onda luminosa attraverso un'apertura finita).
+- L'interferenza dei raggi crea l'**Airy disk**, che rappresenta il limite fisico di nitidezza del sistema ottico:
+$$
+d_{\text{Airy}} = 2.44\,\lambda\,N
+$$
+- Gli effetti della diffrazione e della depth of focus/field si combinano insieme.
 
 # DA IMMAGINE CONTINUA A DIGITALE
 Per passare da un'immagine reale ad una digitale serve un **sensore**.
@@ -90,7 +192,7 @@ Very important things to know from day 1:
 
 Per lavorare in float per operazioni custom:
 
-```
+```python
 rame_float = frame.astype(np.float32) / 255 
 To go back to uint8 for opencv methods: 
 frame = np.clip(frame_float * 255, 0, 255).astype(np.uint8)
@@ -127,7 +229,7 @@ Il suo algoritmo funziona:
 	- Segnare quando avviene un'equivalenza temporanea nel momento in cui si incontrano 2 label diverse
 2. **Rimpiazzare le equivalenze temporanee** con una label che include tutti i pixel
 
-```
+```python
 count, labels, stats, centroids =
 	cv2.connectedComponentsWithStats(
 	mask,
