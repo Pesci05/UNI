@@ -108,66 +108,110 @@ $$
 - Gli effetti della diffrazione e della depth of focus/field si combinano insieme.
 
 # DA IMMAGINE CONTINUA A DIGITALE
-Per passare da un'immagine reale ad una digitale serve un **sensore**.
+Per passare da un'immagine reale ad una digitale serve un **sensore**. Un pixel è una misura **foton-to-charge** su un'area finita, in un tempo finito, pesata spettralmente, con capacità finita e rumore.
 
-## SENSORE
-Il sensore viene raffigurato da un **rettangolo**, il quale viene diviso in **pixel**, questi permettoni di definire:
-- **RISOLUZIONE**
-- **La grandezza dei pixel**
-- **Grandezza del sensore**
-Ogni pixel contiene la media dell'informazione che riceve.
+## SENSORE (Spatial integration and sampling)
+Il sensore viene raffigurato da un **rettangolo**, diviso in **pixel**, che permettono di definire tre grandezze:
+- **Risoluzione** ($N_x / N_y$, numero di pixel)
+- **Grandezza dei pixel** ($p_x / p_y$, di solito $p_x = p_y$)
+- **Grandezza del sensore** ($W / H$)
 
-Il numero dei pixel può influire su:
-- **FIELD OF VIEW**
+Solo due sono indipendenti:
+$$
+W = N_x \cdot p_x \quad H = N_y \cdot p_y
+$$
+Ogni pixel **media** (integra) l'irradianza che raccoglie sulla sua area. Avere più pixel può significare due cose:
+- un **sensore più grande** (cattura più scena a parità di dettaglio),
+- **pixel più piccoli** (cattura la stessa scena con maggior dettaglio).
 
 ## FIELD OF VIEW
-Il FOV è collegato alla **maximum field view**, il quale è una proprietà della lente, e questo sarà un cerchio grazie alla forma della lente.
-Invece il **Field of view** invece è definito si dalla lente ma anche dal **sensore**, infatti la sua grandezza sarà dettata dalla **diagonale** del sensore:
-- **MINORE**
-	Con la diagonale minore, significa che il sensore sarà del tutto all'interno del MAXIMUM FIELD VIEW, 
-- **MAGGIORE O UGUALE**
-	Invece in questo caso, il sensore starborderà dal MAXIMUM FIELD VIEW, questo comporta a degli effetti di **vigenttamento** e **spreco dimensioni del sensore**
-Il FOV viene calcolato:
-$$
-FOV=\arctan\left( \frac{W}{2d} \right)
-$$
+Il **[[IMAGE FORMATION#maximum field angle|maximum field angle]]** è una proprietà della lente (cerchio d'immagine $D_{ic}$ e distanza $d_i$).
+Il **Field of View (FOV)** effettivo è invece determinato dalla combinazione di **lente + sensore**, in base alla **diagonale** del sensore rispetto al cerchio d'immagine:
+- **Minore del cerchio d'immagine**: il sensore è del tutto all'interno del cerchio $\rightarrow$ zona ideale.
+- **Maggiore o uguale al cerchio d'immagine**: il sensore sborda $\rightarrow$ effetti di **vignettamento** e **spreco delle dimensioni del sensore**.
 
+Il FOV orizzontale si calcola come:
+$$
+\text{FOV}_H = 2\arctan\left( \frac{W}{2d_i} \right)
+$$
+*(In pratica si assume spesso messa a fuoco all'infinito, cioè $f = d_i$).*
+![[Pasted image 20261122233413.png]]
 ## PIXEL DENSITY
-Viene definita dal rapporto **mm/px**.
-Questo rapporto può essere calcolata con:
-1) **MAGNIFICATION LAW**
-2) Misura contando i pixel di un oggetto in un'immaggine
-
-## COME FUNZIONANO
-Per avere un'immagine, bisogna che il sensore, il quale è un insieme di pixel, deve **essere colpita dalla luce**, questa, luce deve essere campionata ad una certa frequenza (**Nyquist**).
-Il valore del pixele viene deciso tramite misurazione durante il **tempo d'esposizione**, poichè un pixel non raccoglie la luminosità instantaneamente, infatti durante questo lasso di tempo un pixel raccoglie un certo numero di **foroni**.
+Viene definita dal rapporto **mm/px** (o **px/mm**) per collegare le dimensioni in pixel nell'immagine alle dimensioni reali. Si può stimare in due modi:
+1. **Magnification law**:
 $$
-N_{photon} = irradiance*pixelArea* exposureTime
+|m| = \frac{d_i}{d_o} = \frac{h_i}{h_o} \qquad \text{mm/px} = \frac{|m|}{\text{pixel size}}
 $$
-Per aumentare la luminosità si può:
-- aumentare l'illuminazione
-- incrementare l'apertura
-- Sensore con una grandezza dei pixel più grandi
-- Aumentare l'exposure time
+2. **Misura diretta**: contando i pixel di un oggetto di dimensioni reali note.
 
-L'**exposure time** defnisce per quanto tempo si osserva un certo oggetto durante una misurazione.
+In entrambi i casi la relazione **mm/px** vale solo alla distanza $d_o$ specifica (spesso fissa).
 
-**Frame rate** definisce
+### Pixel density: più alta è meglio?
+- **NO**: se la sfocatura ottica (CoC, *Airy disk*, aberrazioni) copre già molti pixel (*optic limited*), aumentare i pixel non aggiunge dettaglio utile.
+- **SÌ** (fino a un certo punto): per il **teorema di Nyquist**, i dettagli periodici vanno campionati ad almeno **2× la loro frequenza** (2 pixel per periodo è già un limite inferiore rischioso). Sotto questa soglia si verifica **aliasing** (*alias prone*): non si perdono solo dettagli, ma si generano **dettagli falsi** (es. effetto *Moiré*).
+- **Bilancio ideale**: ottica e sensore devono corrispondere, in modo che più campioni rappresentino il dettaglio più piccolo utile.
+
+## INTEGRAZIONE TEMPORALE (Temporal integration and sampling)
+Un pixel non raccoglie la luminosità istantaneamente, ma la accumula durante il **tempo d'esposizione** (*exposure time*):
+$$
+N_{\text{photons}} \propto \text{irradiance} \cdot \text{pixel area} \cdot \text{exposure time}
+$$
+Per avere un'immagine più luminosa si può:
+- aumentare l'illuminazione,
+- aumentare l'apertura (meno *depth of field*),
+- usare un sensore con pixel più grandi,
+- aumentare l'**exposure time** (rischio di **motion blur**).
+
+### Exposure time vs Frame rate
+- L'**exposure time** definisce **per quanto tempo** si osserva l'oggetto durante una misurazione.
+- Il **frame rate** definisce **quanto spesso** si effettua la misurazione.
+- Poiché non si può iniziare una misura prima di aver finito la precedente:
+$$
+\text{exposure time} < \frac{1}{\text{frame rate}}
+$$
+- Se la scena è ferma il frame rate non è critico; se l'oggetto si muove, anche il campionamento temporale può produrre **aliasing**.
 
 ## SHUTTER TYPE
-Per un **global shutter**, ogni riga di pixel, condividono lo stesso intervallo d'integrazione.
+- **Global shutter**: tutte le righe di pixel condividono lo stesso intervallo di integrazione.
+- **Rolling shutter**: le righe vengono integrate e lette sequenzialmente una alla volta. È più economico ma introduce **artefatti** (non risolvibili accorciando l'esposizione, perché resta lo sfasamento temporale tra righe):
+  - strutture verticali storte (moto parallelo),
+  - oggetti compressi o stirati (moto incidente),
+  - effetto *wobble* durante la rotazione della camera,
+  - **bande** sotto illuminazione modulata nel tempo.
 
-Per il **rolling shutter**, ogni riga legge ogni linea una alla volta, spostando l'intervallo sempre più avanti, questo lo rende più economico ma produce degli **artefatti**, modificando l'immagine:
-- oggetti dritti vengono catturati storti
-- comprime e espande l'oggetto
-- se l'oggetto è in rotazione può fondere l'oggetto insieme ad un altro oggetto
-Questi effetti non sono riconducibile all'exposure time, ma sono errore chevengono generati dal sensore stesso.
+## RADIOMETRICA, QUANTIZZAZIONE E RUMORE
+Non tutti i fotoni contribuiscono all'immagine: esiste una probabilità, detta **quantum efficiency**, che un fotone rilasci un **elettrone** (dipende dalla lunghezza d'onda).
 
-# EFFICICIENZA
-Non tutti i fotno contribuiscono allacquisizione dell'immagine, questo avviene perché essite una **probabilità** che un elettrone venga **rilasciato** come risultato.
-Questa probabilità viene definita come **quantum efficiency**, e questa dipende dallla lunghezza d'onda della luce.
+### Full well capacity
+Un pixel **non è un contenitore infinito**: la **full well capacity** è il numero massimo di elettroni accumulabili. Superandola, il pixel **satura** e si perdono informazioni sulle alte luci (motivo per cui non si può alzare l'esposizione all'infinito anche su scene ferme).
 
-Un pixel **non è un contenitore infinito**, quando un sensore supera la sua massima capacità.
+### Da elettroni a numeri (catena CMOS)
+1. **Fotoni $\rightarrow$ Elettroni** (quantum efficiency).
+2. **Elettroni $\rightarrow$ Tensione** (proporzionale tramite *sensing node*).
+3. **Gain analogico** (amplificatore, equivalente all'**ISO** nelle fotocamere consumer).
+4. **ADC (Quantizzazione)**: discretizza la tensione in base alla *bit depth* del sensore (es. 0–255 a 8 bit, 0–1023 a 10 bit, 0–4095 a 12 bit, 0–65535 a 16 bit).
+
+### Sorgenti di rumore
+Il rumore impedisce di ottenere due immagini identiche:
+- **Shot noise**: legato al segnale dei fotoni (distribuzione di Poisson, varianza cresce col segnale).
+- **Dark-current noise**: elettroni generati termicamente (cresce con tempo e temperatura).
+- **Read noise**: introdotto durante la lettura della carica (rilevante a basso segnale).
+- **Quantization noise**: introdotto dai passi finiti dell'ADC.
+
+$$
+\text{SNR} = \frac{\text{mean signal}}{\text{noise standard deviation}}
+$$
+
+### Exposure vs Gain
+A parità di luminosità finale:
+- **Esposizione corta + Gain alto**: pochi elettroni e **SNR bassa** (domina il *read noise* amplificato).
+- **Esposizione più lunga + Gain basso**: più elettroni raccolti e **SNR migliore** (preferibile, evitando saturazione e *motion blur*).
+
+## SELEZIONE SPETTRALE (Spectral selection)
+- La **luce visibile** è compresa tra **380 e 740 nm**.
+- I sensori al silicio sono sensibili fino a **1000–1100 nm** (vicino infrarosso): si usa spesso un filtro **IR-cut** tra lente e sensore per evitare contaminazioni. (Le termocamere usano invece sensori e ottiche diverse per il lontano infrarosso).
+- **Camera monocromatica**: mescola tutte le lunghezze d'onda in un'unica misura di luminosità.
+- **Camera RGB (Bayer pattern)**: filtra le bande R, G, B prima del sensore; ogni pixel misura un solo colore e gli altri vengono **interpolati**. Il **verde** è campionato con densità doppia perché contribuisce molto alla luminanza percepita. I filtri riducono la *quantum efficiency*, quindi per massimo conteggio di fotoni e dettagli reali (non interpolati) si preferisce una camera monocromatica.
 
 
 
@@ -175,7 +219,7 @@ Un pixel **non è un contenitore infinito**, quando un sensore supera la sua mas
 Per acquisire un'immagine il componenete più importante è la **telecamera**, però per elaborarla servono un certo tipo di algortmi, nel nostro caso utilizzaeremo **OPENCV**.
 
 Per acquisire un frame tranite numpy si deve:
-```
+```Python
 ok, frame = cap.read()
 
 print(farme.shape)
