@@ -528,5 +528,58 @@ In uno spazio **uniformemente percettivo**, la distanza tra due punti dovrebbe e
 
 [[09_Colore.pdf#page=18|09_Colore, spazi di colore]]
 
+# TRASFORMATA DI FOURIER
+Le immagine fino ad ora le abbiamo viste come matrici, definite dal valore di 2 funzioni, dove vengono contenuti i valori del pixel, queso tipo di rappresentazione viene nominata nel **dominio spaziale** a 2 dimensioni.
+
+Però le immagini possono essere rappresentate anche nel **dominio delle frequenze**, dove alcune operazioni di manipolazione dell immagini diventano più semplici, da effetture.
+
+## Idea base
+La trasformata di fourier permette di esprimere una qualsiasi funzione $f()$ come combinazione lienare di una **base di funzioni**.
+
+Le funzioni base sono delle **sinusoidi**, e l'output della trasfromata sono i *coefficienti* della combinazione lineare.
+
+[[11_Trasformata di fourie_I.pdf#page=11|11_Trasformata di fourie_I, pagina 11]]
+
+---
+## Tecniche spettrali
+Per trasformare segnali audio, immagini, video ecc... dal dominio temporale al dominio delle frequenze è possibile utilizzare diverse trasformazioni, tra loro simili:
+
+- **Fourier Tarsform**
+- **Discrete Fourier Transform (DFT),**
+- **Discrete Cosine Transform (DCT)**
+
+Una sinusoide viene definita da **tre grandezze principali**:
+- **Lunghezza d'onda** $\to$ inversa della frequenza
+- **Ampiezza**
+- **Fase**
+
+### Concetti matematici
+Formula di eulero:
+$$
+e^{i\rho} = \cos \rho + i \sin \rho
+$$
+Numeri complessi espressi in coordinate polari:
+$$
+z = re^{i\rho} = r(\cos \rho + i \sin \rho)
+$$
+Dove $r$ è il modulo:
+
+$$
+r = |z| = \sqrt{ x^2 +y^2}
+$$
+
+[[11_Trasformata di fourie_I.pdf#page=21|11_Trasformata di fourie_I, pagina 21]]
+
+## Serie di Fourier
+Quasi tutte le funzioni periodiche possono essere rappresentate come una sommatoria infinita di sinusoidi, detta **serie di Fourier**:
+
+$$
+serie di fourie
+$$
+
+Però se una funzione non è periodica si può prendere in esame un periodo finito, e replicare questo periodo all'infinito.
+
+## Trasformata di Fourier
+La trasformata di fourier estende la serie di fourier a qualsiasi funzioni, comprese anche quelle definifite in un intervallo finito di tempo.
 
 
