@@ -48,7 +48,7 @@ Questo tipo di algortmi vengono utilizzati in caso:
 - **Medical imaging**
 - **Rimozione del rumore**
 - **Correzione del contrasto**
-- **Edge detection**
+- **Edge detection** ^d83f5a
 - **Riconoscimento di regioni, segmentazione**
 - **Compressione dell'immagine**
 - **Image Inpainting**

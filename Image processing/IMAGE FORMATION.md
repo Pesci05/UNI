@@ -472,8 +472,142 @@ Obiettivo: stimare **FOV** e **focale** (pixel + mm) e confrontare con datasheet
 ---
 
 ---
+---
 # Edges to countours
+I bordi estraggono informazioni, da un'immagine, ma questi non sono molto interpretabili da un algoritmo.
 
+Il risultato di questo tipo di algortmi viene detto **edge map**.
+
+**[[IMAGE PROCESSING#EDGE DETECTION|Sobel edge detection]]**, Sobel dà un risultato per ogni pixel, questo compromette la rilevazione dei bordi, per questo si può introdurre un **treshold**(soglia), però questa soglia può produrre problemi:
+- **Rumore produce gradienti**
+- **Un bordo sfocato non produce un bordo formato da un unico pixel, ma un bordo più spesso**
+- **le texture producono risposte irrilevanti**
+- **Una soglia può perdere bordi validi o anche conservare troppo rumore.**
+- **Risposta della soglia può essere frammentata.**
+
+## CANNY edge detector: Pipeline
+1. **Gaussian smoothing**:
+    - **Cosa fa**: Applica una sfumatura gaussiana iniziale per sopprimere il rumore ad alta frequenza.
+    - **Perché**: Le derivate amplificano i cambiamenti rapidi, incluso il rumore. Il Gaussian smoothing stabilisce la scala alla quale un bordo è considerato significativo. Se un dettaglio viene rimosso dallo smoothing, significa che non era un bordo che volevamo rilevare, ma un dettaglio/rumore da eliminare. Uno smoothing maggiore rimuove il rumore fine ma può anche rimuovere o spostare i piccoli dettagli.
+	 [[4. from edges to contours intro to thresholding  morphology.pdf#page=13|4. from edges to contours intro to thresholding  morphology, pagina 13]]
+
+2. **Gradient estimation**:
+    - **Cosa fa**: Calcola la magnitudine e la direzione del gradiente (esattamente come Sobel).
+    
+
+3. **Non-maximum suppression (NMS)**:
+    - **Cosa fa**: Serve ad **assottigliare ciascuna cresta del gradiente** per ottenere contorni spessi un solo pixel.
+    - **Come funziona**:
+        - Si segue la direzione del gradiente 𝜃 in un pixel candidato.
+        - Si confronta la magnitudine del pixel con i due campioni vicini lungo quella direzione (_il confronto viene fatto attraverso il bordo, non lungo di esso_).
+        - Si **ritiene il pixel solo se è un massimo locale**. Altrimenti, se il valore non è maggiore dei pixel vicini, il pixel non è un bordo e viene completamente soppresso.
+    [[4. from edges to contours intro to thresholding  morphology.pdf#page=14|4. from edges to contours intro to thresholding  morphology, pagina 14]]
+
+4. **Double threshold (Doppia soglia)**:
+    - **Cosa fa**: Classifica le risposte impostando due soglie 𝑇𝐿 e 𝑇𝐻 (𝑇𝐿 <𝑇𝐻):
+        - 𝑀 ≥𝑇𝐻 → candidato a **bordo forte** (strong edge candidate).
+        - 𝑇𝐿 ≤𝑀 <𝑇𝐻 → candidato a **bordo debole** (weak edge candidate).
+        - 𝑀 <𝑇𝐿 → **rigettato**.
+    [[4. from edges to contours intro to thresholding  morphology.pdf#page=15|4. from edges to contours intro to thresholding  morphology, pagina 15]]
+
+5. **Hysteresis (Isteresi)**:
+    - **Cosa fa**: Serve a rimuovere i bordi deboli isolati e a **connettere i bordi spezzati**.
+    - **Come funziona**: L'isteresi **ritiene un candidato debole solo quando è collegato a un percorso di bordi forti**. Di conseguenza, una continuazione debole (faint continuation) può sopravvivere se supportata da bordi forti, mentre una risposta debole e isolata scompare.
+
+Per avere un certo numero di **bordi**, ci devono essere un certo numero di **regioni**, bordi e regioni devono essere rispettivamente $\text{bordi} \leq \text{regioni}$.
+
+Una edge map può contenere:
+- Curve aperte
+- Bordi di texture irrilevanti
+- Nessun etichetta esplicita.
+
+Una **region mask** è un'immagine binaria che rappresenta un'area o un oggetto pieno, le proprietà di queste mask sono:
+- Rimuovere piccole strutture in primo piano
+- Riempire i buchi
+- Combinare regioni
+- Misurare l'area
+>[!note] Da una regione possiamo sempre estrarre un bordo (che chiamiamo _contour_), ma da un bordo non sempre si può ricuperare una regione
+
+### Canny in OpenCV
+
+```python
+edges = cv2.Canny(gray, low_threshold, high_threshold)
+```
+
+### Metodo più facile per avere una regione
+Per oggetti scuri su sfondo chiaro:
+$$
+M(x,y) = \{255,  I(x,y) < T \\0,I(x,y) \geq T \}
+$$
+```python
+_, mask = cv2.threshold(gray, T, 255, cv2.THRESH_BINARY_INV)
+```
+
+## Tipi di Threshold
+Per le immagini in scala di grigio, non è così facile trovare un treshold giusto, per questo esistono diversi tipi di threshold come:
+- **Otsu's method**
+	metodo automatico per trovare una soglia ottimale in un'immagine in scala di grigi.
+	Trova la soglia (threshold) ottimale **minimizzando la varianza di intensità intra-classe** (intra-class intensity variance), oppure, in modo equivalente, **massimizzando la varianza inter-classe** (inter-class variance). 
+	$𝑡∗=arg⁡max0<𝑡<255[𝜔0(𝑡)𝜎20(𝑡)+𝜔1(𝑡)𝜎21(𝑡)]$
+```python
+otsu_value, mask = cv2.threshold(
+       gray, 0, 255, 
+       cv2.THRESH_BINARY_INV | cv2.THRESH_OTSU)
+```
+- **Adaptive threshold**
+	Per sopraggiungere ai limiti di una soglia globale, si può calcolare una soglia che dipende da **statistiche locali** dell'immagine.
+	Per scegliere i parametri di queste statistiche locali:
+	- **Neighborhood piccoli (`block_size` ridotto):** Seguono molto bene i dettagli locali, ma rischiano di amplificare la texture e il rumore.
+	- **Neighborhood grandi (`block_size` ampio):** Si comportano in modo simile a una soglia globale che varia lentamente nello spazio
+	
+$$
+	t(x,y) = \mu_{N(x,y)} - C
+$$
+```python
+mask = cv2.adaptiveThreshold(
+    gray, 255,
+    cv2.ADAPTIVE_THRESH_GAUSSIAN_C,
+    cv2.THRESH_BINARY_INV,
+    block_size, C
+)
+```
+
+### Tabella di confronto dei metodi di Thresholding
+
+|Metodo|Assunzioni principali|Parametri principali|Tipico fallimento / Problema|
+|:--|:--|:--|:--|
+|**Fixed (Globale)**|Intensità note e stabili|𝑇|Cambiamenti di esposizione o illuminazione (broken assumptions)|
+|**Otsu**|Due classi globali separabili|Nessuno (automatico)|L'illuminazione varia spazialmente|
+|**Adaptive**|Due classi locali separabili|`block_size`, 𝐶|Texture / rumore o scelta errata della scala|
+
+>[!note] Scegliere sempre il metodo più semplice le cui assunzioni corrispondono alle condizioni di acquisizione dell'immagine
+
+## Morphology
+La **morphology** è un insieme di operazioni che processano un'immagine in modo tale di:
+- **Ingrandire**
+- **Restringere**
+- **Pulire**
+- **Unire strutture spaziali**
+
+Un'immagine binaria si può vedere come un insieme di coordinate A(insieme dei pixel bianchi), e mentre i pixel neri appartengono al complemento AC.
+Tramite la morfologia si può avere un terzo insieme $B$ chiamato **Structuring element**.
+Si parte da una **sogliatura debole**, per poi applicare la morfologia per avere esattamente le regioni che appartengono agli **oggetti reali**.
+## Structuring element
+La structuring element è il **secondo insieme/kernel** utilizzato nelle operazioni morfologiche.
+
+Una structuring element definisce:
+- **Forma**
+- **Dimensione**
+- **Ancoraggio**
+```python
+kernel = cv2.getStructuringElement(cv2.MORPH_RECT, (3, 3))
+```
+
+>[!warning] **lo structuring element non è ancora l'operazione in sé**, ma definisce il **supporto** (la regione di pixel) degli elementi coinvolti nell'operazione morfologica (come erosione, dilazione, apertura o chiusura).
+
+
+
+ 
 
 ---
 # Looking for Objects

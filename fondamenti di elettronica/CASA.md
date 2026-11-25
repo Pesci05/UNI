@@ -58,7 +58,7 @@ Questo è il simbolo elettrico:
 ![[Pasted image 20251220004408.png]]
 
 La carica di un condensatore varia soltanto nel monento in cui la tensione ai suoi capi varia nel tempo.
-[[ESEMPI CIRCUITI#ES. carica scarica di un condensatore|ES. CONDENSATORE]]
+[[Esempi circuiti risolti#ES. 1 — Carica e scarica di un condensatore (circuito RC)|ES. CONDENSATORE]]
 ## Induttori
 L'induttore è un componente che può immagazzinare energia magnetica.
 Questo componente stabilisce una relazione lineare tra la tensione ai 2 terminali e la variazione della corrente nel tempo.
@@ -822,7 +822,7 @@ Esistono anche 2 valori di corrente $I_{Zmin}$ e $I_{Zmax}$ perchè:
 - Con corrente minore di $I_{Zmin}$, la regione di lavoro **non è quella di Zener**, ma quella di polarizzazione inversa, questa comporta ad una **grande variazione di tensione in basa alla corrente in input.**
 - Se la corrente è maggiore a $I_{Zmax}$, questo comporta ad una dissipazione di corrente eccessiva, e può portare ad un **danno permanente**.
 
-**[[ESEMPI CIRCUITI#ES. Diodo zener|Esempi diodo Zener]]**
+**[[Esempi circuiti risolti#ES. 2 — Regolatore di tensione con diodo Zener|Esempi diodo Zener]]**
 
 Se si varia il valore del carico, varierà di conseguenza anche il valore della corrente che attraverserà il diodo, se la corrente sarà **troppo grande** causerà un danno permanente al diodo, invece se sarà **troppo piccola** il diodo non sarà polarizzato nella regine Zener, però si può evitare introducendo un amplificatore di corrente, il quale in base alla corrente in entrata erogherà una **corrente multiplo più grande**, questo significa che per una data **corrente in uscita**, la **corrente in entrata arà molto inferiore**, questo comporta che a seguito di grandi variazioni di carico, che causerà piccole variazioni di corrente.
 L'implementazione reale avviene tramite un transistor bipolare a giunzione.
