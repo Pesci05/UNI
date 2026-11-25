@@ -196,7 +196,7 @@ Il **Field of View (FOV)** effettivo è determinato dalla combinazione **lente +
 Il FOV orizzontale si calcola come:
 
 $$
-\text{FOV}_H = 2\arctan\left( \frac{W}{2d_i} \right)
+\text{FOV}_W = 2\arctan\left( \frac{W}{2d_i} \right)
 $$
 
 *(In pratica si assume spesso messa a fuoco all'infinito, cioè $f = d_i$).*
@@ -216,11 +216,11 @@ Rapporto **mm/px** (o **px/mm**) per collegare dimensioni in pixel alle dimensio
 
 ### Pixel density: più alta è meglio?
 
-| Risposta | Quando | Perché |
-|---|---|---|
-| **NO** (*optic limited*) | Sfocatura ottica (CoC, Airy disk, aberrazioni) copre già molti pixel | Aumentare i pixel non aggiunge dettaglio utile |
-| **SÌ** (fino a un punto) | Dettagli periodici nella scena | Teorema di **Nyquist**: serve ≥ 2× la frequenza (2 px/periodo è limite rischioso). Sotto $\rightarrow$ **aliasing** = dettagli falsi (es. *Moiré*) |
-| **Bilancio ideale** | Ottica e sensore corrispondono | Abbastanza campioni per il dettaglio più piccolo utile, niente aliasing |
+| Risposta                 | Quando                                                               | Perché                                                                                                                                             |
+| ------------------------ | -------------------------------------------------------------------- | -------------------------------------------------------------------------------------------------------------------------------------------------- |
+| **NO** (*optic limited*) | Sfocatura ottica (CoC, Airy disk, aberrazioni) copre già molti pixel | Aumentare i pixel non aggiunge dettaglio utile                                                                                                     |
+| **SÌ** (fino a un punto) | Dettagli periodici nella scena                                       | Teorema di **Nyquist**: serve ≥ 2× la frequenza (2 px/periodo è limite rischioso). Sotto $\rightarrow$ **aliasing** = dettagli falsi (es. *Moiré*) |
+| **Bilancio ideale**      | Ottica e sensore corrispondono                                       | Abbastanza campioni per il dettaglio più piccolo utile, niente aliasing                                                                            |
 
 ## Integrazione temporale (Temporal integration and sampling)
 Un pixel accumula luce durante il **tempo d'esposizione** (*exposure time*):
@@ -265,12 +265,12 @@ Pixel **non è contenitore infinito**: **full well capacity** = max elettroni ac
 
 ### Sorgenti di rumore
 
-| Rumore | Causa | Caratteristica |
-|---|---|---|
-| **Shot noise** | Segnale fotonico (Poisson) | $\sigma = \sqrt{S}$, cresce col segnale |
-| **Dark-current noise** | Elettroni termici | Cresce con tempo e temperatura |
-| **Read noise** | Lettura carica | Rilevante a basso segnale |
-| **Quantization noise** | Passi finiti ADC | Uniforme su $\pm 0.5$ LSB |
+| Rumore                 | Causa                                      | Caratteristica                          |
+| ---------------------- | ------------------------------------------ | --------------------------------------- |
+| **Shot noise**         | Segnale fotonico (Poisson)                 | $\sigma = \sqrt{S}$, cresce col segnale |
+| **Dark-current noise** | Elettroni termici                          | Cresce con tempo e temperatura          |
+| **Read noise**         | Introdotta durante la lettura della carica | Rilevante a basso segnale               |
+| **Quantization noise** | Introdotta dai passi finiti ADC            | Uniforme su $\pm 0.5$ LSB               |
 
 $$
 \text{SNR} = \frac{\text{mean signal}}{\text{noise standard deviation}}
@@ -283,17 +283,17 @@ $$
 | **Esposizione corta + Gain alto**  | Pochi     | **Bassa**    | Domina *read noise* amplificato                    |
 | **Esposizione lunga + Gain basso** | Molti     | **Migliore** | Preferibile (evitando saturazione e *motion blur*) |
 
-> **Regola**: raccogliere più elettroni possibile (scena e applicazione permettendo).
+> [!info] **Regola**: raccogliere più elettroni possibile (scena e applicazione permettendo).
 
 ## Selezione spettrale (Spectral selection)
 - **Luce visibile**: 380–740 nm.
 - **Sensori Si**: sensibili fino a 1000–1100 nm (near-IR) $\rightarrow$ serve filtro **IR-cut**.
 - **Termocamere**: sensori/ottiche diverse per far-IR.
 
-| Tipo | Principio | Trade-off |
-|---|---|---|
-| **Monocromatica** | Tutte $\lambda$ mescolate in 1 luminanza | Max fotoni, dettagli reali |
-| **RGB (Bayer)** | Filtri R,G,B prima del sensore; interpolazione | Verde 2× denso (luminanza); filtri riducono QE |
+| Tipo              | Principio                                      | Trade-off                                      |
+| ----------------- | ---------------------------------------------- | ---------------------------------------------- |
+| **Monocromatica** | Tutte $\lambda$ mescolate in 1 luminanza       | Max fotoni, dettagli reali                     |
+| **RGB (Bayer)**   | Filtri R,G,B prima del sensore; interpolazione | Verde 2× denso (luminanza); filtri riducono QE |
 
 ---
 
@@ -471,6 +471,11 @@ Obiettivo: stimare **FOV** e **focale** (pixel + mm) e confrontare con datasheet
 
 ---
 
+---
+# Edges to countours
+
+
+---
 # Looking for Objects
 
 ## Labeling
