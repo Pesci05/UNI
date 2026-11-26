@@ -580,6 +580,61 @@ $$
 Però se una funzione non è periodica si può prendere in esame un periodo finito, e replicare questo periodo all'infinito.
 
 ## Trasformata di Fourier
-La trasformata di fourier estende la serie di fourier a qualsiasi funzioni, comprese anche quelle definifite in un intervallo finito di tempo.
+La trasformata di fourier **estende la serie di fourier a qualsiasi funzione**, comprese anche quelle definifite in un intervallo finito di tempo, questo si può fare anche utilizzando la formula di eulero.
+
+(Formule latex della trasformata di fourier, anche con la formula di eulero data dalle slide)
+
+In entrami i casi $F()$ è definita per $\mu appartiente R$.
+La variabile $\mu$ indica una **frequenza continua**.
+
+(Formula di F in funzione di mu)
+
+La funzione $F(\mu)$ solitamente è una **funzione complessa**, **periodica**, dove il suo modulo $|F(\mu)|$ **è il suo spettro**.
+
+Se si ha solo la funzione $F(\mu)$ si può ricavare la funzione $f(t)$ tramite la **trasformata inversa**.
+
+(Formule trasformata inversa, anche eulero)
 
 
+## Discrete Fourier Transform
+
+
+
+## Teorema della convulozione
+Siano $f()$ ed $h$ 2 funzioni ed $F$ ed $H$ le corrispondenti **Trasformate di Fourier** con:
+$$
+F= \mathcal{F}(f),H=\mathcal{F}(h)
+$$
+Allora la Trasformata di Fourier della convoluzione tra f ed h è uguale al prodotto elemento per elemento tra F ed H (Convolution Theorem:
+(corrispondente formula)
+
+
+## Convuluzione tramite DFT
+
+
+### Filtro passa basso
+Mantiene tutte le frequenze al di sotto di una data frequenza, per eliminare le frequenza più alte, producendo un effetto simile al **blurring**.
+
+Un filtro passa basso ideale è una **maschera** binaria NxM:
+![[Pasted image 20261126114348.png]]
+La maschera è applicata su F e non sull'immagine di partenza.
+
+### Filtro passa alto
+Filtro che mantiene tutte le frequenze più alte di una certa frequenza, questo è l'**inverso del fitro passa-basso**.
+
+
+### Filtro gaussiano
+Filtro che permette un graduale passaggio da un valore basso ad un valore alto, spesso utilizzato per smussare i questo tipi di passaggi per essere applicato assieme ad altri filtri.
+Utilizzato anche per comprimere il segnale.
+
+
+### Filtro Butterworth
+
+### Filtri selettivi
+Utilizzati per mascherare solo alcune frequenze specifiche, questi filtri sono:
+- **bandpass e bandreject filter** 
+- **notch reject e notch pass filter**
+
+
+## Vantaggi dei filtri tramite frequenze
+IL [[IMAGE PROCESSING#Teorema della convulozione|Teorema della convulozione]] dice che esiste un **filtro spaziale, il quale dà come risultato lo stesso di un filtro nel dominio delle frequenze**, però questo solo **teoricamente**, però  non è semplice trovare un filtro spaziale tale che dia lo stesso risultato di un filtro in frequenza, un esempio di questi filtri sono quelli **selettivi**.
