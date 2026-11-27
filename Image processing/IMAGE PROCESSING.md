@@ -54,7 +54,7 @@ Questo tipo di algortmi vengono utilizzati in caso:
 - **Image Inpainting**
 - **Effetti speciali**
 
-# IMMAGINI DIGITALI
+# IMMAGINI D|IGITALI
 Le immagini sono formate dalla radiazione elettromagnetica(EM), come:
 - Luce
 - Raggi x
@@ -74,6 +74,28 @@ La lunghezza d'onda si misura in metro.
 
 I colori percepiti dagli essere umani, sono determinati dalla **lunghezza d'onda** della luce che viene riflessa da un'oggetto.
 
+Le immagini normalmente vengono acquisite trmite la **fifrazione della luce**, ma esiston anche altre tipologie di acquisizione attraverso altri tipi di onde come:
+- Immagini radar(onde radio e microonde)
+- Risonanza magnetica (onde radio) 
+- Imaging a microonde 
+- Imaging a infrarossi 
+- Fotografie 
+- Telescopi per l'imaging ultravioletto 
+- Raggi X e tomografia computerizzata 
+- Tomografia a emissione di positroni (raggi gamma) 
+- Ultrasuoni (onde sonore, non EM, con una frequenza maggiore di 20 kHz
+
+## OCCHIO UMANO
+![[Pasted image 20261127192732.png]]
+L'occhio umano è formato da:
+- **Cristallino/lente**: proietta la luce degli oggetti sulla retina
+- **Retina**: Ricoperta di cellule nervose sensibili alla luce chiamate **fotoricettori**, che sono **coni** e **bastoncelli**
+- **Coni**: si concentrano in una zone della retina chiamata **fovea**, sensibili al calore
+- **Bastoncelli**: Son diffusi su tutta la retina, non sono sensibili al calore, ma sensibili alle diverse intensità di luce.
+I muscoli dell'occhio possono cambiare la forma del cristallina, permettendo di **concentrarsi/focus** su oggetti vicini o lontani.
+
+L'**immagine viene messa a fuoco dalla retina**, le **terminazione nervosi presenti vengono eccitate e mandano segnali al cervello**, l'occhio umano può percepire vino a $10^{10}$ intensità di luminosità
+
 ## ACQUISIZIONE DELLE IMMAGINI
 Le immagini sono in genere acquisite illuminando una scena e catturando l’energia riflessa dagli oggetti della scena.
 
@@ -82,7 +104,7 @@ L'energia in ingresso (ad esempio la luce) colpisce un materiale reattivo a quel
 Le risposte dei sensori determinano l’immagine finale
 ![[Pasted image 20260917114618.png]]
 
-Impossobile acquisire le immagini in modo continuo, per questo si esegue un tipo di **campionamento spaziale**, che permette di avere un'immagine discreta in corrispondenza in base alle coordinate discrete (u,v).
+Impossibile acquisire le immagini in modo continuo, per questo si esegue un tipo di **campionamento spaziale**, che permette di avere un'immagine discreta in corrispondenza in base alle coordinate discrete (u,v).
 
 Questo vale anche per l'acuisizione dell'immagine nel tempo, per questo si esegue un **campionamento temporale**, a intervalli discreti.
 
