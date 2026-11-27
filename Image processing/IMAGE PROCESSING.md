@@ -146,7 +146,9 @@ Nel caso di un'immagine grigia a 8 bit si ha, $K=2^8=256$ bin.
 
 L'istogramma contiene informazioni di tipo statistico, sualla **distribuzione** dei valori de pixel, però la **distribuzione spaziale** non viene presa in considerazione.
 
-# L'UMINOSITÀ DELL'IMMAGINE
+Gli istogrammi **non mantengono** i dati di disposizione dei pixel, perde l'informazione riguardo alla **distibuzione spaziale** dell'immagine.
+
+## L'UMINOSITÀ DELL'IMMAGINE
 La luminosità di un immagine ad un canale, è l'intensità media di tutti i pixel dell'immagine:
 $$
 L(I)=\frac{1}{AL}\sum ^L_{u=1}\sum^A_{v=1}I(u,v)
@@ -169,11 +171,13 @@ $$
 dove il denominatore è uguale a 2 volte la media delle luminosità massime e minime, $media=\frac{max(I)+min(I)}{2}$ .
 Ma in questo caso un valore tanto basso a confronto con il resto dell'istogramma, corromperà il risultato della media e per questo bisogna mettere una **soglia**, così da scartare quel valore.
 ![[Pasted image 20260922144047.png]]
-Gli istogrammi permettono di rilevare anche problemi di esposizione/saturazione:
-[[03_Istogrammi.pdf#page=13|03_Istogrammi, pagina 13]]
+Gli istogrammi permettono di rilevare dei difetti dell'immagine grazie alla loro forma per esempio:
+- Problemi di **esposizione** $\to$ valori di illuminazione sono fuori dall'intervallo percepibile del sensore
+- **Manipolazioni** $\to$ Picchi e lacune presenti nell'istogramma
 
 Gli istogrammi possono **mostrare**, l**a modifca dell'immagine,** ma nel caso contrario non garantisce che non si stata manipolata.
 
+Anche le **compressione** e **codifiche** possono influenzare l'istogramma.
 ## BINNING
 Immagini ad alta risoluzione dei livelli d'intensità possono produrre istogrammi molto grandi.
 Per ovviare a questo problema si deve effettuare il **binning**, cioè l'intervallo totale verrà suddiviso in sotto-intervalli.
@@ -194,7 +198,7 @@ dove:
 - la divisione è intera
 
 ## IMMAGINI A PIÙ COLORI
-Per immagini a più colori, quidni a 3 canali,  il suo istogrammi possono essere calcolati:
+Per immagini a più colori, quind a 3 canali,  i loro istogrammi possono essere calcolati:
 - Convertendo l'immagine a un solo canale
 - Calcolare un istogramma per ogni canale dell'immagine
 Ma in entrambe le soluzione perdo informazioni.
@@ -205,7 +209,7 @@ In tal caso, per rappresentare l’istogramma tridimensionale, ho bisogno di un 
 Anche in questo caso è possibile effettuare **binning**.
 
 # OPERATORI PUNTUALI
-Gli operatori puntuali **cambiano l'ntnsità di un pixel** in base ad una funzione che dipende solo da quel pixel.
+Gli operatori puntuali **cambiano l'intensità di un pixel** in base ad una funzione che dipende solo da quel pixel.
 
 Gli operatori puntuali sono chiamati **omogenei** quando $f()$ non dipende dalle specifiche coordinate (u,v).
 
@@ -220,7 +224,7 @@ Gli operatori puntuali sono chiamati **omogenei** quando $f()$ non dipende dalle
 - **Inversione dell'immagine**
 	$f_{invert}(a)=-a+a_{max}=a_{max}-a$
 - **Regolazione automatica del contrasto**
-	Modifica le intensità dei pixel in modo tale che l'intervallo di valori sia usato completamente, si può usare anche per diminuire il contrasto
+	Modifica le intensità dei pixel in modo tale che l'intervallo di valori sia usato completamente, si può usare anche per diminuire il contrasto, viene definito matematicamente qui $\to$ [[04_Operatori puntuali.pdf#page=14|04_Operatori puntuali, pagina 14]]
 
 ## EQUALIZZAZIONE DEGLI ISTOGRAMMI
 Utilizzare gli operatori puntuali per avere una **distribuzione uniforme all'interno dell'istogramma**.
@@ -235,6 +239,9 @@ $$
 - $T(i)$ è la funzione di mapping ed è monotona non decrescente
 - s è il valore d'intensità del pixel alle coordinate (u,v) nell'immagine risultante
 ![[Pasted image 20261006174009.png]]
+
+
+
 
 # FILTRI
 Un filtro spaziale utilizza (anche) il valore dei pixel circostanti, selezionati tramite una finestra dell’immagine centrata sul pixel corrente.
@@ -267,11 +274,11 @@ H(i,j) = \left[ \begin{matrix}
 $$
 La **convoluzione** è l'applicazione di un filtro lineare ad un'immagine.
 
-Quando si incontrano i borid di un'immagine si può fare:
+Quando si incontrano i borididi un'immagine si può fare:
 - **Cropping**
 	Ritaglio un’immagine più piccola escludendo i bordi
 - **Padding**
-	Aggiungo una cornice all’immagine di larghezza K e altezza L prima di applicare il filtr
+	Aggiungo una cornice all’immagine di larghezza K e altezza L prima di applicare il filtro
 
 ### FILTRO GAUSSIANO
 Posso esprimere il valore del generico peso (i,j) di H, kernel Gaussiano, usando la definizione di funzione Gaussiana (bidimensionale):
