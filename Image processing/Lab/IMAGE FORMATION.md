@@ -478,7 +478,7 @@ I bordi estraggono informazioni, da un'immagine, ma questi non sono molto interp
 
 Il risultato di questo tipo di algortmi viene detto **edge map**.
 
-**[[IMAGE PROCESSING#EDGE DETECTION|Sobel edge detection]]**, Sobel dà un risultato per ogni pixel, questo compromette la rilevazione dei bordi, per questo si può introdurre un **treshold**(soglia), però questa soglia può produrre problemi:
+**[[08 - Edge Detection|Sobel edge detection]]**, Sobel dà un risultato per ogni pixel, questo compromette la rilevazione dei bordi, per questo si può introdurre un **treshold**(soglia), però questa soglia può produrre problemi:
 - **Rumore produce gradienti**
 - **Un bordo sfocato non produce un bordo formato da un unico pixel, ma un bordo più spesso**
 - **le texture producono risposte irrilevanti**
